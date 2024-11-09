@@ -12,8 +12,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+                'host-grotesk': ['"Host Grotesk"', 'sans-serif'], // Añade la fuente personalizada
+              },
+            colors: {
+                'custom-red': '#AC2C28',
+                'custom-red-darker': '#9A2724'
+              },
         },
     },
 
