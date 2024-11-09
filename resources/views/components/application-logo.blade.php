@@ -1,1 +1,1 @@
-<img src="/LogoBuf_black_transparent350.png" alt="LogoBuffalo" title="LogoBuffalo">
+<img src="/LogoBuf_black_transparent350.png" alt="LogoBuffalo" title="LogoBuffalo" class="w-64 md:w-full">
