@@ -36,7 +36,7 @@
 
     <div class="mt-4">
         <x-input-label for="biografia" :value="__('Biografía')" />
-        <textarea wire:model="biografia" id="biografia"></textarea>
+        <textarea wire:model="biografia" id="biografia" class="block mt-1 w-full h-52 border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"></textarea>
 
     </div>
     <div class="mt-4">

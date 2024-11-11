@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Musico;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -21,19 +22,41 @@ class CrearMusico extends Component
     protected $rules = [
         'nombre' => 'required|string',
         'apellidos' => 'string',
+        'alias' => 'required',
         'origen' => 'string',
         'biografia' => 'required',
         'fecha_nac' => 'required',
+        'imagen' => 'required|image|max:1024'
 
     ];
+    protected $listeners = ['setBiografia'];
 
-    protected $listeners = ['crearMusico'];
+    public function setBiografia($contenido)
+    {
+        $this->biografia = $contenido;
+    }
+
     public function crearMusico()
     {
-        $this->validate();
 
-        $imagen = $this->imagen->store('public/imagenes');
+        $datos = $this->validate();
 
+        $imagen = $this->imagen->store(path: 'public/imagenes');
+        $datos['imagen'] = str_replace('public/imagenes/', '', $imagen);
+
+        Musico::create([
+            'nombre' => $datos['nombre'],
+            'apellidos' => $datos['apellidos'],
+            'alias' => $datos['alias'],
+            'origen' => $datos['origen'],
+            'fecha_nac' => $datos['fecha_nac'],
+            'biografia' => $datos['biografia'],
+            'imagen' => $datos['imagen']
+        ]);
+
+        session()->flash('mensaje', 'Músico creado correctamente');
+
+        return redirect()->route('admin.musicos.index');
     }
 
     public function render()

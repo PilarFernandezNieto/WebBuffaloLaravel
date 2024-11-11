@@ -11,8 +11,13 @@
                 <div class="p-6 text-gray-900">
                     {{ __("Musicos") }}
                 </div>
+                @if (session()->has('mensaje'))
+                    <div class="uppercase border border-green-600 bg-green-100 text-green-600 font-bold p-2 m-3">
+                        {{session('mensaje')}}
+                    </div>
+                @endif
             </div>
-            <x-button-link :href="route('admin.musicos.create')">Nuevo Músico</x-button-link>
+            <x-button-link :href="route('admin.musicos.create')" class="mt-5">Nuevo Músico</x-button-link>
 
         </div>
     </div>
