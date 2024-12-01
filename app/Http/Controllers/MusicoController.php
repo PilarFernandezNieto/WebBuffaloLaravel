@@ -43,7 +43,7 @@ class MusicoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        dd("desde editar");
     }
 
     /**

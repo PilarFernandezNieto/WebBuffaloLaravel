@@ -12,7 +12,8 @@
                     {{ session('mensaje') }}
                 </div>
             @endif
-            <livewire:mostrar-musicos />
+            <livewire:listado-musicos />
+            {{-- <livewire:mostrar-musicos /> --}}
             <x-button-link :href="route('admin.musicos.create')" class="mt-5">Nuevo Músico</x-button-link>
 
         </div>
