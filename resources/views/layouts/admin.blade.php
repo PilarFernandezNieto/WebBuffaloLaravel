@@ -15,6 +15,8 @@
         rel="stylesheet">
 
     <!-- Scripts -->
+    <script src="https://cdn.tiny.cloud/1/3mwpefylf87qmow9slz4sqdjz7toujobppay56nan6xsqdqp/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
@@ -26,7 +28,7 @@
         <!-- Page Heading -->
         @isset($header)
             <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
             </header>
@@ -38,6 +40,8 @@
             {{ $slot }}
         </main>
     </div>
+
+
     @livewireScripts
 
 

@@ -29,20 +29,12 @@ class CrearMusico extends Component
         'imagen' => 'required|image|max:1024'
 
     ];
-    protected $listeners = ['setBiografia'];
-
-    public function setBiografia($contenido)
-    {
-        $this->biografia = $contenido;
-    }
 
     public function crearMusico()
     {
-
         $datos = $this->validate();
-
-        $imagen = $this->imagen->store(path: 'public/imagenes');
-        $datos['imagen'] = str_replace('public/imagenes/', '', $imagen);
+        $imagen = $this->imagen->store('imagenes', 'public');
+        $datos['imagen'] = str_replace('imagenes/', '', $imagen);
 
         Musico::create([
             'nombre' => $datos['nombre'],
