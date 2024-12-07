@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Musico;
 use Illuminate\Http\Request;
 
 class MusicoController extends Controller
@@ -41,9 +42,11 @@ class MusicoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Musico $musico)
     {
-        dd("desde editar");
+       return view("admin.musicos.edit", [
+        "musico" => $musico
+       ]);
     }
 
     /**

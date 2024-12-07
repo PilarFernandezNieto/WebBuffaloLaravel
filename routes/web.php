@@ -12,7 +12,7 @@ Route::get('/', function () {
 Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
 
-    // Músicos
+    // Músicos - definir las rutas con resource ya crea los metodos necesarios: post, get, delete, update
     Route::resource('musicos', MusicoController::class);
 });
 

@@ -15,8 +15,7 @@
         rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="https://cdn.tiny.cloud/1/3mwpefylf87qmow9slz4sqdjz7toujobppay56nan6xsqdqp/tinymce/7/tinymce.min.js"
-        referrerpolicy="origin"></script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
