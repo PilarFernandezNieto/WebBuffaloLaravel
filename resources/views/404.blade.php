@@ -18,7 +18,13 @@
         @endif
     </head>
     <body class="font-sans antialiased fuente-principal">
-        <h1 class="text-blue-700">The Electric Buffalo</h1>
+        @if (session('error'))
+        <div class="uppercase border border-red-600 bg-red-100 text-red-600 font-bold p-2 m-3">
+            {{ session('error') }}
+        </div>
+        <x-link :href="route('welcome')" class="text-2xl">Inicio</x-link>
+    @endif
 
-    </body>
 </html>
+
+
