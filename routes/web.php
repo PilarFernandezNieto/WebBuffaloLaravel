@@ -9,12 +9,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/404', function() {
-    return view('404');
+Route::get('/403', function() {
+    return view('403');
 });
 
-Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->middleware(['auth', 'verified', 'is_admin'])->name('index');
+Route::prefix('admin')->middleware(['auth', 'verified', 'is_admin'])->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
 
     // Músicos - definir las rutas con resource ya crea los metodos necesarios: post, get, delete, update
     Route::resource('musicos', MusicoController::class);

@@ -17,11 +17,11 @@
         </div>
 
         <div class="flex justify-between my-5">
-            <x-link :href="route('login')">Inicia sesión</x-link>
-            <x-link :href="route('register')">Crea tu cuenta</x-link>
+            <x-link :href="route('login')" class="text-xs">Inicia sesión</x-link>
+            <x-link :href="route('register')" class="text-xs">Crea tu cuenta</x-link>
         </div>
 
-        <x-primary-button class="w-full justify-center">
+        <x-primary-button class="w-full justify-center text-xs">
             {{ __('Enviar instrucciones') }}
         </x-primary-button>
     </form>

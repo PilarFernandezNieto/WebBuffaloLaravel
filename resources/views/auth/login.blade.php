@@ -35,8 +35,8 @@
         </div>
 
         <div class="flex justify-between my-5">
-            <x-link :href="route('register')">Crea tu cuenta</x-link>
-            <x-link :href="route('password.request')">¿Has olvidado tu contraseña?</x-link>
+            <x-link :href="route('register')" class="text-xs">Crea tu cuenta</x-link>
+            <x-link :href="route('password.request')" class="text-xs">¿Has olvidado tu contraseña?</x-link>
         </div>
 
         <x-primary-button class="w-full justify-center">

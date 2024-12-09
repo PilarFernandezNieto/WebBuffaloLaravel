@@ -18,7 +18,7 @@ class RolAdmin
         if ( !auth()->guard()->user()->admin) {
             session()->flash("error", "No tienes permisos para acceder");
 
-            return redirect('/404');
+            return redirect('/403');
         }
         return $next($request);
     }
