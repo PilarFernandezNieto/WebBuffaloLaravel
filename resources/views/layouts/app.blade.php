@@ -33,6 +33,7 @@
 
         <!-- Page Content -->
         <main>
+            <h1>app.blade</h1>
             {{ $slot }}
         </main>
     </div>
