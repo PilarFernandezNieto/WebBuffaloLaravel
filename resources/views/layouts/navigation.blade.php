@@ -15,7 +15,7 @@
                     <x-nav-link :href="route('admin.musicos.index')" :active="request()->routeIs('admin.musicos.index')">
                         {{ __('Musicos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.musicos.index')" :active="request()->routeIs('admin.musicos.index')">
+                    <x-nav-link :href="route('admin.noticias.index')" :active="request()->routeIs('admin.noticias.index')">
                         {{ __('Noticias') }}
                     </x-nav-link>
                 </div>

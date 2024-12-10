@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MusicoController;
+use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'is_admin'])->name('admi
 
     // Músicos - definir las rutas con resource ya crea los metodos necesarios: post, get, delete, update
     Route::resource('musicos', MusicoController::class);
+    Route::resource('noticias', NoticiaController::class);
 });
 
 Route::middleware('auth')->group(function () {
