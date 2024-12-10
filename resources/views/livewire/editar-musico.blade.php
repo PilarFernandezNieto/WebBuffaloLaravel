@@ -36,8 +36,10 @@
 
     <div class="mt-4">
         <x-input-label for="biografia" :value="__('Biografía')" />
-        <textarea wire:model="biografia" id="biografia" wire:model.defer="biografia" wire:ignore
-            class="block mt-1 w-full h-52 border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"></textarea>
+        <div wire:ignore>
+            <textarea wire:model="biografia" id="biografia" wire:model.defer="biografia" wire:ignore
+                class="block mt-1 w-full h-52 border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"></textarea>
+        </div>
 
     </div>
     <div class="mt-4">
@@ -59,3 +61,21 @@
     </div>
     <x-primary-button class="w-full mt-4 justify-center">Guardar Cambios</x-primary-button>
 </form>
+@push('scripts')
+<script>
+
+tinymce.init({
+            selector: '#biografia',
+            language_url: '/js/langs/es.js',
+            language: 'es',
+            setup: function(editor) {
+                editor.on('init change', function() {
+                    editor.save();
+                });
+                editor.on('change', function(e) {
+                    @this.set('biografia', editor.getContent());
+                });
+            }
+        });
+</script>
+@endpush
