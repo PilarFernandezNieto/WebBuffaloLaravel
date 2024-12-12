@@ -16,7 +16,8 @@ export default {
               },
             colors: {
                 'custom-red': '#AC2C28',
-                'custom-red-darker': '#9A2724'
+                'custom-red-darker': '#9A2724',
+                'custom-white': '#ededed'
               },
         },
     },
