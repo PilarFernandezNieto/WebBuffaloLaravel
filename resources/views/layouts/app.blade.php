@@ -10,7 +10,8 @@
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/91eae316a2.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 
 
@@ -20,13 +21,19 @@
     @endif
     @livewireStyles
     @stack('styles')
-   <style>
-    .imagen-header {
-    background-image: url("{{ asset('img/bufalos_header2.jpg') }}");
-    background-position: 50%;
-    background-size: cover;
-    position: relative;
-}
+    <style>
+        .imagen-header {
+            background-image: url("{{ asset('img/bufalos_header2.jpg') }}");
+            background-position: 50%;
+            background-size: cover;
+            position: relative;
+        }
+
+        .imagen-central {
+            background-image: url("{{ asset('img/imagen_central.jpg') }}");
+            background-position: 50%;
+            background-size: cover;
+        }
     </style>
 </head>
 
@@ -231,14 +238,14 @@
     </nav>
     <div class="min-h-screen bg-gray-100 ">
         @if (request()->is('/'))
-        <div class=" imagen-header min-h-56 md:min-h-35 relative">
-            <div class="bg-slate-950 opacity-25 absolute top-0 left-0 h-full w-full"></div>
-            <div class="absolute z-10 p-7 bottom-4 left-40 w-4/5 space-y-8 hidden md:block ">
-                <h2 class="text-custom-white fuente-bufalo text-4xl tracking-[0.5rem]">The Electric Buffalo</h2>
-                <p class="text-custom-red fuente-bufalo text-6xl tracking-[2.5rem] ">Patrolman</p>
+            <div class=" imagen-header min-h-56 md:min-h-35 relative">
+                <div class="bg-slate-950 opacity-25 absolute top-0 left-0 h-full w-full"></div>
+                <div class="absolute z-10 p-7 bottom-4 left-40 w-4/5 space-y-8 hidden md:block ">
+                    <h2 class="text-custom-white fuente-bufalo text-4xl tracking-[0.5rem]">The Electric Buffalo</h2>
+                    <p class="text-custom-red fuente-bufalo text-6xl tracking-[2.5rem] ">Patrolman</p>
+                </div>
             </div>
-        </div>
-    @endif
+        @endif
 
         <!-- Page Heading -->
         @isset($header)
