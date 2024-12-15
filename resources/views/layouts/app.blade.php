@@ -10,6 +10,7 @@
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/91eae316a2.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 
 
@@ -18,6 +19,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
     @livewireStyles
+    @stack('styles')
    <style>
     .imagen-header {
     background-image: url("{{ asset('img/bufalos_header2.jpg') }}");
@@ -89,6 +91,9 @@
                                         </x-slot>
 
                                         <x-slot name="content">
+                                            <x-dropdown-link :href="route('admin.index')">
+                                                {{ __('Admin') }}
+                                            </x-dropdown-link>
                                             <x-dropdown-link :href="route('profile.edit')">
                                                 {{ __('Profile') }}
                                             </x-dropdown-link>
