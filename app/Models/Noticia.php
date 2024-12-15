@@ -11,6 +11,7 @@ class Noticia extends Model
         'intro',
         'texto',
         'fecha',
-        'imagen'
+        'imagen',
+        'portada'
     ];
 }

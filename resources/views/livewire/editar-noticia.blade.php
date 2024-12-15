@@ -1,5 +1,5 @@
 <div class="md:flex md:flex-col md:items-center md:justify-center p-5">
-    <form class="md:w-1/2" wire:submit.prevent='crearNoticia' method="POST">
+    <form class="md:w-1/2" wire:submit.prevent='editarNoticia' method="POST">
 
         <div>
             <x-input-label for="titulo" :value="__('Título')" />
@@ -32,15 +32,20 @@
         </div>
         <div class="mt-4">
             <x-input-label for="imagen" :value="__('Imagen')" />
-            <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen"
+            <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen_nueva"
                 accept="image/*" />
             <div class="my-5 w-80">
-                @if ($imagen)
-                    Imagen:
-                    <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen Noticia">
+                <x-input-label :value="__('Imagen Actual')" />
+                <img src="{{ asset('/storage/imagenes/' . $imagen) }}" alt="{{ 'Imagen ' . $id }}">
+            </div>
+            <div class="my-5 w-80">
+                @if ($imagen_nueva)
+                    Imagen nueva:
+                    <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Imagen Noticia">
                 @endif
             </div>
-            <x-input-error :messages="$errors->get('imagen')" class="mt-2" />
+
+            <x-input-error :messages="$errors->get('imagen_nueva')" class="mt-2" />
         </div>
         <div class="mt-4">
             <div class="flex gap-4 items-center">
@@ -51,7 +56,7 @@
             <x-input-error :messages="$errors->get('portada')" class="mt-2" />
         </div>
 
-        <x-primary-button class="w-full mt-4 justify-center">Crear</x-primary-button>
+        <x-primary-button class="w-full mt-4 justify-center">Guardar Cambios</x-primary-button>
         @if ($errors->any())
             <div class="mt-4 text-red-500">
                 <ul>
@@ -81,3 +86,4 @@
         });
     </script>
 @endpush
+

@@ -39,8 +39,6 @@
             <h3 class="text-white text-4xl mb-12">Discografía del Búfalo Eléctrico</h3>
             <a href="/discografia" class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 px-12 py-4">Pincha aquí</a>
         </div>
-
-
     </section>
 
 </x-app-layout>

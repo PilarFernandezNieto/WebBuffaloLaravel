@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 
@@ -42,9 +43,11 @@ class NoticiaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Noticia $noticia)
     {
-        //
+        return view('admin.noticias.edit', [
+            'noticia' => $noticia
+        ]);
     }
 
     /**

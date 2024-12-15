@@ -20,12 +20,10 @@ class CrearMusico extends Component
     use WithFileUploads;
 
     protected $rules = [
-        'nombre' => 'required|string',
-        'apellidos' => 'string',
-        'alias' => 'required',
-        'origen' => 'string',
-        'biografia' => 'required',
-        'fecha_nac' => 'required',
+        "titulo" => "required|string",
+        "intro" => "string",
+        "texto" => "required",
+        "fecha" => "required",
         'imagen' => 'required|image|max:1024'
 
     ];

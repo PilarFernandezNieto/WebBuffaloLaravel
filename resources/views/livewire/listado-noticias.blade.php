@@ -7,8 +7,11 @@
 
     @foreach ($noticias as $noticia)
         <div
-            class="grid grid-cols-[50px_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="grid grid-cols-[50px_50px_1fr_0.5fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $noticia->id }}</p>
+            <p>
+                <i class="{{ $noticia->portada == 1 ? 'fa-regular fa-square-check text-green-700 text-lg' : 'fa-regular fa-square text-red-600 text-lg' }}" title="{{ $noticia->portada == 1 ? 'Portada' : 'No Portada' }}"></i>
+            </p>
             <p>{{ $noticia->titulo }}</p>
             <p>{{ $noticia->fecha }}</p>
             <img src="{{ asset('storage/imagenes/' . $noticia->imagen) }}" alt="Noticia_ {{ $noticia->id }}"

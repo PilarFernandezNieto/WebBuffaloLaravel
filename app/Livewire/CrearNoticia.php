@@ -13,6 +13,7 @@ class CrearNoticia extends Component
     public $texto;
     public $fecha;
     public $imagen;
+    public $portada = false;
 
     use WithFileUploads;
 
@@ -21,12 +22,15 @@ class CrearNoticia extends Component
         "intro" => "string",
         "texto" => "required",
         "fecha" => "required",
-        'imagen' => 'required|image|max:1024'
+        'imagen' => 'required|image|max:1024',
+        'portada' => 'nullable|boolean',
     ];
 
 
     public function crearNoticia(){
         $datos = $this->validate();
+
+
         $imagen = $this->imagen->store('imagenes', 'public');
         $datos['imagen'] = str_replace('imagenes/', '', $imagen);
 
@@ -35,7 +39,8 @@ class CrearNoticia extends Component
             "intro" => $datos["intro"],
             "texto" => $datos["texto"],
             "fecha" => $datos["fecha"],
-            "imagen" => $datos["imagen"]
+            "imagen" => $datos["imagen"],
+            "portada" => $datos["portada"]
         ]);
 
         session()->flash('mensaje', 'Noticia creada correctamente');
