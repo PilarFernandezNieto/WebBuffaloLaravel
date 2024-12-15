@@ -8,6 +8,15 @@ use Livewire\Component;
 class ListadoContenidos extends Component
 {
 
+    protected $listeners = ['eliminarContenido'];
+
+
+    public function eliminarContenido($id)
+    {
+        $contenido = Contenido::find($id);
+        $contenido->delete();
+    }
+
     public function render()
     {
         $contenidos = Contenido::all();

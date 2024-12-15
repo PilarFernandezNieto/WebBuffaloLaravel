@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contenido;
 use Illuminate\Http\Request;
 
 class ContenidoController extends Controller
@@ -41,9 +42,11 @@ class ContenidoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Contenido $contenido)
     {
-        //
+        return view('admin.contenidos.edit', [
+            'contenido' => $contenido
+        ]);
     }
 
     /**

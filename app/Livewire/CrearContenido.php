@@ -12,7 +12,7 @@ class CrearContenido extends Component
     public $titulo;
     public $texto;
     public $imagen;
-    public $portada;
+    public $portada = true;
     public $fecha;
 
     use WithFileUploads;
