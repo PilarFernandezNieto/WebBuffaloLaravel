@@ -9,4 +9,5 @@
 
 <x-app-layout>
     <h1>Contenido principal de esta página</h1>
+
 </x-app-layout>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MusicoController;
 use App\Http\Controllers\NoticiaController;
@@ -23,6 +24,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'is_admin'])->name('admi
     // Músicos - definir las rutas con resource ya crea los metodos necesarios: post, get, delete, update
     Route::resource('musicos', MusicoController::class);
     Route::resource('noticias', NoticiaController::class);
+    Route::resource('contenidos', ContenidoController::class);
 });
 
 Route::middleware('auth')->group(function () {

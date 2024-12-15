@@ -226,11 +226,11 @@
     </nav>
     <div class="min-h-screen bg-gray-100 ">
         @if (request()->is('/'))
-        <div class="imagen-header min-h-56 md:min-h-35 relative">
+        <div class=" imagen-header min-h-56 md:min-h-35 relative">
             <div class="bg-slate-950 opacity-25 absolute top-0 left-0 h-full w-full"></div>
-            <div class="absolute z-10 p-7 bottom-4 left-40 w-4/5 space-y-8">
+            <div class="absolute z-10 p-7 bottom-4 left-40 w-4/5 space-y-8 hidden md:block ">
                 <h2 class="text-custom-white fuente-bufalo text-4xl tracking-[0.5rem]">The Electric Buffalo</h2>
-                <p class="text-custom-red fuente-bufalo text-6xl tracking-[2.5rem]">Patrolman</p>
+                <p class="text-custom-red fuente-bufalo text-6xl tracking-[2.5rem] ">Patrolman</p>
             </div>
         </div>
     @endif
@@ -246,7 +246,6 @@
 
         <!-- Page Content -->
         <main>
-            <h1>app.blade</h1>
             {{ $slot }}
         </main>
     </div>
