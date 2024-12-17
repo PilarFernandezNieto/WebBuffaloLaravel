@@ -53,6 +53,7 @@
     <script>
         tinymce.init({
             selector: '#texto',
+            plugins: 'link, code',
             language_url: '/js/langs/es.js',
             language: 'es',
             setup: function(editor) {

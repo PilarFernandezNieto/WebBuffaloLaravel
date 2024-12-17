@@ -8,11 +8,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
 
     <!-- Scripts -->
     <script src="https://cdn.tiny.cloud/1/3mwpefylf87qmow9slz4sqdjz7toujobppay56nan6xsqdqp/tinymce/7/tinymce.min.js"

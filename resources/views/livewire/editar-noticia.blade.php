@@ -51,7 +51,8 @@
             <div class="flex gap-4 items-center">
                 <x-input-label for="portada" :value="__('Portada')" />
                 <input type="checkbox" wire:model="portada" id="portada"
-                    class="border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm">
+                    class="border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"
+                    {{ $portada ? 'checked' : '' }}>
             </div>
             <x-input-error :messages="$errors->get('portada')" class="mt-2" />
         </div>
@@ -73,6 +74,7 @@
     <script>
         tinymce.init({
             selector: '#texto',
+            plugins: 'code, link', // Usa el array global definido en app.js
             language_url: '/js/langs/es.js',
             language: 'es',
             setup: function(editor) {
@@ -86,4 +88,3 @@
         });
     </script>
 @endpush
-

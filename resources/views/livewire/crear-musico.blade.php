@@ -62,6 +62,7 @@
     <script>
         tinymce.init({
             selector: '#biografia',
+            plugins: 'link, code',
             language_url: '/js/langs/es.js',
             language: 'es',
             setup: function(editor) {

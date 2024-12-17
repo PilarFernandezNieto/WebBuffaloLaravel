@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Suez+One&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
---fuente-principal: "Host Grotesk", sans-serif;
+--fuente-principal: "Montserrat", sans-serif;
 --fuente-bufalo: "Suez One", serif;
 --fulvous: #E58517;
 --fireBrick: #AC2C28;

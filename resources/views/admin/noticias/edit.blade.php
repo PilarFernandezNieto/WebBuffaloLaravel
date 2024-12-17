@@ -11,7 +11,6 @@
                 <div class="p-6 text-gray-900">
                     <h1 class="text-2xl font-bold text-center mb-10 text-custom-red">Editar Noticia</h1>
                     <livewire:editar-noticia :noticia="$noticia"/>
-                    <p>Formulario editar</p>
                 </div>
             </div>
         </div>

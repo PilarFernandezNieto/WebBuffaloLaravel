@@ -18,7 +18,8 @@ class ListadoNoticias extends Component
     }
     public function render()
     {
-        $noticias = Noticia::all();
+        $noticias = Noticia::orderBy('fecha', 'desc')->get();
+
         return view('livewire.listado-noticias', [
             'noticias' => $noticias
         ]);
