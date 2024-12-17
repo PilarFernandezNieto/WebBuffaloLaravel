@@ -18,6 +18,7 @@ export default {
                 "custom-red": "#AC2C28",
                 "custom-red-darker": "#9A2724",
                 "custom-white": "#ededed",
+                "custom-amber": "#fbf3e7"
             },
             minHeight: {
                 "35": '35rem'

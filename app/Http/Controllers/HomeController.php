@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contenido;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,8 +14,9 @@ class HomeController extends Controller
             ->select('id','titulo', 'texto', 'imagen')
             ->first();
 
+
         return view('welcome', [
-            'contenido' => $contenido
+            'contenido' => $contenido,
         ] );
     }
 }

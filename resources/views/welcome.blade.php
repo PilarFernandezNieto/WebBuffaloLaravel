@@ -41,5 +41,10 @@
         </div>
     </section>
 
+    <livewire:noticias-portada />
+
+
+
+
 </x-app-layout>
 
