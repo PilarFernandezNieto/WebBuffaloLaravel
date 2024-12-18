@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('admin.musicos.index')" :active="request()->routeIs('admin.musicos.index')">
-                        {{ __('Musicos') }}
+                        {{ __('Musicossss') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.noticias.index')" :active="request()->routeIs('admin.noticias.index')">
                         {{ __('Noticias') }}

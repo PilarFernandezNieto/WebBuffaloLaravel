@@ -51,6 +51,7 @@ class EditarContenido extends Component
 
             $datos['imagen'] = str_replace('imagenes/', '', $imagen);
         }
+
         // Encontrar el contenido a editar
         $contenido = Contenido::find($this->id);
 

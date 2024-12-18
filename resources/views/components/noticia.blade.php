@@ -3,11 +3,12 @@
     <div class="contenido-noticias border border-gray-100 p-5">
         <h3 class="text-custom-red text-3xl mb-5 min-h-28 flex font-medium">{{$noticia->titulo}}</h3>
         <div class="texto-noticia ">
-            <h4 class="text-2xl mb-4 min-h-20">{{$noticia->intro}}</h4>
-            <div class="texto text-base my-6 min-h-40">
-                {!!$noticia->texto!!}
+            <h4 class="text-2xl mb-4 min-h-24">{{$noticia->intro}}</h4>
+            <div class="texto text-base my-6 min-h-32">
+                {!! Str::limit($noticia->texto, 175)!!}
             </div>
+            <p class="fecha flex justify-end text-custom-red italic">{{$noticia->fecha}}</p>
         </div>
-
     </div>
+    <a href="" class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 py-4 px-8 absolute bottom-4 left-4">Más info</a>
 </div>
