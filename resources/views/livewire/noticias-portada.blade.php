@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto my-12">
+<div class="max-w-7xl mx-auto my-12 bg-white rounded-lg py-2 px-4 shadow-md">
     <h2 class="text-4xl text-center mb-12 font-medium">Noticias</h2>
     <div class="noticias-portada md:grid md:grid-cols-3 gap-8 ">
         @foreach ($noticias as $noticia)

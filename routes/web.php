@@ -5,6 +5,7 @@ use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MusicoController;
 use App\Http\Controllers\NoticiaController;
+use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 // })->name('welcome');
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/musicos', [PaginasController::class, 'musicos'])->name('musicos');
 
 Route::get('/403', function() {
     return view('403');

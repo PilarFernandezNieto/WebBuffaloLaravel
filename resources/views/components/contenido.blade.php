@@ -1,5 +1,5 @@
-<section class="max-w-6xl w-11/12 mx-auto py-20">
-    <div class="md:grid md:grid-cols-2 md:gap-20">
+<section class="max-w-6xl w-11/12 mx-auto py-20 ">
+    <div class="md:grid md:grid-cols-2 md:gap-20 bg-white rounded-lg p-2 shadow">
         <div>
             <img src="{{ asset('storage/imagenes/' . $contenido->imagen) }}" alt="contenido_{{ $contenido->id }}">
         </div>

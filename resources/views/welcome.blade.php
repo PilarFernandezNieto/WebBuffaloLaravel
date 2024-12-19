@@ -42,7 +42,7 @@
     </section>
 
     <livewire:noticias-portada />
-    <x-footer />
+
 
 
 
