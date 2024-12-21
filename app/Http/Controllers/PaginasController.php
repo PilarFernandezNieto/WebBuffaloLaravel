@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class PaginasController extends Controller
 {
-    public function musicos()
+    public function historia()
     {
         $musicos = Musico::all();
-        return view('paginas.musicos', [
+        return view('paginas.historia', [
             'musicos' => $musicos
         ]);
     }

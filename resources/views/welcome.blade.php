@@ -10,7 +10,7 @@
 <x-app-layout>
     <x-contenido :contenido='$contenido' />
 
-    <section class="max-w-6xl mx-auto flex flex-col items-center gap-8 pb-20">
+    <section class="flex flex-col items-center gap-8 pb-20">
         <button
             class="pinchaAqui px-12 py-4 rounded bg-custom-red hover:bg-custom-red-darker text-white text-base">Escúchalo</button>
         <audio controls="" class="audiostyle hidden" controlslist="nodownload">

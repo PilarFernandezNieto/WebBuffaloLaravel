@@ -1,5 +1,5 @@
-<div class="flex flex-col max-h-80 p-4 bg-black items-center justify-around">
-    <nav class="flex gap-2 my-8">
+<div class="flex flex-col p-4 bg-black items-center justify-around">
+    <nav class="flex flex-col md:flex-row gap-2 my-8">
         <x-link-nav :href="route('admin.musicos.index')" :active="request()->routeIs('admin.musicos.index')">
             {{ __('Musicos') }}
         </x-link-nav>
@@ -31,8 +31,8 @@
 
     </div>
     <div class="contacto my-8">
-        <a href="mailto:theelectricbuffalo.com" target="_blank" class="text-white hover:text-custom-red text-4xl">info@theelectricbuffalo.com</a>
+        <a href="mailto:theelectricbuffalo.com" target="_blank" class="text-white hover:text-custom-red text-2xl md:text-4xl">info@theelectricbuffalo.com</a>
     </div>
-    <p class="text-white">The Electric Buffalo. Todos los derechos reservados</p>
+    <p class="text-white text-sm text-center">The Electric Buffalo. Todos los derechos reservados</p>
 
 </div>

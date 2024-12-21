@@ -1,10 +1,10 @@
 <nav x-data="{ open: false }" class="bg-black">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 ">
+    <div class="w-4/5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 ">
         <div class="flex justify-between">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex items-center py-4">
+                <div class="flex items-center py-4 -ms-8">
                     <a href="{{ route('welcome') }}">
                         <img src="/img/logoBuf.png" alt="" class="w-3/4">
                     </a>
@@ -30,8 +30,8 @@
 
                     </div>
                     <div class="hidden space-x-6 sm:-my-px sm:ms-10 sm:flex pt-4">
-                        <x-link-nav :href="route('musicos')" :active="request()->routeIs('musicos')">
-                            {{ __('Musicos') }}
+                        <x-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
+                            {{ __('Historia') }}
                         </x-link-nav>
                         <x-link-nav :href="route('admin.noticias.index')" :active="request()->routeIs('admin.noticias.index')">
                             {{ __('Noticias') }}
