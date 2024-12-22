@@ -35,15 +35,16 @@
                         </x-slot>
 
                         <x-slot name="content">
+                            <x-dropdown-link :href="route('admin.productos.index')">
+                                {{ __('Listado de productos') }}
+                            </x-dropdown-link>
                             <x-dropdown-link :href="route('profile.edit')">
                                 {{ __('Discos') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('profile.edit')">
                                 {{ __('Camisetas') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Listado de productos') }}
-                            </x-dropdown-link>
+
                         </x-slot>
                     </x-dropdown-menu>
                     <x-nav-link :href="route('welcome')" >

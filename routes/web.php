@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ContenidoController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MusicoController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ContenidoController;
 
 
 // Zona pública
@@ -28,6 +29,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'is_admin'])->name('admi
     Route::resource('musicos', MusicoController::class);
     Route::resource('noticias', NoticiaController::class);
     Route::resource('contenidos', ContenidoController::class);
+    Route::resource('productos', ProductoController::class);
 });
 
 Route::middleware('auth')->group(function () {
