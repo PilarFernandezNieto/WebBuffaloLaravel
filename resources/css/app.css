@@ -18,6 +18,9 @@
 .fuente-bufalo {
     font-family: var(--fuente-bufalo);
 }
+a {
+    text-decoration: none;
+}
 
 
 

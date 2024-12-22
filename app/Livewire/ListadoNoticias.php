@@ -16,9 +16,10 @@ class ListadoNoticias extends Component
         $noticia = Noticia::find($id);
         $noticia->delete();
     }
+
     public function render()
     {
-        $noticias = Noticia::orderBy('fecha', 'desc')->get();
+        $noticias = Noticia::orderBy('created_at')->get();
 
         return view('livewire.listado-noticias', [
             'noticias' => $noticias

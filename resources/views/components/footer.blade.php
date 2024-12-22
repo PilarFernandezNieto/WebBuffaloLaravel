@@ -1,4 +1,4 @@
-<div class="flex flex-col p-4 bg-black items-center justify-around">
+<div class="flex flex-col p-4 bg-black items-center justify-around mt-10">
     <nav class="flex flex-col md:flex-row gap-2 my-8">
         <x-link-nav :href="route('admin.musicos.index')" :active="request()->routeIs('admin.musicos.index')">
             {{ __('Musicos') }}
