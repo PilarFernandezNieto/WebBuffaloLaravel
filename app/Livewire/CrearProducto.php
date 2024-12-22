@@ -30,8 +30,8 @@ class CrearProducto extends Component
         'imagen' => 'required|image|max:1024',
         'informacion' => 'nullable|string',
         'textos' => 'nullable|string',
-        'categoria' => 'required|string',
-        'formato' => 'nullable|string',
+        'categoria' => 'required|integer',
+        'formato' => 'nullable|integer',
         'precio' => 'required|numeric',
         'stock' => 'nullable|integer',
         'talla' => 'nullable|string',
@@ -47,7 +47,7 @@ class CrearProducto extends Component
 
         $datos['informacion'] = $datos['informacion'] ?? '';
         $datos['textos'] = $datos['textos'] ?? '';
-        $datos['formato'] = $datos['formato'] ?? '';
+        $datos['formato'] = $datos['formato'] ?? null;
         $datos['stock'] = $datos['stock'] ?? 0;
         $datos['talla'] = $datos['talla'] ?? '';
         $datos['color'] = $datos['color'] ?? '';

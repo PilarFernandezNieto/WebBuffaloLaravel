@@ -20,4 +20,11 @@ class Producto extends Model
         'color',
         'sello'
     ];
+
+    public function categoria(){
+        return $this->belongsTo(Categoria::class);
+    }
+    public function formato(){
+        return $this->belongsTo(Formato::class);
+    }
 }

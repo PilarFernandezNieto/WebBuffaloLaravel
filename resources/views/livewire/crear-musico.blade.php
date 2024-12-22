@@ -62,7 +62,8 @@
     <script>
         tinymce.init({
             selector: '#biografia',
-            plugins: 'link, code',
+            plugins: 'link code lists',
+            toolbar: 'undo redo | bold italic underline | bullist numlist | outdent indent link code',
             language_url: '/js/langs/es.js',
             language: 'es',
             setup: function(editor) {
