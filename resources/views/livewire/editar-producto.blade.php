@@ -92,9 +92,13 @@
                 </div>
                 <div>
                     <x-input-label for="talla" :value="__('Talla')" />
-                    <x-text-input id="talla" class="block mt-1 w-full" type="text" wire:model="talla"
-                        :value="old('talla')" placeholder="Talla" />
-                    <x-input-error :messages="$errors->get('talla')" class="mt-2" />
+                    <select wire:model="talla" id="talla"
+                        class="w-full border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm mt-1">
+                        <option value="">-- Seleccione --</option>
+                        @foreach ($tallas as $talla)
+                            <option value="{{ $talla->id }}">{{ $talla->nombre }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
         </fieldset>

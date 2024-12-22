@@ -16,7 +16,7 @@ class Producto extends Model
         'formato_id',
         'precio',
         'stock',
-        'talla',
+        'talla_id',
         'color',
         'sello'
     ];
@@ -26,5 +26,8 @@ class Producto extends Model
     }
     public function formato(){
         return $this->belongsTo(Formato::class);
+    }
+    public function talla(){
+        return $this->belongsTo(Talla::class);
     }
 }

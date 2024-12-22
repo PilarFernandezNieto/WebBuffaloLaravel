@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Talla;
 use App\Models\Formato;
 use Livewire\Component;
 use App\Models\Producto;
@@ -36,7 +37,7 @@ class EditarProducto extends Component
         'formato' => 'nullable|integer',
         'precio' => 'required|numeric',
         'stock' => 'nullable|integer',
-        'talla' => 'nullable|string',
+        'talla' => 'nullable|integer',
         'color' => 'nullable|string',
         'sello' => 'nullable|string',
         'anio_edicion' => 'nullable|string'
@@ -53,7 +54,7 @@ class EditarProducto extends Component
         $this->formato = $producto->formato_id;
         $this->precio = $producto->precio;
         $this->stock = $producto->stock;
-        $this->talla = $producto->talla;
+        $this->talla = $producto->talla_id;
         $this->color = $producto->color;
         $this->sello = $producto->sello;
         $this->anio_edicion = $producto->anio_edicion;
@@ -82,7 +83,7 @@ class EditarProducto extends Component
         $producto->formato_id = $datos["formato"];
         $producto->precio = $datos["precio"];
         $producto->stock = $datos["stock"];
-        $producto->talla = $datos["talla"];
+        $producto->talla_id = $datos["talla"];
         $producto->color = $datos["color"];
         $producto->sello = $datos["sello"];
         $producto->anio_edicion = $datos["anio_edicion"];
@@ -102,9 +103,11 @@ class EditarProducto extends Component
 
         $categorias = Categoria::all();
         $formatos = Formato::all();
+        $tallas = Talla::all();
         return view('livewire.editar-producto', [
             'categorias' => $categorias,
-            'formatos' => $formatos
+            'formatos' => $formatos,
+            'tallas' => $tallas
         ]);
     }
 }

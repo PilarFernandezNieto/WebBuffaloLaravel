@@ -2,10 +2,11 @@
 
 namespace App\Livewire;
 
-use App\Models\Categoria;
+use App\Models\Talla;
 use App\Models\Formato;
 use Livewire\Component;
 use App\Models\Producto;
+use App\Models\Categoria;
 use Livewire\WithFileUploads;
 
 class CrearProducto extends Component
@@ -34,7 +35,7 @@ class CrearProducto extends Component
         'formato' => 'nullable|integer',
         'precio' => 'required|numeric',
         'stock' => 'nullable|integer',
-        'talla' => 'nullable|string',
+        'talla' => 'nullable|integer',
         'color' => 'nullable|string',
         'sello' => 'nullable|string',
         'anio_edicion' => 'nullable|string'
@@ -49,7 +50,7 @@ class CrearProducto extends Component
         $datos['textos'] = $datos['textos'] ?? '';
         $datos['formato'] = $datos['formato'] ?? null;
         $datos['stock'] = $datos['stock'] ?? 0;
-        $datos['talla'] = $datos['talla'] ?? '';
+        $datos['talla'] = $datos['talla'] ?? null;
         $datos['color'] = $datos['color'] ?? '';
         $datos['sello'] = $datos['sello'] ?? '';
         $datos['anio_edicion'] = $datos['anio_edicion'] ?? '';
@@ -64,7 +65,7 @@ class CrearProducto extends Component
             'formato_id' => $datos['formato'],
             'precio' => $datos['precio'],
             'stock' => $datos['stock'],
-            'talla' => $datos['talla'],
+            'talla_id' => $datos['talla'],
             'color' => $datos['color'],
             'sello' => $datos['sello'],
             'anio_edicion' => $datos['anio_edicion']
@@ -80,9 +81,11 @@ class CrearProducto extends Component
     {
         $categorias = Categoria::all();
         $formatos = Formato::all();
+        $tallas = Talla::all();
         return view('livewire.crear-producto', [
             'categorias' => $categorias,
-            'formatos' => $formatos
+            'formatos' => $formatos,
+            'tallas' => $tallas
         ]);
     }
 }
