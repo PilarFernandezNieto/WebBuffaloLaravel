@@ -11,7 +11,7 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
                     <x-nav-link :href="route('admin.musicos.index')" :active="request()->routeIs('admin.musicos.index')">
                         {{ __('Musicos') }}
                     </x-nav-link>
@@ -21,6 +21,31 @@
                     <x-nav-link :href="route('admin.contenidos.index')" :active="request()->routeIs('admin.contenidos.index')">
                         {{ __('Contenidos') }}
                     </x-nav-link>
+                    <x-dropdown-menu align="right" width="48" :active="request()->routeIs('admin.productos.*')">
+                        <x-slot name="trigger">
+                            <button class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent  text-sm leading-5 font-medium text-gray-500 hover:text-gray-700 hover:border-b-gray-300 transition duration-150 ease-in-out">
+                                <div>Productos</div>
+
+                                <div class="ms-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('profile.edit')">
+                                {{ __('Discos') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('profile.edit')">
+                                {{ __('Camisetas') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('profile.edit')">
+                                {{ __('Listado de productos') }}
+                            </x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown-menu>
                     <x-nav-link :href="route('welcome')" >
                         {{ __('Inicio') }}
                     </x-nav-link>
