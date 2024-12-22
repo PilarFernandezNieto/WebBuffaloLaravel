@@ -1,3 +1,5 @@
+<!-- Componente de la banda -->
+
 @foreach ($musicos as $musico)
     <div x-data="{ open: false }" class="w-full p-0 flex flex-col">
         <a @click="open = !open" class="inline-block cursor-pointer">

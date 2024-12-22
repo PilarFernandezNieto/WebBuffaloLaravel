@@ -1,6 +1,7 @@
 <x-app-layout>
-    <div class=" my-20 w-[95%] md:w-[80%] mx-auto max-w-7xl">
-        <h1 class="text-5xl mb-20">15 años de Rock</h1>
+    <div class=" my-10 w-[95%] md:w-[80%] mx-auto max-w-[1300px]">
+        <h1 class="text-5xl mb-10">15 años de Rock</h1>
+        <!-- PRIMER BLOQUE -->
         <section>
             <div class="w-full">
                 <span class="flex justify-end text-xs text-slate-600">Foto de Manfred</span>
@@ -32,6 +33,8 @@
             </div>
 
         </section>
+
+        <!-- SEGUNDO BLOQUE -->
         <section class="grid md:grid-cols-2 gap-8 items-end">
             <!-- Columna izquierda -->
             <div class="md:grid md:grid-rows-2 gap-8">
@@ -71,7 +74,7 @@
                 <img src="/img/TrioJovenVertical.jpg" alt="Foto vertical" class="w-full max-h-[70rem] object-cover">
             </div>
         </section>
-
+        <!-- TERCER BLOQUE -->
         <section class="my-20">
 
             <h2 class="text-4xl mb-8 font-medium">La banda ahora</h2>

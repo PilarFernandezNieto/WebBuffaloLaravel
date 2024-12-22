@@ -13,7 +13,7 @@
                 <i class="{{ $noticia->portada == 1 ? 'fa-regular fa-square-check text-green-700 text-lg' : 'fa-regular fa-square text-red-600 text-lg' }}" title="{{ $noticia->portada == 1 ? 'Portada' : 'No Portada' }}"></i>
             </p>
             <p>{{ $noticia->titulo }}</p>
-            <p>{{ \Carbon\Carbon::parse($noticia->fecha)->format('d-m-Y') }}</p>
+            <p>{{$noticia->fecha_formateada}}</p>
             <img src="{{ asset('storage/imagenes/' . $noticia->imagen) }}" alt="Noticia_ {{ $noticia->id }}"
                 class="w-28">
             <div class="flex justify-between items-center">

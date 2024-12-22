@@ -7,8 +7,9 @@
             <div class="texto text-base my-6 min-h-32">
                 {!! Str::limit($noticia->texto, 175)!!}
             </div>
-            <p class="fecha flex justify-end text-custom-red italic">{{$noticia->fecha}}</p>
+            <p class="fecha flex justify-end text-custom-red italic">{{$noticia->fecha_formateada}}</p>
+
         </div>
     </div>
-    <a href="" class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 py-4 px-8 absolute bottom-4 left-4">Más info</a>
+    <a href="{{route('noticia.mostrar', $noticia)}}" class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 py-4 px-8 absolute bottom-4 left-4">Más info</a>
 </div>

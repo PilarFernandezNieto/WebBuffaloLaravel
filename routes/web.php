@@ -9,12 +9,13 @@ use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('welcome');
 
+// Zona pública
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/historia', [PaginasController::class, 'historia'])->name('historia');
+Route::get('/noticias', [PaginasController::class, 'noticias'])->name('noticias');
+Route::get('/noticias/{noticia}', [PaginasController::class, 'mostrarNoticia'])->name('noticia.mostrar');
+
 
 Route::get('/403', function() {
     return view('403');

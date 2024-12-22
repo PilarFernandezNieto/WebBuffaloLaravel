@@ -1,12 +1,12 @@
 <nav x-data="{ open: false }" class="bg-black">
     <!-- Primary Navigation Menu -->
-    <div class="w-4/5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 ">
+    <div class="w-[95%] md:w-[80%] mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-0 ">
         <div class="flex justify-between">
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex items-center py-4 -ms-8">
                     <a href="{{ route('welcome') }}">
-                        <img src="/img/logoBuf.png" alt="" class="w-3/4">
+                        <img src="/img/logoBuf.png" alt="" class="w-3/5 m-4 md:-ml-4">
                     </a>
                 </div>
 
@@ -33,7 +33,7 @@
                         <x-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
                             {{ __('Historia') }}
                         </x-link-nav>
-                        <x-link-nav :href="route('admin.noticias.index')" :active="request()->routeIs('admin.noticias.index')">
+                        <x-link-nav :href="route('noticias')" :active="request()->routeIs('noticias')">
                             {{ __('Noticias') }}
                         </x-link-nav>
 
@@ -103,10 +103,10 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-link-nav :href="route('admin.index')" :active="request()->routeIs('admin.index')">
-                {{ __('Músicos') }}
+            <x-responsive-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
+                {{ __('Historia') }}
             </x-responsive-link-nav>
-            <x-responsive-link-nav :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+            <x-responsive-link-nav :href="route('noticias')" :active="request()->routeIs('noticias')">
                 {{ __('Noticias') }}
             </x-responsive-link-nav>
             <div class=" lg:hidden text-custom-white text-center text-2xl space-x-3">

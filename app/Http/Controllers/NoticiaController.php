@@ -24,13 +24,6 @@ class NoticiaController extends Controller
         return view('admin.noticias.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -51,18 +44,8 @@ class NoticiaController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * No utilizamos el método update porque las noticias se actualizan en componente Livewire
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+
 }
