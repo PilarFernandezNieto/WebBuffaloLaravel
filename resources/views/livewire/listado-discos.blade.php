@@ -6,11 +6,13 @@
     </div>
 
     @foreach ($discos  as $disco)
+
         <div
             class="grid grid-cols-[50px_1fr_0.5fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+
             <p>{{ $disco->id }}</p>
             <p>{{ $disco->nombre }}</p>
-            <p>{{$disco->anio_edicion}}</p>
+            <p>{{ $disco->anio_edicion}}</p>
             <img src="{{ asset('storage/imagenes/' . $disco->imagen) }}" alt="Disco_ {{ $disco->id }}"
                 class="w-28">
             <div class="flex justify-between items-center">
@@ -51,7 +53,7 @@
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                // eliminar el músico desde el servidor
+
                 Livewire.dispatch('eliminarDisco', {id: discoId});
                 Swal.fire(
                     '¡Eliminado!',

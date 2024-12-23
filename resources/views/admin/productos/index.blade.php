@@ -14,7 +14,7 @@
             @endif
             <livewire:listado-productos />
 
-            <x-button-link :href="route('admin.productos.create')" class="mt-5">Nuevo Producto</x-button-link>
+            <x-button-link :href="route('admin.productos.create')" class="mt-5">Nuevo</x-button-link>
 
         </div>
     </div>
