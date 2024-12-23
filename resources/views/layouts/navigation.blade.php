@@ -41,7 +41,7 @@
                             <x-dropdown-link :href="route('admin.discos.index')">
                                 {{ __('Discos') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('profile.edit')">
+                            <x-dropdown-link :href="route('admin.camisetas.index')">
                                 {{ __('Camisetas') }}
                             </x-dropdown-link>
 
