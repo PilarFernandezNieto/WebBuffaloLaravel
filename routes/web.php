@@ -19,6 +19,7 @@ Route::get('/noticias', [PaginasController::class, 'noticias'])->name('noticias'
 Route::get('/noticias/{noticia}', [PaginasController::class, 'mostrarNoticia'])->name('noticia.mostrar');
 Route::get('/discos', [PaginasController::class, 'discos'])->name('discos');
 Route::get('/discos/{disco}', [PaginasController::class, 'mostrarDisco'])->name('disco.mostrar');
+Route::get('/tienda', [PaginasController::class, 'tienda'])->name('tienda');
 
 
 Route::get('/403', function() {

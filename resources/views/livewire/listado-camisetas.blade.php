@@ -5,17 +5,17 @@
         </div>
     </div>
 
-    @foreach ($camisetas  as $camiseta)
-
+    @foreach ($camisetas as $camiseta)
         <div
             class="grid grid-cols-[50px_1fr_1fr_0.5fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
 
             <p>{{ $camiseta->id }}</p>
             <p>{{ $camiseta->nombre }}</p>
             <p>{{ $camiseta->color }}</p>
-            <p>{{ $camiseta->talla->nombre}}</p>
+            <p>{{ $camiseta->talla->nombre }}</p>
             <img src="{{ asset('storage/imagenes/' . $camiseta->imagen) }}" alt="Disco_ {{ $camiseta->id }}"
                 class="w-28">
+            <p>{{ $camiseta->precio_formateado }}</p>
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.productos.edit', $camiseta->id) }}"
                     class="text-indigo-600 hover:text-indigo-700 p-2 font-bold">
@@ -44,27 +44,27 @@
     <script>
         Livewire.on('mostrarAlerta', camisetaId => {
             Swal.fire({
-            title: '¿Quieres eliminar este elemento?',
-            text: "Esta acción no se puede deshacer!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, elimínalo!',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
+                title: '¿Quieres eliminar este elemento?',
+                text: "Esta acción no se puede deshacer!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, elimínalo!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
 
-                Livewire.dispatch('eliminarCamiseta', {id: camisetaId});
-                Swal.fire(
-                    '¡Eliminado!',
-                    'El producto se ha eliminado',
-                    'success'
-                )
-            }
+                    Livewire.dispatch('eliminarCamiseta', {
+                        id: camisetaId
+                    });
+                    Swal.fire(
+                        '¡Eliminado!',
+                        'El producto se ha eliminado',
+                        'success'
+                    )
+                }
+            })
         })
-        })
-
     </script>
 @endpush
-

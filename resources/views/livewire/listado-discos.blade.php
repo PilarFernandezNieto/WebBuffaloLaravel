@@ -5,16 +5,15 @@
         </div>
     </div>
 
-    @foreach ($discos  as $disco)
-
+    @foreach ($discos as $disco)
         <div
-            class="grid grid-cols-[50px_1fr_0.5fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="grid grid-cols-[50px_1fr_0.5fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
 
             <p>{{ $disco->id }}</p>
             <p>{{ $disco->nombre }}</p>
-            <p>{{ $disco->anio_edicion}}</p>
-            <img src="{{ asset('storage/imagenes/' . $disco->imagen) }}" alt="Disco_ {{ $disco->id }}"
-                class="w-28">
+            <p>{{ $disco->anio_edicion }}</p>
+            <img src="{{ asset('storage/imagenes/' . $disco->imagen) }}" alt="Disco_ {{ $disco->id }}" class="w-28">
+            <p>{{ $disco->precio_formateado }}</p>
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.productos.edit', $disco->id) }}"
                     class="text-indigo-600 hover:text-indigo-700 p-2 font-bold">
@@ -43,27 +42,27 @@
     <script>
         Livewire.on('mostrarAlerta', discoId => {
             Swal.fire({
-            title: '¿Quieres eliminar este elemento?',
-            text: "Esta acción no se puede deshacer!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, elimínalo!',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
+                title: '¿Quieres eliminar este elemento?',
+                text: "Esta acción no se puede deshacer!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, elimínalo!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
 
-                Livewire.dispatch('eliminarDisco', {id: discoId});
-                Swal.fire(
-                    '¡Eliminado!',
-                    'El producto se ha eliminado',
-                    'success'
-                )
-            }
+                    Livewire.dispatch('eliminarDisco', {
+                        id: discoId
+                    });
+                    Swal.fire(
+                        '¡Eliminado!',
+                        'El producto se ha eliminado',
+                        'success'
+                    )
+                }
+            })
         })
-        })
-
     </script>
 @endpush
-

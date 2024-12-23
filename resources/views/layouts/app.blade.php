@@ -34,6 +34,11 @@
             background-position: 50%;
             background-size: cover;
         }
+        .imagen-central-tienda {
+            background-image: url("{{ asset('img/Banda.jpg') }}");
+            background-position: 50%;
+            background-size: cover;
+        }
     </style>
 </head>
 

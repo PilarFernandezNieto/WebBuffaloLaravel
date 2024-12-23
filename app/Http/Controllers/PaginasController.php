@@ -39,4 +39,13 @@ class PaginasController extends Controller
     public function mostrarDisco(Producto $disco){
         return view('paginas.disco', compact('disco'));
     }
+    public function tienda(){
+
+        $discos = Producto::where('categoria_id', 1)->get();
+        $camisetas = Producto::where('categoria_id', 2)->get();
+        return view('paginas.tienda', [
+            'discos' => $discos,
+            'camisetas' => $camisetas
+        ]);
+    }
 }

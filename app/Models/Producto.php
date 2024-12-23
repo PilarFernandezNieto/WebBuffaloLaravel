@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use NumberFormatter;
 use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
@@ -30,6 +31,12 @@ class Producto extends Model
     }
     public function talla(){
         return $this->belongsTo(Talla::class);
+    }
+
+    public function getPrecioFormateadoAttribute()
+    {
+        $formatter = new NumberFormatter('es_ES', NumberFormatter::CURRENCY);
+        return $formatter->formatCurrency($this->precio, 'EUR');
     }
 
 

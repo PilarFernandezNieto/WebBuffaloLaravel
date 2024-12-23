@@ -7,13 +7,14 @@
 
     @foreach ($productos as $producto)
         <div
-            class="grid grid-cols-[50px_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="grid grid-cols-[50px_1fr_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $producto->id }}</p>
             <p>{{ $producto->nombre }}</p>
             <p>{{ $producto->categoria->nombre }}</p>
 
             <img src="{{ asset('storage/imagenes/' . $producto->imagen) }}" alt="Imagen de {{ $producto->nombre }}"
                 class="w-28">
+                <p>{{ $producto->precio_formateado }}</p>
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.productos.edit', $producto->id) }}"
                     class="text-indigo-600 hover:text-indigo-700 p-2 font-bold">
