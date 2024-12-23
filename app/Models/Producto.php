@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
@@ -30,4 +31,6 @@ class Producto extends Model
     public function talla(){
         return $this->belongsTo(Talla::class);
     }
+
+
 }

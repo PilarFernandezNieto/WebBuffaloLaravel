@@ -118,7 +118,7 @@
         </div>
 
 
-        <x-primary-button class="w-full mt-4 justify-center">Crear</x-primary-button>
+        <x-primary-button class="w-full mt-4 justify-center">Guardar Cambios</x-primary-button>
         @if ($errors->any())
             <div class="mt-4 text-red-500">
                 <ul>

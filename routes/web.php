@@ -7,9 +7,9 @@ use App\Http\Controllers\MusicoController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ContenidoController;
-
+use App\Http\Controllers\DiscosController;
+use App\Http\Controllers\ProductoController;
 
 // Zona pública
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
@@ -30,6 +30,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'is_admin'])->name('admi
     Route::resource('noticias', NoticiaController::class);
     Route::resource('contenidos', ContenidoController::class);
     Route::resource('productos', ProductoController::class);
+    Route::resource('discos', DiscosController::class);
 });
 
 Route::middleware('auth')->group(function () {
