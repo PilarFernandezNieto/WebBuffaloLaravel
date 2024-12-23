@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex items-center py-4 -ms-8">
                     <a href="{{ route('welcome') }}">
-                        <img src="/img/logoBuf.png" alt="" class="w-3/5 m-4 md:-ml-4">
+                        <img src="/img/logoBuf.png" alt="" class="w-3/4 m-4 md:-ml-4">
                     </a>
                 </div>
 
@@ -35,6 +35,9 @@
                         </x-link-nav>
                         <x-link-nav :href="route('noticias')" :active="request()->routeIs('noticias')">
                             {{ __('Noticias') }}
+                        </x-link-nav>
+                        <x-link-nav :href="route('discos')" :active="request()->routeIs('discos')">
+                            {{ __('Discografía') }}
                         </x-link-nav>
 
                         @auth
@@ -87,7 +90,7 @@
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
                 <button @click="open = ! open"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                    class="inline-flex items-center justify-center p-2 rounded-md text-custom-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -102,6 +105,22 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
+        <div class=" lg:hidden text-custom-white text-center text-2xl space-x-3">
+            <a href="https://www.youtube.com/@theelectricbuffalo666" class="youtube" target="_blank">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/theelectricbuffalo/" class="insta" target="_blank">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
+                target="_blank">
+                <i class="fa-brands fa-spotify" aria-hidden="true"></i>
+            </a>
+            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank">
+                <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
+            </a>
+
+        </div>
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
                 {{ __('Historia') }}
@@ -109,23 +128,10 @@
             <x-responsive-link-nav :href="route('noticias')" :active="request()->routeIs('noticias')">
                 {{ __('Noticias') }}
             </x-responsive-link-nav>
-            <div class=" lg:hidden text-custom-white text-center text-2xl space-x-3">
+            <x-responsive-link-nav :href="route('discos')" :active="request()->routeIs('discos')">
+                {{ __('Discografía') }}
+            </x-responsive-link-nav>
 
-                <a href="https://www.youtube.com/@theelectricbuffalo666" class="youtube" target="_blank">
-                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/theelectricbuffalo/" class="insta" target="_blank">
-                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                </a>
-                <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
-                    target="_blank">
-                    <i class="fa-brands fa-spotify" aria-hidden="true"></i>
-                </a>
-                <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank">
-                    <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
-                </a>
-
-            </div>
         </div>
 
         @auth

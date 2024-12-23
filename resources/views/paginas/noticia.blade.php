@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="flex justify-end">
-            <a href="{{ url()->previous() }}" class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 py-3 px-8 ">Volver</a>
+            <x-button :href="url()->previous()" class="mt-10">Volver</x-button>
         </div>
 
     </div>

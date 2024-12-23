@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Musico;
 use App\Models\Noticia;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class PaginasController extends Controller
@@ -26,5 +27,16 @@ class PaginasController extends Controller
 
     public function mostrarNoticia(Noticia $noticia){
         return view('paginas.noticia', compact('noticia'));
+    }
+
+    public function discos(){
+
+        $discos =Producto::where('categoria_id', 1)->get();
+
+        return view('paginas.discos', compact('discos'));
+    }
+
+    public function mostrarDisco(Producto $disco){
+        return view('paginas.disco', compact('disco'));
     }
 }

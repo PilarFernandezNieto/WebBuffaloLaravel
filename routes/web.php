@@ -10,13 +10,15 @@ use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\DiscosController;
-use App\Http\Controllers\ProductoController; // Ensure this line is correct and the class exists
+use App\Http\Controllers\ProductoController;
 
 // Zona pública
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/historia', [PaginasController::class, 'historia'])->name('historia');
 Route::get('/noticias', [PaginasController::class, 'noticias'])->name('noticias');
 Route::get('/noticias/{noticia}', [PaginasController::class, 'mostrarNoticia'])->name('noticia.mostrar');
+Route::get('/discos', [PaginasController::class, 'discos'])->name('discos');
+Route::get('/discos/{disco}', [PaginasController::class, 'mostrarDisco'])->name('disco.mostrar');
 
 
 Route::get('/403', function() {
