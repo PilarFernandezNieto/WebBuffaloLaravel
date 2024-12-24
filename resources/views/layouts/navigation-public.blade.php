@@ -39,6 +39,9 @@
                         <x-link-nav :href="route('tienda')" :active="request()->routeIs('tienda')">
                             {{ __('Tienda') }}
                         </x-link-nav>
+                        <x-link-nav :href="route('contacto')" :active="request()->routeIs('contacto')">
+                            {{ __('Contacto') }}
+                        </x-link-nav>
 
                         @auth
                             <!-- Settings Dropdown -->

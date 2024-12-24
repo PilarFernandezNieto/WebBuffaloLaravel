@@ -48,4 +48,8 @@ class PaginasController extends Controller
             'camisetas' => $camisetas
         ]);
     }
+
+    public function contacto(){
+        return view('paginas.contacto');
+    }
 }
