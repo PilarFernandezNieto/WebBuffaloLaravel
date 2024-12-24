@@ -10,21 +10,30 @@ class Contacto extends Component
     public $nombre;
     public $email;
     public $mensaje;
+    public $privacidad = false;
 
     protected $rules = [
         'nombre' => 'required|string',
         'email' => 'required|email',
-        'mensaje' => 'required|string'
+        'mensaje' => 'required|string',
+
     ];
 
     public function submit()
     {
         $datos = $this->validate();
+
         $this->nombre = $datos['nombre'];
         $this->email = $datos['email'];
         $this->mensaje = $datos['mensaje'];
 
+
         // Enviar correo al administrador
+        if($this->privacidad == false) {
+
+            session()->flash('error', 'Debes aceptar la política de privacidad para enviar el mensaje.');
+            return;
+        }
         Mail::send([], [], function ($mail) {
             $mail->to('admin@example.com') // Cambia esto por el correo del administrador
                 ->from($this->email, $this->nombre)
