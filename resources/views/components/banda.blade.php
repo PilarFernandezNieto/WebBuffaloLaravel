@@ -7,7 +7,7 @@
                 <img src="{{ asset('/storage/imagenes/' . $musico->imagen) }}" class="rounded w-full h-auto"
                     alt="{{$musico->nombre}}" title="{{$musico->nombre}}">
                 <figcaption class="text-right text-sm italic mt-2">
-                    Foto de Paco Vigil
+                    Foto de {{$musico->fotografo}}
                 </figcaption>
             </figure>
         </a>

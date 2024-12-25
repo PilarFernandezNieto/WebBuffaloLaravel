@@ -60,7 +60,22 @@
 
             <x-input-error :messages="$errors->get('imagen_nueva')" class="mt-2" />
         </div>
+        <div class="mt-4">
+            <x-input-label for="fotografo" :value="__('Foto de')" />
+            <x-text-input id="fotografo" class="block mt-1 w-full" type="text" wire:model="fotografo" :value="old('fotografo')"
+                placeholder="Foto de" />
+            <x-input-error :messages="$errors->get('fotografo')" class="mt-2" />
+        </div>
         <x-primary-button class="w-full mt-4 justify-center">Guardar Cambios</x-primary-button>
+        @if ($errors->any())
+        <div class="mt-4 text-red-500">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     </form>
     <x-link :href="route('admin.musicos.index')" class="p-4">Volver</x-link>
 </div>

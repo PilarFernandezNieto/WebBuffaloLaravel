@@ -54,6 +54,12 @@
             </div>
             <x-input-error :messages="$errors->get('imagen')" class="mt-2" />
         </div>
+        <div class="mt-4">
+            <x-input-label for="fotografo" :value="__('Foto de')" />
+            <x-text-input id="fotografo" class="block mt-1 w-full" type="text" wire:model="fotografo" :value="old('fotografo')"
+                placeholder="Foto de" />
+            <x-input-error :messages="$errors->get('fotografo')" class="mt-2" />
+        </div>
         <x-primary-button class="w-full mt-4 justify-center">Crear</x-primary-button>
     </form>
     <x-link :href="route('admin.musicos.index')" class="p-4">Volver</x-link>
