@@ -6,4 +6,7 @@
             <x-noticia :noticia="$noticia" />
         @endforeach
     </div>
+    <div class="mt-4">
+        {{ $noticias->links() }}
+    </div>
 </div>

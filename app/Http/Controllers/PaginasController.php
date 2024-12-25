@@ -20,9 +20,11 @@ class PaginasController extends Controller
 
     public function noticias(){
 
-        $noticias = Noticia::all();
+        $noticias = Noticia::paginate(3);
 
-        return view('paginas.noticias', compact('noticias'));
+        return view('paginas.noticias', [
+            'noticias' => $noticias
+        ]);
     }
 
     public function mostrarNoticia(Noticia $noticia){
