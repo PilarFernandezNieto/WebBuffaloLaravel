@@ -21,11 +21,12 @@ class EditarNoticia extends Component
     use WithFileUploads;
 
     protected $rules = [
-        "titulo" => "required|string",
-        "intro" => "string",
-        "texto" => "required",
-        "fecha" => "required",
-        'imagen_nueva' => 'nullable|image|max:1024',
+
+        "titulo" => "required|string||max:255",
+        "intro" => "string||max:255",
+        "texto" => "required|string",
+        "fecha" => "required|date",
+        'imagen_nueva' => 'nullable|image|mimes:jpeg,png,jpg|max:1024',
         'portada' => 'nullable|boolean',
     ];
 

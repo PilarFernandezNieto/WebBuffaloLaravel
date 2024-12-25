@@ -18,11 +18,11 @@ class CrearNoticia extends Component
     use WithFileUploads;
 
     protected $rules = [
-        "titulo" => "required|string",
-        "intro" => "string",
-        "texto" => "required",
-        "fecha" => "required",
-        'imagen' => 'required|image|max:1024',
+        "titulo" => "required|string||max:255",
+        "intro" => "string||max:255",
+        "texto" => "required|string",
+        "fecha" => "required|date",
+        'imagen' => 'required|image|mimes:jpeg,png,jpg|max:1024',
         'portada' => 'nullable|boolean',
     ];
 
