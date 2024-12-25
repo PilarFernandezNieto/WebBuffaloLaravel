@@ -16,18 +16,19 @@ class CrearMusico extends Component
     public $biografia;
     public $fecha_nac;
     public $imagen;
+    public $fotografo;
 
     use WithFileUploads;
 
     protected $rules = [
-        'nombre' => 'required|string',
-        'apellidos' => 'string',
-        'alias' => 'required',
-        'origen' => 'string',
-        'biografia' => 'required',
-        'fecha_nac' => 'required',
-        'imagen' => 'required|image|max:1024'
-
+        'nombre' => 'required|string|max:255',
+        'apellidos' => 'string|nullable|max:255',
+        'alias' => 'required|string|max:255|unique:musicos,alias',
+        'origen' => 'string|nullable|max:255',
+        'biografia' => 'required|string',
+        'fecha_nac' => 'required|date|before:today',
+        'imagen' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+        'fotografo' => 'string|nullable|max:255'
     ];
 
     public function crearMusico()
@@ -43,7 +44,8 @@ class CrearMusico extends Component
             'origen' => $datos['origen'],
             'fecha_nac' => $datos['fecha_nac'],
             'biografia' => $datos['biografia'],
-            'imagen' => $datos['imagen']
+            'imagen' => $datos['imagen'],
+            'fotografo' => $datos['fotografo']
         ]);
 
         session()->flash('mensaje', 'Músico creado correctamente');
