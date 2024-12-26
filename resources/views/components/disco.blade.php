@@ -9,5 +9,7 @@
             <div class="flex justify-start">
                 <x-button :href="route('disco.mostrar', $disco->id)" class="mt-10">Ver ficha</x-button>
             </div>
+
     </section>
 </div>
+

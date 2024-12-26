@@ -1,4 +1,4 @@
-<div class=" md:w-2/5 mx-auto p-5 bg-white mt-10">
+<div class=" w-[95%] md:w-[60%] mx-auto">
     <h1 class="text-5xl mb-10">Contacta con nosotros</h1>
     @if (session()->has('success'))
         <div class="uppercase border border-green-600 bg-green-100 text-green-600 font-bold p-2 my-3">
@@ -13,7 +13,7 @@
     <p class="mb-4 text-sm">Utiliza este formulario o escríbenos a <a href="mailto:info@theelectricbuffalo.com"
             class="font-bold">info@theelectricbuffalo.com</a></p>
 
-    <form wire:submit.prevent='submit' method="POST" class="rounded-lg p-4 shadow-md " novalidate>
+    <form wire:submit.prevent='submit' method="POST" class="rounded-lg p-4 md:p-8 shadow-md bg-white " novalidate>
         <div>
             <label for="nombre" class="block font-medium text-sm text-black uppercase">{{ __('Nombre') }}</label>
             <x-text-input id="nombre" class="block mt-1 w-full" type="text" wire:model="nombre" :value="old('nombre')"
@@ -52,3 +52,14 @@
     </form>
 
 </div>
+@push('styles')
+    <style>
+        [type='checkbox']:checked {
+            background-color: #AC2C28;
+        }
+
+        [type='checkbox'] {
+            color: #AC2C28;
+        }
+    </style>
+@endpush

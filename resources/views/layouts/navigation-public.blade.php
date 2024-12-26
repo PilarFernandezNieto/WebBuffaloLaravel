@@ -134,6 +134,9 @@
             <x-responsive-link-nav :href="route('tienda')" :active="request()->routeIs('tienda')">
                 {{ __('Tienda') }}
             </x-responsive-link-nav>
+            <x-responsive-link-nav :href="route('contacto')" :active="request()->routeIs('contacto')">
+                {{ __('Contacto') }}
+            </x-responsive-link-nav>
 
         </div>
 
