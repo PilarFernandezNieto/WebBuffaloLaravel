@@ -13,7 +13,20 @@
     <p class="mb-4 text-sm">Utiliza este formulario o escríbenos a <a href="mailto:info@theelectricbuffalo.com"
             class="font-bold">info@theelectricbuffalo.com</a></p>
 
-    <form wire:submit.prevent='submit' method="POST" class="rounded-lg p-4 md:p-8 shadow-md bg-white " novalidate>
+    <form wire:submit.prevent='submit' method="POST" class="rounded-lg p-4 md:p-8 shadow-md bg-white " novalidate
+        x-data="{
+            siteKey: @js(config('services.recaptcha.site_key')),
+            recaptchaToken: null,
+            submit() {
+                grecaptcha.ready(() => {
+                    grecaptcha.execute(this.siteKey, { action: 'submit' }).then(token => {
+                        this.recaptchaToken = token;
+                        @this.set('recaptchaToken', this.recaptchaToken);
+                        @this.call('submit');
+                    });
+                });
+            }
+        }" @submit.prevent="submit">
         <div>
             <label for="nombre" class="block font-medium text-sm text-black uppercase">{{ __('Nombre') }}</label>
             <x-text-input id="nombre" class="block mt-1 w-full" type="text" wire:model="nombre" :value="old('nombre')"
@@ -46,6 +59,7 @@
             </div>
             <x-input-error :messages="$errors->get('privacidad')" class="mt-2" />
         </div>
+
 
 
         <x-primary-button class="w-full mt-4 justify-center">Enviar</x-primary-button>
