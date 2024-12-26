@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>The Electric Buffalo</title>
+    <title>The Electric Buffalo | {{$pageTitle}}</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
@@ -73,6 +73,9 @@
 
     @livewireScripts
     @stack('scripts')
+    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/fa5545b6c667adb43097b75a9bf07211.js"></script>
 </body>
+
+
 
 </html>

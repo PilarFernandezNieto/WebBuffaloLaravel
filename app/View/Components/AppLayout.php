@@ -7,6 +7,12 @@ use Illuminate\View\View;
 
 class AppLayout extends Component
 {
+    public $pageTitle;
+
+    public function __construct($pageTitle = 'Mi Sitio Web')
+    {
+        $this->pageTitle = $pageTitle;
+    }
     /**
      * Get the view / contents that represents the component.
      */

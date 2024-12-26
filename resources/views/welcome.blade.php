@@ -1,13 +1,4 @@
-{{-- @extends('layouts.app')
-
-@section('titulo')
-    The Electric Buffalo
-@endsection
-@section('contenido')
-    Contenido de esta página
-@endsection --}}
-
-<x-app-layout>
+<x-app-layout pageTitle="Inicio">
     <x-contenido :contenido='$contenido' />
 
     <section class="flex flex-col items-center gap-8 pb-20">

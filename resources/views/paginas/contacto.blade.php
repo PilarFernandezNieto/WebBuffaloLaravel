@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout pageTitle="Contacto">
     <div class=" mt-10 w-[95%] md:w-[80%] mx-auto max-w-[1300px]  ">
         <livewire:contacto />
     </div>

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout pageTitle="Historia">
     <div class=" my-10 w-[95%] md:w-[80%] mx-auto ">
         <h1 class="text-5xl mb-10">15 años de Rock</h1>
         <!-- PRIMER BLOQUE -->
