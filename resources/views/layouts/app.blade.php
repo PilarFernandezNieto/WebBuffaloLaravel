@@ -5,17 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>The Electric Buffalo | {{$pageTitle}}</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
-
+    <title>The Electric Buffalo | {{ $pageTitle }}</title>
+    <meta name="description"
+        content="The Electric Buffalo es una banda de rock asturiana que combina el espíritu del rock clásico americano con una energía moderna. Con influencias de The Allman Brothers y Gov't Mule, su sonido se caracteriza por riffs poderosos y una autenticidad que transmite la esencia del rock en su forma más pura">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Electric Buffalo" />
+    <meta property="og:description"
+        content="Descubre el potente sonido de la banda de rock asturiana The Electric Buffalo. Rock clásico con influencias americanas y energía contemporánea." />
+    <meta property="og:url" content="https://www.theelectricbuffalo.com" />
 
     <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
     <script src="https://kit.fontawesome.com/91eae316a2.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
+
     @livewireStyles
     @stack('styles')
     <style>
@@ -73,7 +81,8 @@
 
     @livewireScripts
     @stack('scripts')
-    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/fa5545b6c667adb43097b75a9bf07211.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/fa5545b6c667adb43097b75a9bf07211.js">
+    </script>
 </body>
 
 

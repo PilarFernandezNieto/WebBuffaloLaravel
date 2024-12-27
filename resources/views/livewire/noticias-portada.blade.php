@@ -1,5 +1,5 @@
 <!-- LISTADO DE 3 NOTICIAS EN LA ZONA PÚBLICA-->
-<div class="w-[95%] md:w-[80%] mx-auto my-10 bg-white rounded-lg p-8 shadow-md">
+<div class="w-[95%] md:w-[80%] mx-auto my-10 bg-white rounded-lg px-0 py-8 md:px-8 shadow-md">
     @if ($noticias->count() > 0)
         <div class="w-[90%] mx-auto">
             <h2 class="text-4xl text-center mb-12 font-medium">Noticias</h2>

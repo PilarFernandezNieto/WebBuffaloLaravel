@@ -3,7 +3,7 @@
         <h1 class="text-5xl mb-10">{{ $noticia->titulo }}</h1>
 
         <div class="flex flex-col">
-            <img src="{{ asset('/storage/imagenes/' . $noticia->imagen) }}" alt="">
+            <img src="{{ asset('/storage/imagenes/' . $noticia->imagen) }}" alt="imagen_{{$noticia->id}}">
             <div class="space-y-8 mt-10 leading-7">
                 <p class="text-3xl font-medium">{{ $noticia->intro }}</p>
                 <p class="text-base text-custom-red italic">{{ $noticia->fecha_formateada }}</p>
