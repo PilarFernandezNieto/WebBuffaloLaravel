@@ -1,13 +1,10 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
-    <div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
-        <div>
-            <h2 class="text-2xl text-gray900"> {{ __('Discos') }}</h2>
-        </div>
-    </div>
+    <h2 class="text-2xl text-gray-900 mb-4"> {{ __('Discos') }}</h2>
+
 
     @foreach ($discos as $disco)
         <div
-            class="grid grid-cols-[50px_1fr_0.5fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="flex flex-col gap-4 md:grid md:grid-cols-[50px_1fr_0.5fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
 
             <p>{{ $disco->id }}</p>
             <p>{{ $disco->nombre }}</p>

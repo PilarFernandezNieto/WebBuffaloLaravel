@@ -103,9 +103,42 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+            <x-responsive-nav-link :href="route('admin.musicos.index')" :active="request()->routeIs('admin.musicos.index')">
+                {{ __('Músicos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.noticias.index')" :active="request()->routeIs('admin.noticias.index')">
                 {{ __('Noticias') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.contenidos.index')" :active="request()->routeIs('admin.contenidos.index')">
+                {{ __('Contenidos') }}
+            </x-responsive-nav-link>
+
+            <x-dropdown-menu align="right" width="48" :active="request()->routeIs('admin.productos')" >
+                <x-slot name="trigger">
+                    <button class="flex items-center w-full ps-3 pe-4 py-2 border-l-4 active:border-custom-red text-start text-base font-medium text-gray-700 active:bg-gray-50 focus:outline-none focus:text-custom-red transition duration-150 ease-in-out">
+                        <div>Productos</div>
+
+                        <div class="ms-1">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </button>
+                </x-slot>
+
+                <x-slot name="content">
+                    <x-dropdown-link :href="route('admin.productos.index')">
+                        {{ __('Listado de productos') }}
+                    </x-dropdown-link>
+                    <x-dropdown-link :href="route('admin.discos.index')">
+                        {{ __('Discos') }}
+                    </x-dropdown-link>
+                    <x-dropdown-link :href="route('admin.camisetas.index')">
+                        {{ __('Camisetas') }}
+                    </x-dropdown-link>
+
+                </x-slot>
+            </x-dropdown-menu>
         </div>
 
         <!-- Responsive Settings Options -->

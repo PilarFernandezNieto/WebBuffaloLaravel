@@ -1,5 +1,5 @@
-<div class="md:flex md:flex-col md:items-center md:justify-center p-5">
-    <form class="md:w-3/4" wire:submit.prevent='editarProducto' method="POST">
+<div class="flex flex-col items-center justify-center gap-4">
+    <form class="w-[95%] md:w-[80%] mx-auto" wire:submit.prevent='editarProducto' method="POST">
         <fieldset class="border border-custom-red p-4 rounded-md mb-4">
             <legend class="text-custom-red text-lg uppercase px-1">Datos comunes</legend>
             <div>
@@ -13,11 +13,11 @@
                 <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen_nueva"
                     accept="image/*" />
                 <div class="md:grid md:grid-cols-2 gap-4">
-                    <div class="my-5 w-80">
+                    <div class="my-5 w-[50%]">
                         <x-input-label :value="__('Imagen Actual')" />
                         <img src="{{ asset('/storage/imagenes/' . $imagen) }}" alt="{{ 'Imagen ' . $nombre }}">
                     </div>
-                    <div class="my-5 w-80">
+                    <div class="my-5 w-[50%]">
                         @if ($imagen_nueva)
                             Imagen nueva:
                             <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Imagen Músico">

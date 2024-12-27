@@ -1,6 +1,5 @@
-<div class="md:flex md:flex-col md:items-center md:justify-center p-5">
-    <form class="md:w-1/2" wire:submit.prevent='crearContenido' method="POST">
-
+<div class="flex flex-col items-center justify-center gap-4 p-5">
+    <form class="w-[95%] md:w-[80%] mx-auto" wire:submit.prevent='crearContenido' method="POST">
         <div>
             <x-input-label for="titulo" :value="__('Título')" />
             <x-text-input id="titulo" class="block mt-1 w-full" type="text" wire:model="titulo" :value="old('titulo')"
@@ -28,7 +27,7 @@
             </div>
             <x-input-error :messages="$errors->get('imagen')" class="mt-2" />
         </div>
-        <div class="grid grid-cols-2">
+        <div class="md:grid md:grid-cols-2 md:items-center">
             <div class="mt-4">
                 <div class="flex gap-4 items-center">
                     <x-input-label for="portada" :value="__('Portada')" />

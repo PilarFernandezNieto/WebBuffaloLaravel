@@ -1,5 +1,5 @@
-<div class="md:flex md:flex-col md:items-center md:justify-center p-5">
-    <form class="md:w-3/4" wire:submit.prevent='crearProducto' method="POST">
+<div class="flex flex-col items-center justify-center gap-4 p-5">
+    <form class="w-[95%] md:w-[80%] mx-auto" wire:submit.prevent='crearProducto' method="POST">
         <fieldset class="border border-custom-red p-4 rounded-md mb-4">
             <legend class="text-custom-red text-lg uppercase px-1">Datos comunes</legend>
             <div>
@@ -12,7 +12,7 @@
                 <x-input-label for="imagen" :value="__('Imagen')" />
                 <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen"
                     accept="image/*" />
-                <div class="my-5 w-80">
+                <div class="my-5">
                     @if ($imagen)
                         Imagen:
                         <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen Noticia">
@@ -141,7 +141,5 @@
                 });
             }
         });
-
     </script>
 @endpush
-

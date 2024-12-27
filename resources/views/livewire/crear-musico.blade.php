@@ -1,5 +1,5 @@
-<div class="md:flex md:flex-col md:items-center md:justify-center p-5">
-    <form class="md:w-1/2" wire:submit.prevent='crearMusico' method="POST">
+<div class="flex flex-col items-center justify-center p-5">
+    <form class="w-[95%] md:w-[80%] mx-auto" wire:submit.prevent='crearMusico' method="POST">
         <div class="grid grid-cols-12 gap-3">
             <div class="col-span-5">
                 <x-input-label for="nombre" :value="__('Nombre')" />

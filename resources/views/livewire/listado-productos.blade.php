@@ -1,20 +1,15 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
-    <div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
-        <div>
-            <h2 class="text-2xl text-gray900"> {{ __('Productos') }}</h2>
-        </div>
-    </div>
-
+    <h2 class="text-2xl text-gray-900 mb-4"> {{ __('Productos') }}</h2>
     @foreach ($productos as $producto)
         <div
-            class="grid grid-cols-[50px_1fr_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="flex flex-col gap-4 md:grid md:grid-cols-[50px_1fr_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $producto->id }}</p>
             <p>{{ $producto->nombre }}</p>
             <p>{{ $producto->categoria->nombre }}</p>
 
             <img src="{{ asset('storage/imagenes/' . $producto->imagen) }}" alt="Imagen de {{ $producto->nombre }}"
                 class="w-28">
-                <p>{{ $producto->precio_formateado }}</p>
+            <p>{{ $producto->precio_formateado }}</p>
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.productos.edit', $producto->id) }}"
                     class="text-indigo-600 hover:text-indigo-700 p-2 font-bold">
@@ -43,26 +38,27 @@
     <script>
         Livewire.on('mostrarAlerta', productoId => {
             Swal.fire({
-            title: '¿Quieres eliminar este elemento?',
-            text: "Esta acción no se puede deshacer!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, elimínalo!',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // eliminar el músico desde el servidor
-                Livewire.dispatch('eliminarProducto', {id: productoId});
-                Swal.fire(
-                    '¡Eliminado!',
-                    'El producto ha sido eliminado',
-                    'success'
-                )
-            }
+                title: '¿Quieres eliminar este elemento?',
+                text: "Esta acción no se puede deshacer!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, elimínalo!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // eliminar el músico desde el servidor
+                    Livewire.dispatch('eliminarProducto', {
+                        id: productoId
+                    });
+                    Swal.fire(
+                        '¡Eliminado!',
+                        'El producto ha sido eliminado',
+                        'success'
+                    )
+                }
+            })
         })
-        })
-
     </script>
 @endpush

@@ -1,13 +1,9 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
-    <div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
-        <div>
-            <h2 class="text-2xl text-gray900"> {{ __('Contenidos') }}</h2>
-        </div>
-    </div>
+    <h2 class="text-2xl text-gray-900 mb-4"> {{ __('Contenidos') }}</h2>
 
     @foreach ($contenidos as $contenido)
         <div
-            class="grid grid-cols-[50px_50px_1fr_1fr_100px] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="flex flex-col gap-4 md:grid md:grid-cols-[50px_50px_1fr_1fr_100px] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $contenido->id }}</p>
             <p>
                 <i class="{{ $contenido->portada == 1 ? 'fa-regular fa-square-check text-green-700 text-lg' : 'fa-regular fa-square text-red-600 text-lg' }}" title="{{ $contenido->portada == 1 ? 'Portada' : 'No Portada' }}"></i>

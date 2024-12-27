@@ -1,19 +1,17 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
-    <div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
-        <div>
-            <h2 class="text-2xl text-gray900"> {{ __('Noticias') }}</h2>
-        </div>
-    </div>
+    <h2 class="text-2xl text-gray-900 mb-4"> {{ __('Noticias') }}</h2>
+
 
     @foreach ($noticias as $noticia)
         <div
-            class="grid grid-cols-[50px_50px_1fr_0.5fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="flex flex-col gap-4 md:grid md:grid-cols-[50px_50px_1fr_0.5fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $noticia->id }}</p>
             <p>
-                <i class="{{ $noticia->portada == 1 ? 'fa-regular fa-square-check text-green-700 text-lg' : 'fa-regular fa-square text-red-600 text-lg' }}" title="{{ $noticia->portada == 1 ? 'Portada' : 'No Portada' }}"></i>
+                <i class="{{ $noticia->portada == 1 ? 'fa-regular fa-square-check text-green-700 text-lg' : 'fa-regular fa-square text-red-600 text-lg' }}"
+                    title="{{ $noticia->portada == 1 ? 'Portada' : 'No Portada' }}"></i>
             </p>
             <p>{{ $noticia->titulo }}</p>
-            <p>{{$noticia->fecha_formateada}}</p>
+            <p>{{ $noticia->fecha_formateada }}</p>
             <img src="{{ asset('storage/imagenes/' . $noticia->imagen) }}" alt="Noticia_ {{ $noticia->id }}"
                 class="w-28">
             <div class="flex justify-between items-center">
@@ -44,26 +42,27 @@
     <script>
         Livewire.on('mostrarAlerta', noticiaId => {
             Swal.fire({
-            title: '¿Quieres eliminar este elemento?',
-            text: "Esta acción no se puede deshacer!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, elimínalo!',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // eliminar el músico desde el servidor
-                Livewire.dispatch('eliminarNoticia', {id: noticiaId});
-                Swal.fire(
-                    '¡Eliminado!',
-                    'La noticia se ha eliminado',
-                    'success'
-                )
-            }
+                title: '¿Quieres eliminar este elemento?',
+                text: "Esta acción no se puede deshacer!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, elimínalo!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // eliminar el músico desde el servidor
+                    Livewire.dispatch('eliminarNoticia', {
+                        id: noticiaId
+                    });
+                    Swal.fire(
+                        '¡Eliminado!',
+                        'La noticia se ha eliminado',
+                        'success'
+                    )
+                }
+            })
         })
-        })
-
     </script>
 @endpush

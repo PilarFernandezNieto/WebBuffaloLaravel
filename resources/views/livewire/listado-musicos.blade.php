@@ -1,13 +1,9 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
-    <div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
-        <div>
-            <h2 class="text-2xl text-gray900"> {{ __('Musicos') }}</h2>
-        </div>
-    </div>
+    <h2 class="text-2xl text-gray-900 mb-4"> {{ __('Musicos') }}</h2>
 
     @foreach ($musicos as $musico)
         <div
-            class="grid grid-cols-[50px_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="flex flex-col md:grid md: gap-4 grid-cols-[50px_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $musico->id }}</p>
             <p>{{ $musico->nombre }} {{ $musico->apellidos }}</p>
             <p>{{ $musico->origen }}</p>
@@ -41,26 +37,27 @@
     <script>
         Livewire.on('mostrarAlerta', musicoId => {
             Swal.fire({
-            title: '¿Quieres eliminar este elemento?',
-            text: "Esta acción no se puede deshacer!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, elimínalo!',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // eliminar el músico desde el servidor
-                Livewire.dispatch('eliminarMusico', {id: musicoId});
-                Swal.fire(
-                    '¡Eliminado!',
-                    'El músico ha sido eliminado',
-                    'success'
-                )
-            }
+                title: '¿Quieres eliminar este elemento?',
+                text: "Esta acción no se puede deshacer!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, elimínalo!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // eliminar el músico desde el servidor
+                    Livewire.dispatch('eliminarMusico', {
+                        id: musicoId
+                    });
+                    Swal.fire(
+                        '¡Eliminado!',
+                        'El músico ha sido eliminado',
+                        'success'
+                    )
+                }
+            })
         })
-        })
-
     </script>
 @endpush
