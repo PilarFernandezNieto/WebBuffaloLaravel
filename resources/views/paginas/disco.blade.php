@@ -6,7 +6,7 @@
                 {!! $disco->informacion !!}
             </div>
             <div class="mt-4 md:mt-0">
-                <img src="{{ asset('storage/imagenes/' . $disco->imagen) }}" alt="portada_{{$disco->nombre}}"
+                <img src="{{asset( $disco->imagen ? 'storage/imagenes/' . $disco->imagen : 'img/no-imagen.jpg') }}" alt="portada_{{$disco->nombre}}"
                     class="w-full h-auto">
             </div>
 

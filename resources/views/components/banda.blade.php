@@ -4,7 +4,7 @@
     <div x-data="{ open: false }" class="w-full p-0 flex flex-col">
         <a @click="open = !open" class="inline-block cursor-pointer">
             <figure class="relative">
-                <img src="{{ asset('/storage/imagenes/' . $musico->imagen) }}" class="rounded w-full h-auto"
+                <img src="{{ asset($musico->imagen ? '/storage/imagenes/' . $musico->imagen : 'img/no-imagen.jpg') }}" class="rounded w-full h-auto"
                     alt="{{$musico->nombre}}" title="{{$musico->nombre}}">
                 <figcaption class="text-right text-sm italic mt-2">
                     Foto de {{$musico->fotografo}}
