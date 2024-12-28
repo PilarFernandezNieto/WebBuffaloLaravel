@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center justify-center gap-4 p-5">
-    <form class="w-[95%] lg:w-[80%] mx-auto" wire:submit.prevent='editarContenido' method="POST">
+    <form class="w-95p lg:w-4/5 mx-auto" wire:submit.prevent='editarContenido' method="POST">
         <div>
             <x-input-label for="titulo" :value="__('Título')" />
             <x-text-input id="titulo" class="block mt-1 w-full" type="text" wire:model="titulo" :value="old('titulo')"

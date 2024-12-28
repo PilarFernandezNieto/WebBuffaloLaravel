@@ -26,6 +26,14 @@ export default {
             letterSpacing: {
                 "letter-spacing-25": "2.5rem",
             },
+            width: {
+                "95p": "95%",
+                "85p": "85%",
+            },
+            maxWidth: {
+                "1300px": "1300px",
+
+            }
         },
     },
 

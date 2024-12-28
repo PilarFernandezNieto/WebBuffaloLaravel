@@ -9,6 +9,6 @@
             <p class="text-lg mb-2 uppercase ">Talla: {{ $camiseta->talla->nombre }}</p>
             <p class="text-lg mb-2">{{ $camiseta->precio_formateado }}</p>
         </div>
-        <x-button class="mt-4  w-full font-bold justify-center" disabled>AGOTADO</x-button>
+        <x-button class="mt-4  w-full font-bold justify-center" disabled>{{$camiseta->stock > 0 ? 'DISPONIBLE' : 'AGOTADO'}}</x-button>
     </div>
 </div>

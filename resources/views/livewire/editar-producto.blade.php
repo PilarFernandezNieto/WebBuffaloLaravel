@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center justify-center gap-4">
-    <form class="w-[95%] lg:w-[80%] mx-auto" wire:submit.prevent='editarProducto' method="POST">
+    <form class="w-95p lg:w-4/5 mx-auto" wire:submit.prevent='editarProducto' method="POST">
         <fieldset class="border border-custom-red p-4 rounded-md mb-4">
             <legend class="text-custom-red text-lg uppercase px-1">Datos comunes</legend>
             <div>

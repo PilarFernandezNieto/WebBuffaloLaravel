@@ -46,6 +46,16 @@
             background-size: cover;
         }
     </style>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QB6GV2DF3D');
+    </script>
 </head>
 
 <body class="font-sans antialiased fuente-principal bg-gray-50">
@@ -55,7 +65,7 @@
         @if (request()->is('/'))
             <div class=" imagen-header min-h-56 md:min-h-35 relative">
                 <div class="bg-slate-950 opacity-25 absolute top-0 left-0 h-full w-full"></div>
-                <div class="absolute z-10 p-7 bottom-4 left-40 w-4/5 space-y-8 hidden md:block ">
+                <div class="absolute z-10 p-7 bottom-4 md:left-4 lg:left-40 w-4/5 space-y-8 hidden md:block ">
                     <h2 class="text-custom-white fuente-bufalo text-4xl tracking-[0.5rem]">The Electric Buffalo</h2>
                     <p class="text-custom-red fuente-bufalo text-6xl tracking-[2.5rem] ">Patrolman</p>
                 </div>

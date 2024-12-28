@@ -1,4 +1,4 @@
-<div class=" w-[95%] md:w-[60%] mx-auto">
+<div class=" w-95p md:w-3/5 mx-auto">
     <h1 class="text-5xl mb-10">Contacta con nosotros</h1>
     @if (session()->has('success'))
         <div class="uppercase border border-green-600 bg-green-100 text-green-600 font-bold p-2 my-3">

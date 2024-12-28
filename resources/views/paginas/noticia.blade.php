@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class=" my-20 w-[95%] md:w-[40%] mx-auto max-w-[1300px] min-w-[40%] bg-white rounded-lg p-4 md:p-8 shadow-md">
+    <div class=" my-20 w-95p lg:w-2/5 mx-auto max-w-1300px min-w-[40%] bg-white rounded-lg p-4 md:p-8 shadow-md">
         <h1 class="text-5xl mb-10">{{ $noticia->titulo }}</h1>
         <div class="flex flex-col">
             <img src="{{ asset($noticia->imagen ? 'storage/imagenes/' . $noticia->imagen : 'img/no-imagen.jpg') }}"

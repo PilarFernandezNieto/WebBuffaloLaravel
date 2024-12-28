@@ -1,12 +1,12 @@
 <nav x-data="{ open: false }" class="bg-black">
     <!-- Primary Navigation Menu -->
-    <div class="w-[95%] lg:w-[80%] mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-0 ">
+    <div class="w-95p lg:w-4/5 mx-auto max-w-1300px px-4 sm:px-6 lg:px-0 ">
         <div class="flex justify-between">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-1 flex items-center py-4">
                     <a href="{{ route('welcome') }}">
-                        <img src="/img/logoBuf.png" alt="logo" class="w-[80%] md:w-full lg:w-3/4 m-4 lg:-ml-4">
+                        <img src="/img/logoBuf.png" alt="logo" class="w-4/5 md:w-full lg:w-3/4 m-4 lg:-ml-4">
                     </a>
                 </div>
 
