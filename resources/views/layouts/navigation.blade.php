@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center py-4">
-                    <a href="{{ route('admin.index') }}">
+                    <a href="{{ route('welcome') }}">
                         <x-application-logo class="block w-auto fill-current text-gray-800" />
                     </a>
                 </div>
