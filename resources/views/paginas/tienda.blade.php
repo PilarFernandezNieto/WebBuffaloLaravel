@@ -1,6 +1,6 @@
 <x-app-layout pageTitle="Tienda">
     <!-- LISTADO CON TODAS LAS NOTICIAS -->
-    <div class=" my-10 w-[95%] md:w-[80%] mx-auto max-w-[1300px]">
+    <div class=" my-10 w-[95%] lg:w-[80%] mx-auto max-w-[1300px]">
         <h1 class="text-5xl mb-10">Discos</h1>
         <div class="md:grid md:grid-cols-3 gap-8">
             @foreach ($discos as $disco)
@@ -21,7 +21,7 @@
         </div>
     </section>
     @if (count($camisetas) > 0)
-        <div class=" my-10 w-[95%] md:w-[80%] mx-auto max-w-[1300px]">
+        <div class=" my-10 w-[95%] lg:w-[80%] mx-auto max-w-[1300px]">
             <h1 class="text-5xl mb-10">Camisetas</h1>
             <div class="md:grid md:grid-cols-3 gap-8">
                 @foreach ($camisetas as $camiseta)

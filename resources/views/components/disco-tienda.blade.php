@@ -8,7 +8,7 @@
             <p class="text-lg mb-2 uppercase ">{{ $disco->formato->nombre }}</p>
             <p class="text-lg mb-2">{{ $disco->precio_formateado }}</p>
         </div>
-        <x-button :href="route('disco.mostrar', $disco)" class="mt-4  w-full font-bold justify-center" disabled>AGOTADO</x-button>
+        <x-button :href="route('disco.mostrar', $disco)" class="mt-4  w-full font-bold justify-center" disabled>{{$disco->stock >0 ? 'DISPONIBLE' : 'AGOTADO'}}</x-button>
     </div>
 
 

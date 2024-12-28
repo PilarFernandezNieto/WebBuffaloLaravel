@@ -48,7 +48,7 @@
     </style>
 </head>
 
-<body class="font-sans antialiased fuente-principal bg-gray-100">
+<body class="font-sans antialiased fuente-principal bg-gray-50">
     @include('layouts.navigation-public')
 
     <div class="min-h-screen ">

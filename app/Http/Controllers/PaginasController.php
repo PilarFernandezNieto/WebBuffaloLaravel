@@ -33,7 +33,7 @@ class PaginasController extends Controller
 
     public function discos(){
 
-        $discos =Producto::where('categoria_id', 1)->get();
+        $discos =Producto::where('categoria_id', 1)->orderBy('anio_edicion', 'desc')->get();
 
         return view('paginas.discos', compact('discos'));
     }

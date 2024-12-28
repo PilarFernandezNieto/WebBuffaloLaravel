@@ -1,5 +1,5 @@
 <x-app-layout pageTitle="{!!$disco->nombre!!}">
-    <div class=" my-20 w-[95%] md:w-[80%] mx-auto max-w-[1300px]">
+    <div class=" my-20 w-[95%] lg:w-[80%] mx-auto max-w-[1300px]">
         <h1 class="text-5xl font-medium mb-10">{{ $disco->nombre }}</h1>
         <div class="md:grid md:grid-cols-2 leading-7 relative">
             <div class="informacion">

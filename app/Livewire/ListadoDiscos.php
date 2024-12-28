@@ -20,7 +20,7 @@ class ListadoDiscos extends Component
 
     public function render()
     {
-        $discos = Producto::where('categoria_id', 1)->get();
+        $discos = Producto::where('categoria_id', 1)->orderBy('anio_edicion', 'desc')->get();
         return view('livewire.listado-discos', compact('discos'));
     }
 }

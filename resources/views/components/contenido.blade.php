@@ -1,5 +1,5 @@
-<section class="w-[95%] md:w-[80%] mx-auto py-20 bg-white rounded-lg px-4 md:px-8 shadow my-10">
-    <div class="md:grid md:grid-cols-2 md:gap-10  md:w-[80%] mx-auto">
+<section class="w-[95%] lg:w-[80%] max-w-{1300px} mx-auto py-20 bg-white rounded-lg px-4 md:px-8 shadow my-10">
+    <div class="md:grid md:grid-cols-2 md:gap-10  lg:w-[80%] mx-auto">
         <div class="mb-4 md:mb-0">
                 <img src="{{asset( $contenido->imagen ? 'storage/imagenes/' . $contenido->imagen : 'img/no-imagen.jpg') }}"
                 alt="contenido_{{ $contenido->id }}" class="w-full">

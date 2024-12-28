@@ -19,7 +19,7 @@ class ListadoNoticias extends Component
 
     public function render()
     {
-        $noticias = Noticia::orderBy('created_at')->get();
+        $noticias = Noticia::orderBy('created_at', 'desc')->get();
 
         return view('livewire.listado-noticias', [
             'noticias' => $noticias
