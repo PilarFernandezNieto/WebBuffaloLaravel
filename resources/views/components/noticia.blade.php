@@ -3,7 +3,7 @@
     <img src="{{asset( $noticia->imagen ? 'storage/imagenes/' . $noticia->imagen : 'img/no-imagen.jpg') }}" alt="noticia{{ $noticia->id }}"
         class="rounded-t-lg max-w-full h-auto">
     <div class="contenido-noticias border border-gray-100 p-5">
-        <h3 class="text-custom-red text-3xl mb-5 min-h-28 flex font-medium">{{ $noticia->titulo }}</h3>
+        <h3 class="text-custom-red text-3xl md:text-2xl lg:text-3xl mb-5 min-h-28 flex font-medium">{{ $noticia->titulo }}</h3>
         <div class="texto-noticia ">
             <h4 class="text-2xl mb-4 min-h-24">{{ $noticia->intro }}</h4>
             <div class="texto text-base my-6 min-h-32">

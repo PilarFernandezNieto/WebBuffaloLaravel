@@ -66,14 +66,4 @@
     </form>
 
 </div>
-@push('styles')
-    <style>
-        [type='checkbox']:checked {
-            background-color: #AC2C28;
-        }
 
-        [type='checkbox'] {
-            color: #AC2C28;
-        }
-    </style>
-@endpush
