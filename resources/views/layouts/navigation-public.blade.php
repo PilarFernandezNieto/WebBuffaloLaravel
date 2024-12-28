@@ -33,7 +33,7 @@
                         <x-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
                             {{ __('Historia') }}
                         </x-link-nav>
-                        <x-link-nav :href="route('discos')" :active="request()->routeIs('discos')">
+                        <x-link-nav :href="route('discografia')" :active="request()->routeIs('discografia')">
                             {{ __('Discografía') }}
                         </x-link-nav>
                         <x-link-nav :href="route('tienda')" :active="request()->routeIs('tienda')">
@@ -128,7 +128,7 @@
             <x-responsive-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
                 {{ __('Historia') }}
             </x-responsive-link-nav>
-            <x-responsive-link-nav :href="route('discos')" :active="request()->routeIs('discos')">
+            <x-responsive-link-nav :href="route('discografia')" :active="request()->routeIs('discografia')">
                 {{ __('Discografía') }}
             </x-responsive-link-nav>
             <x-responsive-link-nav :href="route('tienda')" :active="request()->routeIs('tienda')">

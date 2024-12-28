@@ -31,7 +31,7 @@ class PaginasController extends Controller
         return view('paginas.noticia', compact('noticia'));
     }
 
-    public function discos(){
+    public function discografia(){
 
         $discos =Producto::where('categoria_id', 1)->orderBy('anio_edicion', 'desc')->get();
 

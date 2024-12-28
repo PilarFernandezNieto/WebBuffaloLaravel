@@ -18,8 +18,8 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/historia', [PaginasController::class, 'historia'])->name('historia');
 Route::get('/noticias', [PaginasController::class, 'noticias'])->name('noticias');
 Route::get('/noticias/{noticia}', [PaginasController::class, 'mostrarNoticia'])->name('noticia.mostrar');
-Route::get('/discos', [PaginasController::class, 'discos'])->name('discos');
-Route::get('/discos/{disco}', [PaginasController::class, 'mostrarDisco'])->name('disco.mostrar');
+Route::get('/discografia', [PaginasController::class, 'discografia'])->name('discografia');
+Route::get('/discografia/{disco}', [PaginasController::class, 'mostrarDisco'])->name('discografia.mostrar');
 Route::get('/tienda', [PaginasController::class, 'tienda'])->name('tienda');
 Route::get('/contacto', [PaginasController::class, 'contacto'])->name('contacto');
 

@@ -13,7 +13,7 @@
 
         </div>
         <div class="flex justify-start">
-            <x-button :href="route('discos')" class="mt-10">Volver</x-button>
+            <x-button :href="route('discografia')" class="mt-10">Volver</x-button>
         </div>
 
         <div>

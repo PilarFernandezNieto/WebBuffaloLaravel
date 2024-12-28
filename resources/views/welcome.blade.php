@@ -31,7 +31,7 @@
         <div class="bg-slate-950 opacity-50 absolute top-0 left-0 h-full w-full"></div>
         <div class="py-4 text-center z-10">
             <h3 class="text-white text-4xl mb-12">Discografía del Búfalo Eléctrico</h3>
-            <a href="{{ route('discos') }}"
+            <a href="{{ route('discografia') }}"
                 class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 px-12 py-4">Pincha aquí</a>
         </div>
     </section>

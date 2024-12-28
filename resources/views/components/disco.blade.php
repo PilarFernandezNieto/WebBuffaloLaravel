@@ -8,7 +8,7 @@
             <h2 class="text-custom-red text-3xl font-medium mb-8">{{ $disco->nombre }}</h2>
             {!! $disco->textos !!}
             <div class="flex justify-start">
-                <x-button :href="route('disco.mostrar', $disco->id)" class="mt-10">Ver ficha</x-button>
+                <x-button :href="route('discografia.mostrar', $disco->id)" class="mt-10">Ver ficha</x-button>
             </div>
     </section>
 </div>

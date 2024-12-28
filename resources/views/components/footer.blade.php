@@ -4,8 +4,8 @@
         <x-link-nav :href="route('historia')" >
             {{ __('Historia') }}
         </x-link-nav>
-        <x-link-nav :href="route('discos')" >
-            {{ __('Discos') }}
+        <x-link-nav :href="route('discografia')" >
+            {{ __('Discografía') }}
         </x-link-nav>
         <x-link-nav :href="route('tienda')" >
             {{ __('Tienda') }}
