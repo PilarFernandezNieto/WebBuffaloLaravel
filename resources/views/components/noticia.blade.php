@@ -7,7 +7,7 @@
         <div class="texto-noticia ">
             <h4 class="text-2xl mb-4 min-h-24">{{ $noticia->intro }}</h4>
             <div class="texto text-base my-6 min-h-32">
-                {!! Str::limit($noticia->texto, 180) !!}
+                {!! Str::limit($noticia->texto, 200) !!}
             </div>
             <p class="fecha flex justify-end text-custom-red italic">{{ $noticia->fecha_formateada }}</p>
 
