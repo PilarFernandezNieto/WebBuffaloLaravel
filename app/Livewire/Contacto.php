@@ -43,7 +43,7 @@ class Contacto extends Component
         }
         if ($result['success'] >= 0.5) {
             Mail::send([], [], function ($mail) {
-                $mail->to('admin@example.com') // Cambia esto por el correo del administrador
+                $mail->to('info@theelectricbuffalo.com') // Cambia esto por el correo del administrador
                     ->from($this->email, $this->nombre)
                     ->subject('Nuevo Mensaje de Contacto')
                     ->html("

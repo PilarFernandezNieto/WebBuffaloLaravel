@@ -13,6 +13,7 @@ class Musico extends Model
         'origen',
         'fecha_nac',
         'biografia',
-        'imagen'
+        'imagen',
+        'fotografo'
     ];
 }
