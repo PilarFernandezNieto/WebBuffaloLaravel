@@ -46,7 +46,7 @@ return [
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
-            'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+            'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'https://www.theelectricbuffalo.com/'), PHP_URL_HOST)),
         ],
 
         'ses' => [
@@ -109,7 +109,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'admin@theelectricbuffalo.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@theelectricbuffalo.com'),
         'name' => env('MAIL_FROM_NAME', 'The Electric Buffalo'),
     ],
 
