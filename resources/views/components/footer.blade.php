@@ -38,5 +38,8 @@
             class="text-white hover:text-custom-red text-2xl md:text-4xl">info@theelectricbuffalo.com</a>
     </div>
     <p class="text-white text-sm text-center">The Electric Buffalo. Todos los derechos reservados</p>
+    <p class="mt-4">
+        <a href="{{route('politica')}}" class="text-custom-white text-xs">Política de privacidad</a>
+    </p>
 
 </div>

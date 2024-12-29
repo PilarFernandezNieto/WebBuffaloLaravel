@@ -54,4 +54,7 @@ class PaginasController extends Controller
     public function contacto(){
         return view('paginas.contacto');
     }
+    public function politica(){
+        return view('paginas.politica-privacidad');
+    }
 }

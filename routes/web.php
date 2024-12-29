@@ -22,15 +22,9 @@ Route::get('/discografia', [PaginasController::class, 'discografia'])->name('dis
 Route::get('/discografia/{disco}', [PaginasController::class, 'mostrarDisco'])->name('discografia.mostrar');
 Route::get('/tienda', [PaginasController::class, 'tienda'])->name('tienda');
 Route::get('/contacto', [PaginasController::class, 'contacto'])->name('contacto');
+Route::get('/politica-privacidad', [PaginasController::class, 'politica'])->name('politica');
 
-Route::get('/test-email', function () {
-    Mail::raw('Este es un correo de prueba desde mi hosting.', function ($message) {
-        $message->to('admin@tudominio.com')
-                ->subject('Correo de Prueba');
-    });
 
-    return 'Correo de prueba enviado.';
-});
 
 
 Route::get('/403', function() {
