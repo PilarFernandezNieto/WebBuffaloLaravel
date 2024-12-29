@@ -13,18 +13,25 @@
                 <!-- Navigation Links -->
                 <div class="flex flex-col justify-center">
                     <div class=" hidden lg:block text-custom-white text-end text-2xl space-x-3">
+                        <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red"
+                            target="_blank">
+                            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                        </a>
 
-                        <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red" target="_blank">
+                        <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red"
+                            target="_blank">
                             <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/theelectricbuffalo/" class="hover:text-custom-red" target="_blank">
+                        <a href="https://www.instagram.com/theelectricbuffalo/" class="hover:text-custom-red"
+                            target="_blank">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                         <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
                             target="_blank" class="hover:text-custom-red">
                             <i class="fa-brands fa-spotify" aria-hidden="true"></i>
                         </a>
-                        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" class="hover:text-custom-red">
+                        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank"
+                            class="hover:text-custom-red">
                             <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
                         </a>
 

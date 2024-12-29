@@ -5,7 +5,7 @@
                 alt="contenido_{{ $contenido->id }}" class="w-full">
         </div>
         <div class="p-0 md:px-4">
-            <h2 class="text-custom-red uppercase tracking-[1rem]  font-bold text-3xl md:text-4xl mb-8">
+            <h2 class="text-custom-red uppercase tracking-[0.7rem] font-bold text-3xl md:text-4xl mb-8">
                 {{ $contenido->titulo }}</h2>
             <div class="text-slate-800 text-base contenido leading-7">{!! $contenido->texto !!}</div>
         </div>

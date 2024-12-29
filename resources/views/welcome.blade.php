@@ -7,21 +7,24 @@
         <audio controls="" class="audiostyle hidden" controlslist="nodownload">
             <source src="/multimedia/A2-Patrolman.mp3" type="audio/mp3">
         </audio>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
-            <a href="https://www.youtube.com/@theelectricbuffalo666" target="_blank" class="w-full md:w-auto">
-                <img loading="lazy" src="img/youtuberecorte.png" alt="logo-youtube" class="w-20 mx-auto">
+        <div class="grid grid-cols-3 gap-10 items-center md:grid-cols-5">
+            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank">
+                <img loading="lazy" src="img/logo_facebbok.png" alt="logo-youtube" class="w-16">
             </a>
-            <a href="https://www.instagram.com/theelectricbuffalo/" target="_blank" class="w-full md:w-auto">
+            <a href="https://www.youtube.com/@theelectricbuffalo666" target="_blank" >
+                <img loading="lazy" src="img/youtuberecorte.png" alt="logo-youtube" class="w-16">
+            </a>
+            <a href="https://www.instagram.com/theelectricbuffalo/" target="_blank" >
                 <img loading="lazy" src="/img/instagram_logo_2022..png" alt="logo-instagram"
-                    class="w-16 rounded-lg mx-auto">
+                    class="w-16">
             </a>
             <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
-                target="_blank" class="w-full md:w-auto">
-                <img loading="lazy" src="/img/spotifty.png" alt="logo-spotify" class="w-16 rounded-lg mx-auto">
+                target="_blank">
+                <img loading="lazy" src="/img/spotifty.png" alt="logo-spotify" class="w-16 rounded-lg">
             </a>
-            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" class="w-full md:w-auto">
+            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" >
                 <img loading="lazy" src="/img/bandcamp-button-circle-aqua-64.png" alt="logo-bandcamp"
-                    class="w-16 mx-auto">
+                    class="w-16">
             </a>
         </div>
 

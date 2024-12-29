@@ -1,21 +1,23 @@
 <div class="flex flex-col p-4 bg-black items-center justify-around mt-10">
     <nav class="flex flex-col md:flex-row gap-2 my-8 items-center">
 
-        <x-link-nav :href="route('historia')" >
+        <x-link-nav :href="route('historia')">
             {{ __('Historia') }}
         </x-link-nav>
-        <x-link-nav :href="route('discografia')" >
+        <x-link-nav :href="route('discografia')">
             {{ __('Discografía') }}
         </x-link-nav>
-        <x-link-nav :href="route('tienda')" >
+        <x-link-nav :href="route('tienda')">
             {{ __('Tienda') }}
         </x-link-nav>
-        <x-link-nav :href="route('contacto')" >
+        <x-link-nav :href="route('contacto')">
             {{ __('Contacto') }}
         </x-link-nav>
     </nav>
     <div class=" flex text-custom-white text-end text-4xl space-x-3 items-center">
-
+        <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red" target="_blank">
+            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+        </a>
         <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red" target="_blank">
             <i class="fa-brands fa-youtube" aria-hidden="true"></i>
         </a>
