@@ -20,7 +20,7 @@ class PaginasController extends Controller
 
     public function noticias(){
 
-        $noticias = Noticia::paginate(3);
+        $noticias = Noticia::orderBy('fecha', 'desc')->paginate(3);
 
         return view('paginas.noticias', [
             'noticias' => $noticias
