@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Mail\ContactForm;
 use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
@@ -42,22 +43,10 @@ class Contacto extends Component
             return;
         }
         if ($result['success'] >= 0.5) {
-            Mail::send([], [], function ($mail) {
-                $mail->to('info@theelectricbuffalo.com') // Cambia esto por el correo del administrador
-                    ->from('info@theelectricbuffalo.com', $this->nombre)
-                    ->subject('Nuevo Mensaje de Contacto')
-                    ->html("
-                    <p><strong>Nombre:</strong> {$this->nombre}</p>
-                    <p><strong>Email:</strong> {$this->email}</p>
-                    <p><strong>Mensaje:</strong></p>
-                    <p>{$this->mensaje}</p>
-                ");
-            });
-            // Limpiar campos y mostrar mensaje de éxito
-            $this->reset();
+            Mail::to('info@theelectricbuffalo.com')->send(new ContactForm($this->nombre, $this->email, $this->mensaje));
             session()->flash('success', '¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.');
+            return redirect()->route('contacto');
         }
-
     }
     public function render()
     {

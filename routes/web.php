@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\ContactForm;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -30,6 +31,15 @@ Route::get('/politica-privacidad', [PaginasController::class, 'politica'])->name
 Route::get('/403', function() {
     return view('403');
 });
+
+// Route::get('/preview-email', function () {
+//     $nombre = 'John Doe';
+//     $email = 'johndoe@example.com';
+//     $mensaje = 'Este es un mensaje de prueba para la previsualización del correo.';
+
+//     // Renderiza la vista del correo como HTML
+//     return new ContactForm($nombre, $email, $mensaje);
+// });
 
 Route::prefix('admin')->middleware(['auth', 'verified', 'is_admin'])->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
