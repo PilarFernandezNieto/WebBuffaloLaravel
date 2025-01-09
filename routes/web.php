@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CamisetasController;
 use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\UserController;
 
 // Zona pública
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
@@ -45,6 +46,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'is_admin'])->name('admi
     Route::get('/', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
 
     // Músicos - definir las rutas con resource ya crea los metodos necesarios: post, get, delete, update
+    Route::resource('usuarios', UserController::class);
     Route::resource('musicos', MusicoController::class);
     Route::resource('noticias', NoticiaController::class);
     Route::resource('contenidos', ContenidoController::class);

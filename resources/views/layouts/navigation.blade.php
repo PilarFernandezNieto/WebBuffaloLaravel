@@ -12,6 +12,9 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
+                    <x-nav-link :href="route('admin.usuarios.index')" :active="request()->routeIs('admin.usuarios.index')">
+                        {{ __('Usuarios') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('admin.musicos.index')" :active="request()->routeIs('admin.musicos.index')">
                         {{ __('Musicos') }}
                     </x-nav-link>
