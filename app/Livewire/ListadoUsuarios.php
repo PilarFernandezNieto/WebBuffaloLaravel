@@ -13,8 +13,15 @@ class ListadoUsuarios extends Component
 
     public function eliminarUsuario($id)
     {
+
         $user = User::find($id);
+        if ($user->admin) {
+            $this->dispatch('resultadoEliminacion', ['success' => false, 'message' => 'No se puede eliminar un administrador.']);
+            return;
+        }
         $user->delete();
+        $this->dispatch('resultadoEliminacion', ['success' => true, 'message' => 'Usuario eliminado correctamente.']);
+
     }
     public function render()
     {

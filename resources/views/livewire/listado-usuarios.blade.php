@@ -17,7 +17,7 @@
             <p>{{ $usuario->name }}</p>
             <p>{{ $usuario->email }}</p>
             <p> {{ $usuario->admin ? 'ADMIN' : 'USER' }}</p>
-            <p>{{$usuario->created_at->format('d-m-Y')}}</p>
+            <p>{{ $usuario->created_at->format('d-m-Y') }}</p>
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.usuarios.edit', $usuario->id) }}"
                     class="text-indigo-600 hover:text-indigo-700 p-2 font-bold">
@@ -56,17 +56,27 @@
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // eliminar el usuario desde el servidor
                     Livewire.dispatch('eliminarUsuario', {
                         id: usuarioId
                     });
-                    Swal.fire(
-                        '¡Eliminado!',
-                        'El usuario ha sido eliminado',
-                        'success'
-                    )
                 }
             })
         })
+
+        Livewire.on('resultadoEliminacion', resultado => {
+            if (resultado[0].success) {
+                Swal.fire({
+                    title: '¡Eliminado!',
+                    text: resultado[0].message,
+                    icon: 'success'
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: resultado[0].message,
+                    icon: 'error'
+                });
+            }
+        });
     </script>
 @endpush
