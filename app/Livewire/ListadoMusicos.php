@@ -23,6 +23,7 @@ class ListadoMusicos extends Component
     {
         $musicos = Musico::all();
 
+
         return view('livewire.listado-musicos', [
             'musicos' => $musicos
         ]);

@@ -1,15 +1,14 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Panel Administrador - Editar Músico') }}
+            {{ __('Panel Administrador - Editar Usuario') }}
         </h2>
     </x-slot>
 
     <div class="py-12 px-4">
         <div class="md:w-3/5 mx-auto bg-white overflow-hidden shadow-sm sm:rounded-lg text-gray-900 py-10">
-            <h1 class="text-2xl font-bold text-center mb-10 text-custom-red">Editar Músico</h1>
-            <livewire:editar-musico :musico="$musico" />
+            <h1 class="text-2xl font-bold text-center mb-10 text-custom-red">Editar Usuario</h1>
+            <livewire:editar-usuario :usuario="$usuario" />
         </div>
     </div>
 </x-admin-layout>
-

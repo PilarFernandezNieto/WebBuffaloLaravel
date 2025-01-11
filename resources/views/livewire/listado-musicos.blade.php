@@ -1,9 +1,17 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
     <h2 class="text-2xl text-gray-900 mb-4"> {{ __('Musicos') }}</h2>
+    <div
+        class="flex flex-col md:grid gap-4 md:grid-cols-[5%_1fr_1fr_1fr_auto] p-4 uppercase font-bold justify-between items-center sm:hidden">
+        <p>Id</p>
+        <p>Nombre</p>
+        <p>Origen</p>
+        <p>Imagen</p>
+        <p>Acciones</p>
+    </div>
 
     @foreach ($musicos as $musico)
         <div
-            class="flex flex-col md:grid md: gap-4 grid-cols-[50px_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="flex flex-col md:grid md: gap-4 grid-cols-[5%_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $musico->id }}</p>
             <p>{{ $musico->nombre }} {{ $musico->apellidos }}</p>
             <p>{{ $musico->origen }}</p>

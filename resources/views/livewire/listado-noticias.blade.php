@@ -1,10 +1,18 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
     <h2 class="text-2xl text-gray-900 mb-4"> {{ __('Noticias') }}</h2>
-
+    <div
+        class="flex flex-col md:grid gap-4 md:grid-cols-[5%_10%_1fr_0.5fr_1fr_auto] p-4 uppercase font-bold justify-between items-center">
+        <p>Id</p>
+        <p>Portada</p>
+        <p>Título</p>
+        <p>Fecha</p>
+        <p>Imagen</p>
+        <p>Acciones</p>
+    </div>
 
     @foreach ($noticias as $noticia)
         <div
-            class="flex flex-col gap-4 md:grid md:grid-cols-[50px_50px_1fr_0.5fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="flex flex-col gap-4 md:grid md:grid-cols-[5%_10%_1fr_0.5fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $noticia->id }}</p>
             <p>
                 <i class="{{ $noticia->portada == 1 ? 'fa-regular fa-square-check text-green-700 text-lg' : 'fa-regular fa-square text-red-600 text-lg' }}"

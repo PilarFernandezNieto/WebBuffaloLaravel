@@ -1,13 +1,23 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
     <h2 class="text-2xl text-gray-900 mb-4"> {{ __('Usuarios') }}</h2>
+    <div
+        class="flex flex-col md:grid gap-2 grid-cols-[5%_1fr_1fr_1fr_1fr_auto] p-4 uppercase font-bold justify-between items-center">
+        <p>Id</p>
+        <p>Nombre</p>
+        <p>Email</p>
+        <p>Rol</p>
+        <p>Fecha Alta</p>
+        <p>Acciones</p>
+    </div>
 
     @foreach ($usuarios as $usuario)
         <div
-            class="flex flex-col md:grid md: gap-4 grid-cols-[50px_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
+            class="flex flex-col md:grid md: gap-4 grid-cols-[5%_1fr_1fr_1fr_1fr_auto] p-4 border border-slate-300 rounded-sm shadow-sm mb-4 justify-between items-center">
             <p>{{ $usuario->id }}</p>
             <p>{{ $usuario->name }}</p>
             <p>{{ $usuario->email }}</p>
             <p> {{ $usuario->admin ? 'ADMIN' : 'USER' }}</p>
+            <p>{{$usuario->created_at->format('d-m-Y')}}</p>
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.usuarios.edit', $usuario->id) }}"
                     class="text-indigo-600 hover:text-indigo-700 p-2 font-bold">
