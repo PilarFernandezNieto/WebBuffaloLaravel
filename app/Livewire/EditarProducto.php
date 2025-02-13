@@ -7,6 +7,7 @@ use App\Models\Formato;
 use Livewire\Component;
 use App\Models\Producto;
 use App\Models\Categoria;
+use App\Traits\ImageHandler;
 use Livewire\WithFileUploads;
 
 class EditarProducto extends Component
@@ -27,6 +28,7 @@ class EditarProducto extends Component
     public $anio_edicion;
 
     use WithFileUploads;
+    use ImageHandler;
 
     protected $rules = [
         'nombre' => 'required|string',
@@ -66,8 +68,9 @@ class EditarProducto extends Component
 
         // Si hay nueva imagen
         if ($this->imagen_nueva) {
-            $imagen = $this->imagen_nueva->store('imagenes', 'public');
 
+            $this->borraImagen($this->imagen);
+            $imagen = $this->imagen_nueva->store('imagenes', 'public');
             $datos['imagen'] = str_replace('imagenes/', '', $imagen);
         }
 

@@ -3,13 +3,17 @@
 namespace App\Livewire;
 
 use App\Models\Musico;
+use App\Traits\ImageHandler;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class EditarMusico extends Component
 {
+
+
     public $id;
     public $nombre;
     public $apellidos;
@@ -22,6 +26,7 @@ class EditarMusico extends Component
     public $imagen_nueva;
 
     use WithFileUploads;
+    use ImageHandler;
 
     protected function rules()
     {
@@ -67,6 +72,7 @@ class EditarMusico extends Component
 
         // Si hay nueva imagen
         if ($this->imagen_nueva) {
+            $this->borraImagen($this->imagen);
             $imagen = $this->imagen_nueva->store('imagenes', 'public');
 
             $datos['imagen'] = str_replace('imagenes/', '', $imagen);
@@ -97,4 +103,8 @@ class EditarMusico extends Component
     {
         return view('livewire.editar-musico');
     }
+
+
+
+
 }

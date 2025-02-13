@@ -3,10 +3,12 @@
 namespace App\Livewire;
 
 use App\Models\Producto;
+use App\Traits\ImageHandler;
 use Livewire\Component;
 
 class ListadoCamisetas extends Component
 {
+    use ImageHandler;
 
     protected $listeners = ['eliminarCamiseta'];
 
@@ -14,6 +16,7 @@ class ListadoCamisetas extends Component
     public function eliminarCamiseta($id)
     {
         $producto = Producto::find($id);
+        $this->borraImagen($producto->imagen);
         $producto->delete();
     }
 

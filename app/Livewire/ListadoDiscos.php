@@ -16,8 +16,6 @@ class ListadoDiscos extends Component
         $producto = Producto::find($id);
         $producto->delete();
     }
-
-
     public function render()
     {
         $discos = Producto::where('categoria_id', 1)->orderBy('anio_edicion', 'desc')->get();

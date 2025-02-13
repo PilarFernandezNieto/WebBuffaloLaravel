@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Contenido;
+use App\Traits\ImageHandler;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -18,6 +19,7 @@ class EditarContenido extends Component
     public $imagen_nueva;
 
     use WithFileUploads;
+    use ImageHandler;
 
     protected $rules = [
         'titulo' => 'required|string',
@@ -47,6 +49,7 @@ class EditarContenido extends Component
 
         // Si hay nueva imagen
         if ($this->imagen_nueva) {
+            $this->borraImagen($this->imagen);
             $imagen = $this->imagen_nueva->store('imagenes', 'public');
 
             $datos['imagen'] = str_replace('imagenes/', '', $imagen);

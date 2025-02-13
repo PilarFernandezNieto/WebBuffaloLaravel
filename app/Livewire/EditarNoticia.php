@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Noticia;
+use App\Traits\ImageHandler;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
@@ -19,6 +20,7 @@ class EditarNoticia extends Component
     public $imagen_nueva;
 
     use WithFileUploads;
+    use ImageHandler;
 
     protected $rules = [
 
@@ -44,10 +46,11 @@ class EditarNoticia extends Component
     public function editarNoticia()
     {
         $datos = $this->validate();
-        // Si hay nueva imagen
-        if ($this->imagen_nueva) {
-            $imagen = $this->imagen_nueva->store('imagenes', 'public');
 
+        if ($this->imagen_nueva) {
+
+            $this->borraImagen($this->imagen);
+            $imagen = $this->imagen_nueva->store('imagenes', 'public');
             $datos['imagen'] = str_replace('imagenes/', '', $imagen);
         }
         $noticia = Noticia::find($this->id);

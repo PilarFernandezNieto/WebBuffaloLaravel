@@ -3,17 +3,20 @@
 namespace App\Livewire;
 
 use App\Models\Noticia;
+use App\Traits\ImageHandler;
 use Livewire\Component;
 
 class ListadoNoticias extends Component
 {
 
-    protected $listeners = ['eliminarNoticia'];
+    use ImageHandler;
 
+    protected $listeners = ['eliminarNoticia'];
 
     public function eliminarNoticia($id)
     {
         $noticia = Noticia::find($id);
+        $this->borraImagen($noticia->imagen);
         $noticia->delete();
     }
 
