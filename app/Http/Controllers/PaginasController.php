@@ -43,7 +43,7 @@ class PaginasController extends Controller
     }
     public function tienda(){
 
-        $discos = Producto::where('categoria_id', 1)->get();
+        $discos = Producto::where('categoria_id', 1)->orderBy('anio_edicion', 'desc')->get();
         $camisetas = Producto::where('categoria_id', 2)->get();
         return view('paginas.tienda', [
             'discos' => $discos,
