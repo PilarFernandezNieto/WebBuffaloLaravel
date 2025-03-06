@@ -6,7 +6,7 @@
             <figure class="relative">
                 <img src="{{ asset($musico->imagen ? '/storage/imagenes/' . $musico->imagen : 'img/no-imagen.jpg') }}" class="rounded w-full h-auto"
                     alt="{{$musico->nombre}}" title="{{$musico->nombre}}">
-                <figcaption class="text-right text-sm italic mt-2">
+                <figcaption class="text-right text-sm italic mb-2 md:mb-0">
                     Foto de {{$musico->fotografo}}
                 </figcaption>
             </figure>

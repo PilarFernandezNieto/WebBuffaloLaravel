@@ -117,18 +117,6 @@
                 <img src="/img/cartel_vertical.jpg" alt="Cartel" class="w-full">
             </div>
         </section>
-
-
-
-
-        <!-- CUARTO BLOQUE -->
-        <section class="my-20">
-
-            <h2 class="text-4xl mb-8 font-medium">La banda ahora</h2>
-            <div class="md:grid md:grid-cols-2 gap-8">
-                <x-banda :musicos="$musicos" />
-            </div>
-        </section>
     </div>
 
 

@@ -4,6 +4,9 @@
         <x-link-nav :href="route('historia')">
             {{ __('Historia') }}
         </x-link-nav>
+        <x-link-nav :href="route('banda')">
+            {{ __('La Banda') }}
+        </x-link-nav>
         <x-link-nav :href="route('discografia')">
             {{ __('Discografía') }}
         </x-link-nav>

@@ -18,6 +18,7 @@ use App\Http\Controllers\UserController;
 // Zona pública
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/historia', [PaginasController::class, 'historia'])->name('historia');
+Route::get('/banda', [PaginasController::class, 'banda'])->name('banda');
 Route::get('/noticias', [PaginasController::class, 'noticias'])->name('noticias');
 Route::get('/noticias/{noticia}', [PaginasController::class, 'mostrarNoticia'])->name('noticia.mostrar');
 Route::get('/discografia', [PaginasController::class, 'discografia'])->name('discografia');

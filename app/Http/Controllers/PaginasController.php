@@ -15,7 +15,15 @@ class PaginasController extends Controller
         return view('paginas.historia', [
             'musicos' => $musicos
         ]);
-        return view('paginas.historia', compact('musicos'));
+
+    }
+    public function banda()
+    {
+        $musicos = Musico::all();
+        return view('paginas.banda', [
+            'musicos' => $musicos
+        ]);
+        
     }
 
     public function noticias(){

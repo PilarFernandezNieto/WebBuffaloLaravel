@@ -2,17 +2,17 @@
     <!-- Primary Navigation Menu -->
     <div class="w-95p lg:w-4/5 mx-auto max-w-1300px px-4 sm:px-6 lg:px-0 ">
         <div class="flex justify-between">
-            <div class="flex">
+            <div class="grid grid-cols-12 items-end py-4">
                 <!-- Logo -->
-                <div class="shrink-1 flex items-center py-4">
+                <div class="col-span-6 md:col-span-5 flex items-center">
                     <a href="{{ route('welcome') }}">
-                        <img src="/img/logoBuf.png" alt="logo" class="w-4/5 md:w-full lg:w-3/4 m-4 lg:-ml-4">
+                        <img src="/img/logoBuf.png" alt="logo" class="w-full md:w-full lg:w-3/4 m-3 lg:-ml-4">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="flex flex-col justify-center">
-                    <div class=" hidden lg:block text-custom-white text-end text-2xl space-x-3">
+                <div class="col-span-7 flex flex-col justify-center">
+                    <div class="hidden lg:block text-custom-white text-end text-2xl space-x-3">
                         <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red"
                             target="_blank">
                             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
@@ -36,9 +36,12 @@
                         </a>
 
                     </div>
-                    <div class="hidden space-x-6 sm:-my-px sm:ms-10 sm:flex pt-4">
+                    <div class="hidden md:hidden lg:flex space-x-6 sm:-my-px sm:ms-10 pt-4 justify-end">
                         <x-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
                             {{ __('Historia') }}
+                        </x-link-nav>
+                        <x-link-nav :href="route('banda')" :active="request()->routeIs('banda')">
+                            {{ __('La Banda') }}
                         </x-link-nav>
                         <x-link-nav :href="route('discografia')" :active="request()->routeIs('discografia')">
                             {{ __('Discografía') }}
@@ -98,7 +101,7 @@
             </div>
 
             <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
+            <div class="-me-2 flex items-center lg:hidden">
                 <button @click="open = ! open"
                     class="inline-flex items-center justify-center p-2 rounded-md text-custom-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -114,7 +117,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden border border-t-1  border-gray-200 pt-4">
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden lg:hidden border border-t-1  border-gray-200 pt-4">
         <div class=" lg:hidden text-custom-white text-center text-2xl space-x-3">
             <a href="https://www.youtube.com/@theelectricbuffalo666" class="youtube" target="_blank">
                 <i class="fa-brands fa-youtube" aria-hidden="true"></i>
@@ -134,6 +137,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
                 {{ __('Historia') }}
+            </x-responsive-link-nav>
+            <x-responsive-link-nav :href="route('banda')" :active="request()->routeIs('banda')">
+                {{ __('La Banda') }}
             </x-responsive-link-nav>
             <x-responsive-link-nav :href="route('discografia')" :active="request()->routeIs('discografia')">
                 {{ __('Discografía') }}
