@@ -29,6 +29,14 @@ a {
     color: #AC2C28;
 }
 
+.contenido a {
+    color: #000;
+    font-weight: 500;
+}
+.contenido a:hover {
+    color: #AC2C28;
+}
+
 
 
 
