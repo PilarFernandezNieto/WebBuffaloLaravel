@@ -18,20 +18,20 @@
         </x-link-nav>
     </nav>
     <div class=" flex text-custom-white text-end text-4xl space-x-3 items-center">
-        <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red" target="_blank">
+        <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red" target="_blank" aria-label="Icono Facebook">
             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
         </a>
-        <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red" target="_blank">
+        <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red" target="_blank" aria-label="Icono Youtube">
             <i class="fa-brands fa-youtube" aria-hidden="true"></i>
         </a>
-        <a href="https://www.instagram.com/theelectricbuffalo/" class="hover:text-custom-red" target="_blank">
+        <a href="https://www.instagram.com/theelectricbuffalo/" class="hover:text-custom-red" target="_blank" aria-label="Icono Instagram">
             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
         </a>
         <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
-            target="_blank" class="hover:text-custom-red">
+            target="_blank" class="hover:text-custom-red" aria-label="Icono Spotify">
             <i class="fa-brands fa-spotify" aria-hidden="true"></i>
         </a>
-        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" class="hover:text-custom-red">
+        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" class="hover:text-custom-red" aria-label="Icono Bandcamp">
             <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
         </a>
 

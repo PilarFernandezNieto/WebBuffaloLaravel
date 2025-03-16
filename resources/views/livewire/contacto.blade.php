@@ -44,7 +44,7 @@
         <div class="mt-4">
             <label for="mensaje" class="block font-medium text-sm text-black uppercase">{{ __('Mensaje') }}</label>
             <div>
-                <textarea wire:model="mensaje" id="texto" wire:model.defer="mensaje" wire:ignore
+                <textarea wire:model="mensaje" id="mensaje" wire:model.defer="mensaje" wire:ignore
                     class="block mt-1 w-full h-52 border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"></textarea>
             </div>
             <x-input-error :messages="$errors->get('mensaje')" class="mt-2" />

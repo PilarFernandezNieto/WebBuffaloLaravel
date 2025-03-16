@@ -14,24 +14,24 @@
                 <div class="col-span-7 flex flex-col justify-center">
                     <div class="hidden lg:block text-custom-white text-end text-2xl space-x-3">
                         <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red"
-                            target="_blank">
+                            target="_blank" aria-label="Icono Facebook">
                             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                         </a>
 
                         <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red"
-                            target="_blank">
+                            target="_blank" aria-label="Icono Youtube">
                             <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.instagram.com/theelectricbuffalo/" class="hover:text-custom-red"
-                            target="_blank">
+                            target="_blank" aria-label="Icono Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                         <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
-                            target="_blank" class="hover:text-custom-red">
+                            target="_blank" class="hover:text-custom-red" aria-label="Icono Spotify">
                             <i class="fa-brands fa-spotify" aria-hidden="true"></i>
                         </a>
-                        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank"
-                            class="hover:text-custom-red">
+                        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" class="hover:text-custom-red"
+                            aria-label="Icono Bandcamp">
                             <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
                         </a>
 
@@ -119,17 +119,21 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden lg:hidden border border-t-1  border-gray-200 pt-4">
         <div class=" lg:hidden text-custom-white text-center text-2xl space-x-3">
-            <a href="https://www.youtube.com/@theelectricbuffalo666" class="youtube" target="_blank">
+            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES"
+                target="_blank" aria-label="Icono Facebook">
+                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@theelectricbuffalo666" class="youtube" target="_blank" aria-label="Icono Youtube">
                 <i class="fa-brands fa-youtube" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/theelectricbuffalo/" class="insta" target="_blank">
+            <a href="https://www.instagram.com/theelectricbuffalo/" class="insta" target="_blank" aria-label="Icono Instagram">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
             <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
-                target="_blank">
+                target="_blank" aria-label="Icono Spotify">
                 <i class="fa-brands fa-spotify" aria-hidden="true"></i>
             </a>
-            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank">
+            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" aria-label="Icono Bandcamp">
                 <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
             </a>
 
