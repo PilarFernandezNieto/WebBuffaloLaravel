@@ -23,7 +23,7 @@ class PaginasController extends Controller
         return view('paginas.banda', [
             'musicos' => $musicos
         ]);
-        
+
     }
 
     public function noticias(){
@@ -64,5 +64,8 @@ class PaginasController extends Controller
     }
     public function politica(){
         return view('paginas.politica-privacidad');
+    }
+    public function cookies(){
+        return view('paginas.politica-cookies');
     }
 }

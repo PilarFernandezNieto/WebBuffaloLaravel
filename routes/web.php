@@ -26,7 +26,7 @@ Route::get('/discografia/{disco}', [PaginasController::class, 'mostrarDisco'])->
 Route::get('/tienda', [PaginasController::class, 'tienda'])->name('tienda');
 Route::get('/contacto', [PaginasController::class, 'contacto'])->name('contacto');
 Route::get('/politica-privacidad', [PaginasController::class, 'politica'])->name('politica');
-
+Route::get('/politica-cookies', [PaginasController::class, 'cookies'])->name('cookies');
 
 
 
