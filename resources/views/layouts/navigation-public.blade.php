@@ -1,36 +1,36 @@
-<nav x-data="{ open: false }" class="bg-black">
+<nav x-data="{ open: false }" class="bg-black  min-h-[140px]">
     <!-- Primary Navigation Menu -->
     <div class="w-95p lg:w-4/5 mx-auto max-w-1300px px-4 sm:px-6 lg:px-0 ">
         <div class="flex justify-between">
             <div class="grid grid-cols-12 items-end py-4">
                 <!-- Logo -->
-                <div class="col-span-6 md:col-span-5 flex items-center">
+                <div class="col-span-10 md:col-span-4 flex items-center">
                     <a href="{{ route('welcome') }}">
-                        <img src="/img/logoBuf.png" alt="logo" class="w-full md:w-full lg:w-3/4 m-3 lg:-ml-4">
+                        <img src="/img/logoBuf.png" alt="logo" class="w-full mx-4 lg:-ml-4">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="col-span-7 flex flex-col justify-center">
+                <div class="col-span-2 md:col-span-8 flex flex-col justify-center">
                     <div class="hidden lg:block text-custom-white text-end text-2xl space-x-3">
-                        <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red"
+                        <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red transition duration-500 ease-in-out"
                             target="_blank" aria-label="Icono Facebook">
                             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                         </a>
 
-                        <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red"
+                        <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red transition duration-500 ease-in-out"
                             target="_blank" aria-label="Icono Youtube">
                             <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/theelectricbuffalo/" class="hover:text-custom-red"
+                        <a href="https://www.instagram.com/theelectricbuffalo/" class="hover:text-custom-red transition duration-500 ease-in-out"
                             target="_blank" aria-label="Icono Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                         <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
-                            target="_blank" class="hover:text-custom-red" aria-label="Icono Spotify">
+                            target="_blank" class="hover:text-custom-red transition duration-500 ease-in-out" aria-label="Icono Spotify">
                             <i class="fa-brands fa-spotify" aria-hidden="true"></i>
                         </a>
-                        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" class="hover:text-custom-red"
+                        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" class="hover:text-custom-red transition duration-500 ease-in-out"
                             aria-label="Icono Bandcamp">
                             <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
                         </a>
@@ -59,7 +59,7 @@
                                 <x-dropdown align="right" width="48">
                                     <x-slot name="trigger">
                                         <button
-                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-500">
                                             <div>{{ Auth::user()->name }}</div>
 
                                             <div class="ms-1">
@@ -103,7 +103,7 @@
             <!-- Hamburger -->
             <div class="-me-2 flex items-center lg:hidden">
                 <button @click="open = ! open"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-custom-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-custom-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-500 ease-in-out"
                     aria-expanded="open.toString()" :aria-label="open ? 'Cerrar menú' : 'Abrir menú'">
 
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">

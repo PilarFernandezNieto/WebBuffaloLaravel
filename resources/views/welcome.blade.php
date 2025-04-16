@@ -3,7 +3,7 @@
 
     <section class="flex flex-col items-center gap-8 pb-20">
         <button
-            class="pinchaAqui px-12 py-4 rounded bg-custom-red hover:bg-custom-red-darker text-white text-base">Escúchalo</button>
+            class="pinchaAqui px-12 py-4 rounded bg-custom-red hover:bg-custom-red-darker text-white text-base transition duration-500 ease-in-out">Escúchalo</button>
         <audio controls="" class="audiostyle hidden" controlslist="nodownload">
             <source src="/multimedia/A2-Patrolman.mp3" type="audio/mp3">
         </audio>
@@ -35,7 +35,7 @@
         <div class="py-4 text-center z-10">
             <h3 class="text-white text-4xl mb-12">Discografía del Búfalo Eléctrico</h3>
             <a href="{{ route('discografia') }}"
-                class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 px-12 py-4">Pincha aquí</a>
+                class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 px-12 py-4 transition duration-500 ease-in-out">Pincha aquí</a>
         </div>
     </section>
 
