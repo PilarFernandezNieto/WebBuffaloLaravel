@@ -9,22 +9,22 @@
         </audio>
         <div class="grid grid-cols-3 gap-10 items-center md:grid-cols-5">
             <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank">
-                <img loading="lazy" src="img/logo_facebbok.png" alt="logo-youtube" class="w-16">
+                <img loading="lazy" src="img/logo_facebbok.png" alt="logo-youtube" class="w-16 hover:scale-[1.1] transition duration-500 ease-in-out">
             </a>
             <a href="https://www.youtube.com/@theelectricbuffalo666" target="_blank" >
-                <img loading="lazy" src="img/youtuberecorte.png" alt="logo-youtube" class="w-16">
+                <img loading="lazy" src="img/youtuberecorte.png" alt="logo-youtube" class="w-16 hover:scale-[1.1] transition duration-500 ease-in-out">
             </a>
             <a href="https://www.instagram.com/theelectricbuffalo/" target="_blank" >
                 <img loading="lazy" src="/img/instagram_logo_2022..png" alt="logo-instagram"
-                    class="w-16">
+                    class="w-16 hover:scale-[1.1] transition duration-500 ease-in-out">
             </a>
             <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
                 target="_blank">
-                <img loading="lazy" src="/img/spotifty.png" alt="logo-spotify" class="w-16 rounded-lg">
+                <img loading="lazy" src="/img/spotifty.png" alt="logo-spotify" class="w-16 rounded-lg hover:scale-[1.1] transition duration-500 ease-in-out">
             </a>
             <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" >
                 <img loading="lazy" src="/img/bandcamp-button-circle-aqua-64.png" alt="logo-bandcamp"
-                    class="w-16">
+                    class="w-16 hover:scale-[1.1] transition duration-500 ease-in-out">
             </a>
         </div>
 
