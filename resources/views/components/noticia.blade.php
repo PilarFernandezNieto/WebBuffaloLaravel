@@ -33,7 +33,7 @@
 
             {{-- 4. CTA CON DIRECCIÓN --}}
             <a href="{{ route('noticia.mostrar', $noticia) }}"
-                class="text-sm font-medium text-custom-red hover:text-custom-amber flex items-center gap-1 transition-colors">
+                class="text-sm font-medium text-custom-red hover:text-custom-red-darker flex items-center gap-1 transition-colors">
                 Leer noticia
                 <span aria-hidden="true">→</span>
             </a>
