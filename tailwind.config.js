@@ -12,7 +12,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                "host-grotesk": ['"Host Grotesk"', "sans-serif"], // Añade la fuente personalizada
+                titulo: ['"Suez One"', "serif"],
+                cuerpo: ["Raleway", "sans-serif"],
             },
             colors: {
                 "custom-red": "#AC2C28",
@@ -32,8 +33,7 @@ export default {
             },
             maxWidth: {
                 "1300px": "1300px",
-
-            }
+            },
         },
     },
 

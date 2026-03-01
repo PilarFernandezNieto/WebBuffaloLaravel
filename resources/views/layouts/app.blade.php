@@ -16,6 +16,10 @@
     <meta property="og:url" content="https://www.theelectricbuffalo.com" />
 
     <!-- Styles / Scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
@@ -61,16 +65,20 @@
     </script>
 </head>
 
-<body class="font-sans antialiased fuente-principal bg-gray-50">
+<body class="font-sans antialiased fuente-principal bg-stone-50">
     @include('layouts.navigation-public')
 
     <div class="min-h-screen ">
         @if (request()->is('/'))
-            <div class=" imagen-header min-h-56 md:min-h-35 relative">
-                <div class="bg-slate-950 opacity-25 absolute top-0 left-0 h-full w-full"></div>
-                <div class="absolute z-10 p-7 bottom-4 md:left-4 lg:left-40 w-4/5 space-y-8 hidden md:block ">
-                    <h1 class="text-custom-white fuente-bufalo text-4xl tracking-[0.5rem]">The Electric Buffalo</h1>
-                    <p class="text-custom-red fuente-bufalo text-6xl tracking-[2.5rem] ">Patrolman</p>
+            <div class="imagen-header min-h-[60vh] md:min-h-[75vh] relative flex items-end">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div class="relative z-10 p-8 md:p-16 space-y-3 w-full">
+                    <h1 class="font-titulo text-white text-4xl md:text-6xl tracking-[0.5rem]">
+                        The Electric Buffalo
+                    </h1>
+                    <p class="font-titulo text-custom-red text-5xl md:text-7xl tracking-[0.3rem]">
+                        Patrolman
+                    </p>
                 </div>
             </div>
         @endif

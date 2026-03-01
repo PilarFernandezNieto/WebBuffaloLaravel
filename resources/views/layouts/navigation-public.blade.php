@@ -13,30 +13,36 @@
                 <!-- Navigation Links -->
                 <div class="col-span-2 md:col-span-8 flex flex-col justify-center">
                     <div class="hidden lg:block text-custom-white text-end text-2xl space-x-3">
-                        <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" class="hover:text-custom-red transition duration-500 ease-in-out"
-                            target="_blank" aria-label="Icono Facebook">
+                        <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES"
+                            class="hover:text-custom-red transition duration-500 ease-in-out" target="_blank"
+                            aria-label="Icono Facebook">
                             <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                         </a>
 
-                        <a href="https://www.youtube.com/@theelectricbuffalo666" class="hover:text-custom-red transition duration-500 ease-in-out"
-                            target="_blank" aria-label="Icono Youtube">
+                        <a href="https://www.youtube.com/@theelectricbuffalo666"
+                            class="hover:text-custom-red transition duration-500 ease-in-out" target="_blank"
+                            aria-label="Icono Youtube">
                             <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/theelectricbuffalo/" class="hover:text-custom-red transition duration-500 ease-in-out"
-                            target="_blank" aria-label="Icono Instagram">
+                        <a href="https://www.instagram.com/theelectricbuffalo/"
+                            class="hover:text-custom-red transition duration-500 ease-in-out" target="_blank"
+                            aria-label="Icono Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                         <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
-                            target="_blank" class="hover:text-custom-red transition duration-500 ease-in-out" aria-label="Icono Spotify">
+                            target="_blank" class="hover:text-custom-red transition duration-500 ease-in-out"
+                            aria-label="Icono Spotify">
                             <i class="fa-brands fa-spotify" aria-hidden="true"></i>
                         </a>
-                        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" class="hover:text-custom-red transition duration-500 ease-in-out"
+                        <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank"
+                            class="hover:text-custom-red transition duration-500 ease-in-out"
                             aria-label="Icono Bandcamp">
                             <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
                         </a>
 
                     </div>
-                    <div class="hidden md:hidden lg:flex space-x-6 sm:-my-px sm:ms-10 pt-4 justify-end">
+                    <div class="hidden lg:flex space-x-6 sm:-my-px sm:ms-10 pt-4 justify-end">
+
                         <x-link-nav :href="route('historia')" :active="request()->routeIs('historia')">
                             {{ __('Historia') }}
                         </x-link-nav>
@@ -121,14 +127,16 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden lg:hidden border border-t-1  border-gray-200 pt-4">
         <div class=" lg:hidden text-custom-white text-center text-2xl space-x-3">
-            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES"
-                target="_blank" aria-label="Icono Facebook">
+            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank"
+                aria-label="Icono Facebook">
                 <i class="fa-brands fa-facebook" aria-hidden="true"></i>
             </a>
-            <a href="https://www.youtube.com/@theelectricbuffalo666" class="youtube" target="_blank" aria-label="Icono Youtube">
+            <a href="https://www.youtube.com/@theelectricbuffalo666" class="youtube" target="_blank"
+                aria-label="Icono Youtube">
                 <i class="fa-brands fa-youtube" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/theelectricbuffalo/" class="insta" target="_blank" aria-label="Icono Instagram">
+            <a href="https://www.instagram.com/theelectricbuffalo/" class="insta" target="_blank"
+                aria-label="Icono Instagram">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
             <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
