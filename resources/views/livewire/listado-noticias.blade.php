@@ -20,8 +20,7 @@
             </p>
             <p>{{ $noticia->titulo }}</p>
             <p>{{ $noticia->fecha_formateada }}</p>
-            <img src="{{ asset('storage/imagenes/' . $noticia->imagen) }}" alt="Noticia_ {{ $noticia->id }}"
-                class="w-28">
+            <img src="{{ asset('storage/' . $noticia->imagen) }}" alt="Noticia_ {{ $noticia->id }}" class="w-28">
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.noticias.edit', $noticia->id) }}"
                     class="text-indigo-600 hover:text-indigo-700 p-2 font-bold">

@@ -7,7 +7,7 @@
         </h1>
 
         {{-- IMAGEN --}}
-        <img src="{{ asset($noticia->imagen ? 'storage/imagenes/' . $noticia->imagen : 'img/no-imagen.jpg') }}"
+        <img src="{{ asset($noticia->imagen ? 'storage/' . $noticia->imagen : 'img/no-imagen.jpg') }}"
             alt="{{ $noticia->titulo }}" class="w-full rounded-lg mb-8">
         {{-- CONTENIDO --}}
         <div class="space-y-8 leading-7">

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Noticia;
+use App\Services\ImageService;
 use App\Traits\ImageHandler;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
@@ -28,7 +29,7 @@ class EditarNoticia extends Component
         "intro" => "string||max:255",
         "texto" => "required|string",
         "fecha" => "required|date",
-        'imagen_nueva' => 'nullable|image|mimes:jpeg,png,jpg|max:1024',
+        'imagen_nueva' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         'portada' => 'nullable|boolean',
     ];
 
@@ -50,8 +51,7 @@ class EditarNoticia extends Component
         if ($this->imagen_nueva) {
 
             $this->borraImagen($this->imagen);
-            $imagen = $this->imagen_nueva->store('imagenes', 'public');
-            $datos['imagen'] = str_replace('imagenes/', '', $imagen);
+            $datos['imagen'] = ImageService::save($this->imagen_nueva, 'noticias');
         }
         $noticia = Noticia::find($this->id);
 

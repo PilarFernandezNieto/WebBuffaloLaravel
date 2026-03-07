@@ -5,7 +5,7 @@
 
     {{-- 1. IMAGEN CON ROL ACTIVO --}}
     <div class="overflow-hidden">
-        <img src="{{ asset($noticia->imagen ? 'storage/imagenes/' . $noticia->imagen : 'img/no-imagen.jpg') }}"
+        <img src="{{ asset($noticia->imagen ? 'storage/' . $noticia->imagen : 'img/no-imagen.jpg') }}"
             alt="{{ $noticia->titulo }}"
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
     </div>

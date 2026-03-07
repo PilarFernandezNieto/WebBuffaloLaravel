@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Noticia;
+use App\Services\ImageService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -22,17 +23,16 @@ class CrearNoticia extends Component
         "intro" => "string||max:255",
         "texto" => "required|string",
         "fecha" => "required|date",
-        'imagen' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+        'imagen' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         'portada' => 'nullable|boolean',
     ];
 
 
-    public function crearNoticia(){
+    public function crearNoticia()
+    {
         $datos = $this->validate();
 
-
-        $imagen = $this->imagen->store('imagenes', 'public');
-        $datos['imagen'] = str_replace('imagenes/', '', $imagen);
+        $datos['imagen'] = ImageService::save($this->imagen, 'noticias');
 
         Noticia::create([
             "titulo" => $datos["titulo"],
