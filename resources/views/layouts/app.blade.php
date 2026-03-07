@@ -70,15 +70,17 @@
 
     <div class="min-h-screen ">
         @if (request()->is('/'))
-            <div class="imagen-header min-h-[60vh] md:min-h-[75vh] relative flex items-end">
+            <div class="imagen-header min-h-[400px] md:min-h-[560px] relative">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div class="relative z-10 p-8 md:p-16 space-y-3 w-full">
-                    <h1 class="font-titulo text-white text-4xl md:text-6xl tracking-[0.5rem]">
-                        The Electric Buffalo
-                    </h1>
-                    <p class="font-titulo text-custom-red text-5xl md:text-7xl tracking-[0.3rem]">
-                        Patrolman
-                    </p>
+                    <div class="absolute top-64 md:top-80 ">
+                        <h1 class="font-titulo text-white text-4xl md:text-6xl tracking-[0.5rem]">
+                            The Electric Buffalo
+                        </h1>
+                        <p class="font-titulo text-custom-red text-5xl md:text-7xl tracking-[0.3rem]">
+                            Patrolman
+                        </p>
+                    </div>
                 </div>
             </div>
         @endif

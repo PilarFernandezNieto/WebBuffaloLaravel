@@ -3,7 +3,7 @@
 
         {{-- FOTO --}}
         <div class="overflow-hidden rounded-lg cursor-pointer" @click="open = !open">
-            <img src="{{ asset($musico->imagen ? '/storage/imagenes/' . $musico->imagen : 'img/no-imagen.jpg') }}"
+            <img src="{{ asset($musico->imagen ? 'storage/' . $musico->imagen : 'img/no-imagen.jpg') }}"
                 alt="{{ $musico->nombre }}" class="w-full h-auto transition-transform duration-500 hover:scale-105">
         </div>
 

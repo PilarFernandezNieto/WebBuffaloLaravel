@@ -15,8 +15,7 @@
             <p>{{ $musico->id }}</p>
             <p>{{ $musico->nombre }} {{ $musico->apellidos }}</p>
             <p>{{ $musico->origen }}</p>
-            <img src="{{ asset('storage/imagenes/' . $musico->imagen) }}" alt="Imagen de {{ $musico->nombre }}"
-                class="w-28">
+            <img src="{{ asset('storage/' . $musico->imagen) }}" alt="Imagen de {{ $musico->nombre }}" class="w-28">
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.musicos.edit', $musico->id) }}"
                     class="text-indigo-600 hover:text-indigo-700 p-2 font-bold">

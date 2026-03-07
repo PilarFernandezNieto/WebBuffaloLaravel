@@ -6,7 +6,7 @@
         {{-- BLOQUE 1: imagen horizontal + texto --}}
         <section class="space-y-6">
             <figure>
-                <img src="/img/risas_baja.jpg" alt="The Electric Buffalo" class="w-full rounded-lg object-cover">
+                <img src="/img/risas_baja.jpg" alt="The Electric Buffalo" class="w-full rounded-md object-cover">
                 <figcaption class="text-xs text-gray-400 italic text-right mt-1">Foto de Manfred</figcaption>
             </figure>
             <div class="space-y-5 text-base leading-7 text-gray-800">
@@ -46,13 +46,13 @@
 
                 <figure class="mt-4">
                     <img src="/img/BuffaloBN.jpg" alt="The Electric Buffalo en blanco y negro"
-                        class="w-full rounded-lg">
+                        class="w-full rounded-md">
                     <figcaption class="text-xs text-gray-400 italic text-right mt-1">Foto de Manfred</figcaption>
                 </figure>
             </div>
             <figure>
                 <img src="/img/TrioJovenVertical.jpg" alt="Trío joven"
-                    class="w-full rounded-lg object-cover object-top">
+                    class="w-full rounded-md object-cover object-top">
                 <figcaption class="text-xs text-gray-400 italic text-right mt-1">Foto de Manfred</figcaption>
             </figure>
         </section>
@@ -60,7 +60,7 @@
         {{-- BLOQUE 3: imagen vertical izquierda + texto y foto derecha --}}
         <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <figure>
-                <img src="/img/cartel_vertical.jpg" alt="Cartel" class="w-full rounded-lg">
+                <img src="/img/cartel_vertical.jpg" alt="Cartel" class="w-full rounded-md">
             </figure>
             <div class="flex flex-col gap-8">
                 <div class="space-y-5 text-base leading-7 text-gray-800">
@@ -82,7 +82,7 @@
                         exactamente como empezó todo allá por aquel año 2006.</p>
                 </div>
                 <figure>
-                    <img src="/img/wilon_joven.jpg" alt="Wilón joven" class="w-full rounded-lg">
+                    <img src="/img/wilon_joven.jpg" alt="Wilón joven" class="w-full rounded-md">
                     <figcaption class="text-xs text-gray-400 italic text-right mt-1">Foto de Manfred</figcaption>
                 </figure>
             </div>

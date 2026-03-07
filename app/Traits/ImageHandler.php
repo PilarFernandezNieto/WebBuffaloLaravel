@@ -6,16 +6,14 @@ use Illuminate\Support\Facades\Storage;
 
 trait ImageHandler
 {
-    public function borraImagen($imagen)
+    public function borraImagen(?string $path): void
     {
-        if (!$imagen) {
+        if (!$path) {
             return;
         }
 
-        $relativePath = 'imagenes/' . $imagen;
-
-        if (Storage::disk('public')->exists($relativePath)) {
-            Storage::disk('public')->delete($relativePath);
+        if (Storage::disk('public')->exists($path)) {
+            Storage::disk('public')->delete($path);
         }
     }
 }

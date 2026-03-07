@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Musico;
+use App\Services\ImageService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -20,6 +21,7 @@ class CrearMusico extends Component
 
     use WithFileUploads;
 
+
     protected $rules = [
         'nombre' => 'required|string|max:255',
         'apellidos' => 'string|nullable|max:255',
@@ -27,15 +29,15 @@ class CrearMusico extends Component
         'origen' => 'string|nullable|max:255',
         'biografia' => 'required|string',
         'fecha_nac' => 'required|date|before:today',
-        'imagen' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+        'imagen'    => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         'fotografo' => 'string|nullable|max:255'
     ];
 
     public function crearMusico()
     {
         $datos = $this->validate();
-        $imagen = $this->imagen->store('imagenes', 'public');
-        $datos['imagen'] = str_replace('imagenes/', '', $imagen);
+
+        $datos['imagen'] = ImageService::save($this->imagen, 'musicos');
 
         Musico::create([
             'nombre' => $datos['nombre'],
