@@ -21,7 +21,7 @@
                 accept="image/*" />
             <div class="my-5 w-80">
                 <x-input-label :value="__('Imagen Actual')" />
-                <img src="{{ asset('/storage/imagenes/' . $imagen) }}" alt="{{ 'Imagen ' . $id }}">
+                <img src="{{ asset('storage/' . $imagen) }}" alt="{{ 'Imagen ' . $id }}">
             </div>
             <div class="my-5 w-80">
                 @if ($imagen_nueva)

@@ -18,7 +18,7 @@
             <p>{{ $disco->id }}</p>
             <p>{{ $disco->nombre }}</p>
             <p>{{ $disco->anio_edicion }}</p>
-            <img src="{{ asset('storage/imagenes/' . $disco->imagen) }}" alt="Disco_ {{ $disco->id }}" class="w-28">
+            <img src="{{ asset('storage/' . $disco->imagen) }}" alt="Disco_ {{ $disco->id }}" class="w-28">
             <p>{{ $disco->precio_formateado }}</p>
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.productos.edit', $disco->id) }}"

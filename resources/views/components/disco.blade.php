@@ -4,7 +4,7 @@
 
     {{-- IMAGEN DE FONDO --}}
     <div class="relative">
-        <img src="{{ asset($disco->imagen ? 'storage/imagenes/' . $disco->imagen : 'img/no-imagen.jpg') }}"
+        <img src="{{ asset($disco->imagen ? 'storage/' . $disco->imagen : 'img/no-imagen.jpg') }}"
             alt="portada_{{ $disco->nombre }}" class="w-full h-96 object-cover">
         {{-- OVERLAY --}}
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>

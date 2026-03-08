@@ -19,7 +19,7 @@
             </p>
 
             <p>{{ $contenido->titulo }} </p>
-            <img src="{{ asset('storage/imagenes/' . $contenido->imagen) }}" alt="Imagen de {{ $contenido->nombre }}"
+            <img src="{{ asset('storage/' . $contenido->imagen) }}" alt="Imagen de {{ $contenido->nombre }}"
                 class="w-28">
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.contenidos.edit', $contenido->id) }}"

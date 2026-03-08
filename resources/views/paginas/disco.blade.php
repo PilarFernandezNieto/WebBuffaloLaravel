@@ -3,7 +3,7 @@
 
         {{-- IMAGEN DE FONDO CON TÍTULO --}}
         <div class="relative rounded-lg overflow-hidden shadow-lg">
-            <img src="{{ asset($disco->imagen ? 'storage/imagenes/' . $disco->imagen : 'img/no-imagen.jpg') }}"
+            <img src="{{ asset($disco->imagen ? 'storage/' . $disco->imagen : 'img/no-imagen.jpg') }}"
                 alt="portada_{{ $disco->nombre }}" class="w-full h-96 object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
             <div class="absolute bottom-0 left-0 p-8">

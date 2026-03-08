@@ -18,6 +18,8 @@ class ImageService
         'noticias'  => ['width' => 600,  'height' => 600],  // 1:1
         'discos'    => ['width' => 800,  'height' => 0],    // altura automática
         'camisetas' => ['width' => 600,  'height' => 600],  // 1:1
+        'contenidos' => ['width' => 1200, 'height' => 0],  // altura automática
+
     ];
 
     /**
@@ -38,12 +40,22 @@ class ImageService
             mkdir(dirname($storagePath), 0755, true);
         }
 
-        Image::useImageDriver(ImageDriver::Gd)
-            ->loadFile($file->getRealPath())
-            ->width($dimensions['width'])
-            ->height($dimensions['height'])
-            ->quality(85)
-            ->save($storagePath);
+        $image = Image::useImageDriver(ImageDriver::Gd)
+            ->loadFile($file->getRealPath());
+
+        // Obtenemos el ancho original para no ampliar imágenes pequeñas
+        $originalWidth = $image->getWidth();
+
+        // Usamos el menor entre máximo definido y el ancho original para evitar ampliar imágenes pequeñas
+        $targetWidth = min($dimensions['width'], $originalWidth);
+        $image->quality(85)
+            ->width($targetWidth);
+
+        if ($dimensions['height'] > 0) {
+            // sólo aplicamos height si está definido - height=0 significa altura automática
+            $image->height($dimensions['height']);
+        }
+        $image->save($storagePath);
 
         return "{$folder}/{$filename}";
     }

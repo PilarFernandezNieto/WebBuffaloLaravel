@@ -18,8 +18,7 @@
             <p>{{ $camiseta->nombre }}</p>
             <p>{{ $camiseta->color }}</p>
             <p>{{ $camiseta->talla->nombre }}</p>
-            <img src="{{ asset('storage/imagenes/' . $camiseta->imagen) }}" alt="Disco_ {{ $camiseta->id }}"
-                class="w-28">
+            <img src="{{ asset('storage/' . $camiseta->imagen) }}" alt="Disco_ {{ $camiseta->id }}" class="w-28">
             <p>{{ $camiseta->precio_formateado }}</p>
             <div class="flex justify-between items-center">
                 <a href="{{ route('admin.productos.edit', $camiseta->id) }}"

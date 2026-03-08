@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Contenido;
+use App\Services\ImageService;
 use App\Traits\ImageHandler;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -26,7 +27,7 @@ class EditarContenido extends Component
         'texto' => 'required',
         'portada' => 'boolean',
         'fecha' => 'required|date',
-        'imagen_nueva' => 'nullable|image|max:1024'  // nullable: el campo puede estar vacío pero en caso no de no estarlo, debe de ser una imagen
+        'imagen_nueva' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
 
     ];
 
@@ -50,9 +51,7 @@ class EditarContenido extends Component
         // Si hay nueva imagen
         if ($this->imagen_nueva) {
             $this->borraImagen($this->imagen);
-            $imagen = $this->imagen_nueva->store('imagenes', 'public');
-
-            $datos['imagen'] = str_replace('imagenes/', '', $imagen);
+            $datos['imagen'] = ImageService::save($this->imagen_nueva, 'contenidos');
         }
 
         // Encontrar el contenido a editar

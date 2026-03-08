@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Contenido;
+use App\Services\ImageService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -20,7 +21,7 @@ class CrearContenido extends Component
     protected $rules = [
         'titulo' => 'required|string',
         'texto' => 'required',
-        'imagen' => 'required|image|max:1024',
+        'imagen'    => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         'portada' => 'nullable|boolean',
         'fecha' => 'required|date'
 
@@ -29,8 +30,7 @@ class CrearContenido extends Component
     public function crearContenido()
     {
         $datos = $this->validate();
-        $imagen = $this->imagen->store('imagenes', 'public');
-        $datos['imagen'] = str_replace('imagenes/', '', $imagen);
+        $datos['imagen'] = ImageService::save($this->imagen, 'contenidos');
 
         Contenido::create([
             'titulo' => $datos['titulo'],

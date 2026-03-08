@@ -33,7 +33,7 @@ class EditarProducto extends Component
 
     protected $rules = [
         'nombre' => 'required|string',
-        'imagen_nueva'    => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+        'imagen_nueva'    => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         'informacion' => 'nullable|string',
         'textos' => 'nullable|string',
         'categoria' => 'required|integer',

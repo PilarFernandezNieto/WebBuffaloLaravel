@@ -15,7 +15,7 @@
                 <div class="md:grid md:grid-cols-2 gap-4">
                     <div class="my-5 w-[50%] min-w-40">
                         <x-input-label :value="__('Imagen Actual')" />
-                        <img src="{{ asset('/storage/imagenes/' . $imagen) }}" alt="{{ 'Imagen ' . $nombre }}">
+                        <img src="{{ asset('/storage/' . $imagen) }}" alt="{{ 'Imagen ' . $nombre }}">
                     </div>
                     <div class="my-5 w-[50%] min-w-40">
                         @if ($imagen_nueva)
