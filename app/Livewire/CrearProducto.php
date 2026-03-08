@@ -2,11 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\Talla;
-use App\Models\Formato;
-use Livewire\Component;
-use App\Models\Producto;
 use App\Models\Categoria;
+use App\Models\Formato;
+use App\Models\Producto;
+use App\Models\Talla;
+use App\Services\ImageService;
+use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class CrearProducto extends Component
@@ -28,7 +29,7 @@ class CrearProducto extends Component
     use WithFileUploads;
     protected $rules = [
         'nombre' => 'required|string',
-        'imagen' => 'required|image|max:1024',
+        'imagen'    => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         'informacion' => 'nullable|string',
         'textos' => 'nullable|string',
         'categoria' => 'required|integer',
@@ -41,10 +42,10 @@ class CrearProducto extends Component
         'anio_edicion' => 'nullable|string'
     ];
 
-    function crearProducto() {
+    function crearProducto()
+    {
         $datos = $this->validate();
-        $imagen = $this->imagen->store('imagenes', 'public');
-        $datos['imagen'] = str_replace('imagenes/', '', $imagen);
+        $datos['imagen'] = ImageService::save($this->imagen, 'productos');
 
         $datos['informacion'] = $datos['informacion'] ?? '';
         $datos['textos'] = $datos['textos'] ?? '';

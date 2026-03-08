@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout pageTitle="{!! $noticia->titulo !!}">
     <div class="my-20 w-95p lg:w-2/5 mx-auto max-w-1300px min-w-[40%] bg-white rounded-lg p-4 md:p-8 shadow-md">
 
         {{-- CABECERA --}}

@@ -2,12 +2,13 @@
 
 namespace App\Livewire;
 
-use App\Models\Talla;
-use App\Models\Formato;
-use Livewire\Component;
-use App\Models\Producto;
 use App\Models\Categoria;
+use App\Models\Formato;
+use App\Models\Producto;
+use App\Models\Talla;
+use App\Services\ImageService;
 use App\Traits\ImageHandler;
+use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class EditarProducto extends Component
@@ -32,7 +33,7 @@ class EditarProducto extends Component
 
     protected $rules = [
         'nombre' => 'required|string',
-        'imagen_nueva' => 'nullable|image|max:1024',
+        'imagen_nueva'    => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         'informacion' => 'nullable|string',
         'textos' => 'nullable|string',
         'categoria' => 'required|integer',
@@ -70,8 +71,7 @@ class EditarProducto extends Component
         if ($this->imagen_nueva) {
 
             $this->borraImagen($this->imagen);
-            $imagen = $this->imagen_nueva->store('imagenes', 'public');
-            $datos['imagen'] = str_replace('imagenes/', '', $imagen);
+            $datos['imagen'] = ImageService::save($this->imagen_nueva, 'productos');
         }
 
         // Encontrar el producto a editar
