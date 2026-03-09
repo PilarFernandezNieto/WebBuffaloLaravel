@@ -10,26 +10,32 @@
             <source src="/multimedia/A2-Patrolman.mp3" type="audio/mp3">
         </audio>
         <div class="grid grid-cols-3 gap-10 items-center md:grid-cols-5">
-            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank">
-                <img loading="lazy" src="img/logo_facebbok.png" alt="logo-youtube"
-                    class="w-16 hover:scale-[1.1] transition duration-500 ease-in-out">
+            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES"
+                aria-label="Facebook de The Electric Buffalo" target="_blank"
+                class="hover:scale-[1.1] transition duration-500 ease-in-out inline-block">
+                <i class="fa-brands fa-facebook text-6xl text-facebook"></i>
             </a>
-            <a href="https://www.youtube.com/@theelectricbuffalo666" target="_blank">
-                <img loading="lazy" src="img/youtuberecorte.png" alt="logo-youtube"
-                    class="w-16 hover:scale-[1.1] transition duration-500 ease-in-out">
+            <a href="https://www.youtube.com/@theelectricbuffalo666" aria-label="YouTube de The Electric Buffalo"
+                target="_blank" class="hover:scale-[1.1] transition duration-500 ease-in-out inline-block">
+                <i class="fa-brands fa-youtube text-6xl text-youtube"></i>
+
             </a>
-            <a href="https://www.instagram.com/theelectricbuffalo/" target="_blank">
-                <img loading="lazy" src="/img/instagram_logo_2022..png" alt="logo-instagram"
-                    class="w-16 hover:scale-[1.1] transition duration-500 ease-in-out">
+            <a href="https://www.instagram.com/theelectricbuffalo/" aria-label="Instagram de The Electric Buffalo"
+                target="_blank" class="hover:scale-[1.1] transition duration-500 ease-in-out inline-block">
+                <i class="fa-brands fa-instagram text-6xl text-instagram"></i>
+
+
             </a>
             <a href="https://open.spotify.com/intl-es/artist/4ciUFLaycqUBlM162ifmSH?si=eugYIzlWQnqkxGXJMXzYcw"
-                target="_blank">
-                <img loading="lazy" src="/img/spotifty.png" alt="logo-spotify"
-                    class="w-16 rounded-lg hover:scale-[1.1] transition duration-500 ease-in-out">
+                aria-label="Spotify de The Electric Buffalo" target="_blank"
+                class="hover:scale-[1.1] transition duration-500 ease-in-out inline-block">
+                <i class="fa-brands fa-spotify text-6xl text-spotify"></i>
+
             </a>
-            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank">
-                <img loading="lazy" src="/img/bandcamp-button-circle-aqua-64.png" alt="logo-bandcamp"
-                    class="w-16 hover:scale-[1.1] transition duration-500 ease-in-out">
+            <a href="https://theelectricbuffalo.bandcamp.com/" aria-label="Bandcamp de The Electric Buffalo"
+                target="_blank" class="hover:scale-[1.1] transition duration-500 ease-in-out inline-block">
+                <i class="fa-brands fa-bandcamp text-6xl text-bandcamp"></i>
+
             </a>
         </div>
 
@@ -40,8 +46,9 @@
         <div class="py-4 text-center z-10">
             <h3 class="text-white text-4xl mb-12">Discografía del Búfalo Eléctrico</h3>
             <a href="{{ route('discografia') }}"
-                class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 px-12 py-4 transition duration-500 ease-in-out">Pincha
-                aquí</a>
+                class="bg-custom-red hover:bg-custom-red-darker rounded-md text-white mt-10 px-12 py-4 transition duration-500 ease-in-out">Discografía
+                completa
+            </a>
         </div>
     </section>
 

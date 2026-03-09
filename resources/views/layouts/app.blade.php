@@ -32,14 +32,14 @@
     @stack('styles')
     <style>
         .imagen-header {
-            background-image: url("{{ asset('img/bufalos_header2.jpg') }}");
+            background-image: url("{{ asset('img/bufalos_header2.webp') }}");
             background-position: 50%;
             background-size: cover;
             position: relative;
         }
 
         .imagen-central {
-            background-image: url("{{ asset('img/imagen_central.jpg') }}");
+            background-image: url("{{ asset('img/imagen_central.webp') }}");
             background-position: 50%;
             background-size: cover;
         }

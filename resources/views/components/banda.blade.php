@@ -30,7 +30,7 @@
 
         {{-- CRÉDITO FOTO --}}
         @if ($musico->fotografo)
-            <p class="text-xs text-gray-400 italic mt-1">Foto de {{ $musico->fotografo }}</p>
+            <p class="text-xs text-gray-500 italic mt-1">Foto de {{ $musico->fotografo }}</p>
         @endif
 
         {{-- BIO DESPLEGABLE --}}

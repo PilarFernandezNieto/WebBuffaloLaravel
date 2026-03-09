@@ -7,7 +7,7 @@
         <section class="space-y-6">
             <figure>
                 <img src="/img/risas_baja.jpg" alt="The Electric Buffalo" class="w-full rounded-md object-cover">
-                <figcaption class="text-xs text-gray-400 italic text-right mt-1">Foto de Manfred</figcaption>
+                <figcaption class="text-xs text-gray-500 italic text-right mt-1">Foto de Manfred</figcaption>
             </figure>
             <div class="space-y-5 text-base leading-7 text-gray-800">
                 <p><b>The Electric Buffalo</b> (Oviedo) surge, como idea, en un garito de costumbres rockeras allá por
@@ -47,13 +47,13 @@
                 <figure class="mt-4">
                     <img src="/img/BuffaloBN.jpg" alt="The Electric Buffalo en blanco y negro"
                         class="w-full rounded-md">
-                    <figcaption class="text-xs text-gray-400 italic text-right mt-1">Foto de Manfred</figcaption>
+                    <figcaption class="text-xs text-gray-500 italic text-right mt-1">Foto de Manfred</figcaption>
                 </figure>
             </div>
             <figure>
                 <img src="/img/TrioJovenVertical.jpg" alt="Trío joven"
                     class="w-full rounded-md object-cover object-top">
-                <figcaption class="text-xs text-gray-400 italic text-right mt-1">Foto de Manfred</figcaption>
+                <figcaption class="text-xs text-gray-500 italic text-right mt-1">Foto de Manfred</figcaption>
             </figure>
         </section>
 
@@ -83,7 +83,7 @@
                 </div>
                 <figure>
                     <img src="/img/wilon_joven.jpg" alt="Wilón joven" class="w-full rounded-md">
-                    <figcaption class="text-xs text-gray-400 italic text-right mt-1">Foto de Manfred</figcaption>
+                    <figcaption class="text-xs text-gray-500 italic text-right mt-1">Foto de Manfred</figcaption>
                 </figure>
             </div>
         </section>

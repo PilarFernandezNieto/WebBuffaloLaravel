@@ -17,7 +17,7 @@
 
         {{-- FOOTER --}}
         <div class="flex items-center justify-between mt-10 pt-4 border-t border-gray-100">
-            <time class="text-xs text-gray-400 italic">{{ $noticia->fecha_formateada }}</time>
+            <time class="text-xs text-gray-500 italic">{{ $noticia->fecha_formateada }}</time>
             <x-button :href="route('noticias')">← Volver</x-button>
         </div>
 

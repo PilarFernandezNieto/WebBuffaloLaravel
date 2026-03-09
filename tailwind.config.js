@@ -20,6 +20,11 @@ export default {
                 "custom-red-darker": "#9A2724",
                 "custom-white": "#ededed",
                 "custom-amber": "#fbf3e7",
+                facebook: "#1877F2",
+                youtube: "#FF0000",
+                instagram: "#E1306C",
+                spotify: "#1DB954",
+                bandcamp: "#1DA0C3",
             },
             minHeight: {
                 35: "35rem",

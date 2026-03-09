@@ -27,7 +27,7 @@
         <div class="flex items-center justify-between pt-3 border-t border-gray-100">
 
             {{-- 3. FECHA EN SU SITIO --}}
-            <time class="text-xs text-gray-400 italic">
+            <time class="text-xs text-gray-500 italic">
                 {{ $noticia->fecha_formateada }}
             </time>
 
