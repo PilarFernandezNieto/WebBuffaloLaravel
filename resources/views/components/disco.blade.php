@@ -1,11 +1,11 @@
 @props(['disco'])
 
-<article x-data="{ open: false }" class="relative rounded-xl overflow-hidden shadow-lg">
+<article x-data="{ open: false }" class="relative rounded-xl overflow-hidden shadow-lg max-w-[600px] w-full mx-auto">
 
     {{-- IMAGEN DE FONDO --}}
     <div class="relative">
         <img src="{{ asset($disco->imagen ? 'storage/' . $disco->imagen : 'img/no-imagen.jpg') }}"
-            alt="portada_{{ $disco->nombre }}" class="w-full h-96 object-cover">
+            alt="portada_{{ $disco->nombre }}" class="w-full h-64 object-cover object-top">
         {{-- OVERLAY --}}
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
