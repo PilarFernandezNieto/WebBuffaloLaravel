@@ -25,7 +25,7 @@
     <div x-show="open" x-transition class="bg-white px-8 py-6 informacion text-base leading-7 text-gray-800 space-y-4">
         {!! $disco->textos !!}
         <div class="pt-4">
-            <x-button :href="route('discografia.mostrar', $disco->id)">Ver ficha</x-button>
+            <x-button :href="route('discografia.mostrar', $disco->slug)">Ver ficha</x-button>
         </div>
     </div>
 

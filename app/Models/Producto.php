@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use NumberFormatter;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Producto extends Model
 {
@@ -41,5 +42,25 @@ class Producto extends Model
     {
         $formatter = new NumberFormatter('es_ES', NumberFormatter::CURRENCY);
         return $formatter->formatCurrency($this->precio, 'EUR');
+    }
+
+    /**
+     * Función de arranque (booting) del modelo.
+     */
+    protected static function booted(): void
+    {
+        static::creating(function (Producto $producto) {
+            if (empty($producto->slug) && !empty($producto->nombre)) {
+                $producto->slug = Str::slug($producto->nombre);
+            }
+        });
+
+        static::updating(function (Producto $producto) {
+            if ($producto->isDirty('nombre') || empty($producto->slug)) {
+                if (!empty($producto->nombre)) {
+                    $producto->slug = Str::slug($producto->nombre);
+                }
+            }
+        });
     }
 }

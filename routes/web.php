@@ -22,7 +22,7 @@ Route::get('/banda', [PaginasController::class, 'banda'])->name('banda');
 Route::get('/noticias', [PaginasController::class, 'noticias'])->name('noticias');
 Route::get('/noticias/{noticia}', [PaginasController::class, 'mostrarNoticia'])->name('noticia.mostrar');
 Route::get('/discografia', [PaginasController::class, 'discografia'])->name('discografia');
-Route::get('/discografia/{disco}', [PaginasController::class, 'mostrarDisco'])->name('discografia.mostrar');
+Route::get('/discografia/{disco:slug}', [PaginasController::class, 'mostrarDisco'])->name('discografia.mostrar');
 Route::get('/tienda', [PaginasController::class, 'tienda'])->name('tienda');
 Route::get('/contacto', [PaginasController::class, 'contacto'])->name('contacto');
 Route::get('/politica-privacidad', [PaginasController::class, 'politica'])->name('politica');

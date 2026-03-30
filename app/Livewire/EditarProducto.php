@@ -15,6 +15,7 @@ class EditarProducto extends Component
 {
     public $id;
     public $nombre;
+    public $slug;
     public $imagen;
     public $imagen_nueva;
     public $informacion;
@@ -50,6 +51,7 @@ class EditarProducto extends Component
     {
         $this->id = $producto->id;
         $this->nombre = $producto->nombre;
+        $this->slug = $producto->slug;
         $this->imagen = $producto->imagen;
         $this->informacion = $producto->informacion;
         $this->textos = $producto->textos;
@@ -61,6 +63,11 @@ class EditarProducto extends Component
         $this->color = $producto->color;
         $this->sello = $producto->sello;
         $this->anio_edicion = $producto->anio_edicion;
+    }
+
+    public function updatedNombre($value)
+    {
+        $this->slug = \Illuminate\Support\Str::slug($value);
     }
 
     public function editarProducto()

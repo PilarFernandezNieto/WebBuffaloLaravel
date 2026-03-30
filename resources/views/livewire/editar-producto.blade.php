@@ -2,11 +2,17 @@
     <form class="w-95p lg:w-4/5 mx-auto" wire:submit.prevent='editarProducto' method="POST">
         <fieldset class="border border-custom-red p-4 rounded-md mb-4">
             <legend class="text-custom-red text-lg uppercase px-1">Datos comunes</legend>
-            <div>
-                <x-input-label for="nombre" :value="__('Nombre')" />
-                <x-text-input id="nombre" class="block mt-1 w-full" type="text" wire:model="nombre" :value="old('nombre')"
-                    placeholder="Nombre" />
-                <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
+            <div class="md:grid md:grid-cols-2 gap-4">
+                <div>
+                    <x-input-label for="nombre" :value="__('Nombre')" />
+                    <x-text-input id="nombre" class="block mt-1 w-full" type="text" wire:model="nombre" :value="old('nombre')"
+                        placeholder="Nombre" />
+                    <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
+                </div>
+                <div>
+                    <x-input-label for="slug" :value="__('URL Amigable (Slug)')" />
+                    <x-text-input id="slug" class="block mt-1 w-full bg-gray-100 text-gray-500 cursor-not-allowed" type="text" disabled wire:model="slug"/>
+                </div>
             </div>
             <div class="mt-4">
                 <x-input-label for="imagen" :value="__('Imagen')" />
