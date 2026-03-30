@@ -13,20 +13,20 @@
     <p class="mb-4 text-sm">Utiliza este formulario o escríbenos a <a href="mailto:info@theelectricbuffalo.com"
             class="font-bold">info@theelectricbuffalo.com</a></p>
 
-    <form wire:submit.prevent='submit' method="POST" class="rounded-lg p-4 md:p-8 shadow-md bg-white " novalidate
-        x-data="{
-            siteKey: @js(config('services.recaptcha.site_key')),
-            recaptchaToken: null,
-            submit() {
-                grecaptcha.ready(() => {
-                    grecaptcha.execute(this.siteKey, { action: 'submit' }).then(token => {
-                        this.recaptchaToken = token;
-                        @this.set('recaptchaToken', this.recaptchaToken);
-                        @this.call('submit');
-                    });
+    <form method="POST" class="rounded-lg p-4 md:p-8 shadow-md bg-white " novalidate x-data="{
+        siteKey: @js(config('services.recaptcha.site_key')),
+        recaptchaToken: null,
+        submit() {
+            grecaptcha.ready(() => {
+                grecaptcha.execute(this.siteKey, { action: 'submit' }).then(token => {
+                    this.recaptchaToken = token;
+                    @this.set('recaptchaToken', this.recaptchaToken);
+                    @this.call('submit');
                 });
-            }
-        }" @submit.prevent="submit">
+            });
+        }
+    }"
+        @submit.prevent="submit">
         <div>
             <label for="nombre" class="block font-medium text-sm text-black uppercase">{{ __('Nombre') }}</label>
             <x-text-input id="nombre" class="block mt-1 w-full" type="text" wire:model="nombre" :value="old('nombre')"
@@ -52,8 +52,9 @@
         </div>
         <div class="mt-4">
             <div class="flex gap-4 items-center">
-                <label for="privacidad"
-                    class="block font-medium text-sm text-black uppercase">Acepta la <a href="{{route('politica')}}" class="font-medium hover:text-custom-red">política de privacidad</a></label>
+                <label for="privacidad" class="block font-medium text-sm text-black uppercase">Acepta la <a
+                        href="{{ route('politica') }}" class="font-medium hover:text-custom-red">política de
+                        privacidad</a></label>
                 <input type="checkbox" wire:model="privacidad" id="privacidad"
                     class="border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm">
             </div>
@@ -66,4 +67,3 @@
     </form>
 
 </div>
-

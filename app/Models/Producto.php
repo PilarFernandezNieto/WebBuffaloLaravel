@@ -10,6 +10,7 @@ class Producto extends Model
 {
     protected $fillable = [
         'nombre',
+        'slug',
         'anio_edicion',
         'imagen',
         'informacion',
@@ -23,13 +24,16 @@ class Producto extends Model
         'sello'
     ];
 
-    public function categoria(){
+    public function categoria()
+    {
         return $this->belongsTo(Categoria::class);
     }
-    public function formato(){
+    public function formato()
+    {
         return $this->belongsTo(Formato::class);
     }
-    public function talla(){
+    public function talla()
+    {
         return $this->belongsTo(Talla::class);
     }
 
@@ -38,6 +42,4 @@ class Producto extends Model
         $formatter = new NumberFormatter('es_ES', NumberFormatter::CURRENCY);
         return $formatter->formatCurrency($this->precio, 'EUR');
     }
-
-
 }

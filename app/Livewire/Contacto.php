@@ -4,10 +4,9 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Mail\ContactForm;
-use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Validation\ValidationException;
+
 
 class Contacto extends Component
 {
@@ -21,32 +20,44 @@ class Contacto extends Component
         'nombre' => 'required|string',
         'email' => 'required|email',
         'mensaje' => 'required|string',
-
-
+        'privacidad' => 'accepted'
+    ];
+    protected $messages = [
+        'privacidad.accepted' => 'Debes aceptar la política de privacidad para enviar el mensaje'
     ];
 
     public function submit()
     {
-        $datos = $this->validate();
+        $this->validate();
+        if (empty($this->recaptchaToken)) {
+            session()->flash('error', 'Error de verificación. Por favor, inténtalo de nuevo');
+        }
 
-        $this->nombre = $datos['nombre'];
-        $this->email = $datos['email'];
-        $this->mensaje = $datos['mensaje'];
+        //Verificar reCAPTCHA contra Google
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret'   => config('services.recaptcha.secret_key'),
+            'response' => $this->recaptchaToken,
+        ]);
+        // PARA PRUEBAS EN DESARROLLO
+        // $response = Http::withoutVerifying()->asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+        //     'secret'   => config('services.recaptcha.secret_key'),
+        //     'response' => $this->recaptchaToken,
+        // ]);
+        $result = $response->json();
 
-        $secretKey = config('services.recaptcha.secret_key');
-        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secretKey}&response={$this->recaptchaToken}");
-        $result = json_decode($response, true);
+        //dd($result); // ← y aquí para ver la respuesta
 
-        // Enviar correo al administrador
-        if ($this->privacidad == false) {
-            session()->flash('error', 'Debes aceptar la política de privacidad para enviar el mensaje.');
+        // Comprobar success (bool) Y score (float) por separado
+        if (!($result['success'] ?? false) || ($result['score'] ?? 0) < 0.5) {
+            session()->flash('error', 'Verificación fallida. Por favor, inténtalo de nuevo.');
             return;
         }
-        if ($result['success'] >= 0.5) {
-            Mail::to('info@theelectricbuffalo.com')->send(new ContactForm($this->nombre, $this->email, $this->mensaje));
-            session()->flash('success', '¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.');
-            return redirect()->route('contacto');
-        }
+
+        Mail::to('info@theelectricbuffalo.com')->send(new ContactForm($this->nombre, $this->email, $this->mensaje));
+
+        session()->flash('success', '¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.');
+
+        return redirect()->route('contacto');
     }
     public function render()
     {
