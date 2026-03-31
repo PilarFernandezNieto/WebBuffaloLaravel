@@ -10,25 +10,33 @@ use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class EditarNoticia extends Component
 {
-
     public $id;
+
     public $titulo;
+
+    public $slug;
+
     public $intro;
+
     public $texto;
+
     public $portada = false;
+
     public $fecha;
+
     public $imagen;
+
     public $imagen_nueva;
 
-    use WithFileUploads;
     use ImageHandler;
+    use WithFileUploads;
 
     protected $rules = [
 
-        "titulo" => "required|string||max:255",
-        "intro" => "string||max:255",
-        "texto" => "required|string",
-        "fecha" => "required|date",
+        'titulo' => 'required|string||max:255',
+        'intro' => 'string||max:255',
+        'texto' => 'required|string',
+        'fecha' => 'required|date',
         'imagen_nueva' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         'portada' => 'nullable|boolean',
     ];
@@ -37,11 +45,17 @@ class EditarNoticia extends Component
     {
         $this->id = $noticia->id;
         $this->titulo = $noticia->titulo;
+        $this->slug = $noticia->slug;
         $this->intro = $noticia->intro;
         $this->texto = $noticia->texto;
         $this->portada = $noticia->portada;
         $this->fecha = $noticia->fecha;
         $this->imagen = $noticia->imagen;
+    }
+
+    public function updatedTitulo($value)
+    {
+        $this->slug = \Illuminate\Support\Str::slug($value);
     }
 
     public function editarNoticia()
@@ -64,8 +78,9 @@ class EditarNoticia extends Component
 
         $noticia->save();
         // Redireccionar
-        session()->flash("mensaje", "Noticia actualizada correctamente");
-        return redirect()->route("admin.noticias.index");
+        session()->flash('mensaje', 'Noticia actualizada correctamente');
+
+        return redirect()->route('admin.noticias.index');
     }
 
     public function render()

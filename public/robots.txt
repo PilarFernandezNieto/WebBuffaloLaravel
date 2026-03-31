@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /403
+
+Sitemap: https://www.theelectricbuffalo.com/sitemap.xml

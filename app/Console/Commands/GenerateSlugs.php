@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Noticia;
 use Illuminate\Console\Command;
-use App\Models\Producto;
 use Illuminate\Support\Str;
 
 class GenerateSlugs extends Command
@@ -20,33 +20,34 @@ class GenerateSlugs extends Command
      *
      * @var string
      */
-    protected $description = 'Genera los slugs faltantes para los productos (discos/camisetas) existentes en la base de datos.';
+    protected $description = 'Genera los slugs faltantes para las noticias  existentes en la base de datos.';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $this->info('Buscando productos sin slug...');
-        
-        // Obtenemos los productos sin slug
-        $productos = Producto::whereNull('slug')->orWhere('slug', '')->get();
+        $this->info('Buscando noticias sin slug...');
 
-        if ($productos->isEmpty()) {
-            $this->info('¡Perfecto! Todos los productos ya tienen su slug.');
+        // Obtenemos los noticias sin slug
+        $noticias = Noticia::whereNull('slug')->orWhere('slug', '')->get();
+
+        if ($noticias->isEmpty()) {
+            $this->info('¡Perfecto! Todos los noticias ya tienen su slug.');
+
             return;
         }
 
         $count = 0;
-        foreach ($productos as $producto) {
-            $producto->slug = Str::slug($producto->nombre);
+        foreach ($noticias as $noticia) {
+            $noticia->slug = Str::slug($noticia->titulo);
             // Desactivamos temporalmente los timestamps por si no quieres que se actualice la fecha de modificación
-            $producto->timestamps = false;
-            $producto->save();
-            $this->line("Slug generado para: {$producto->nombre} -> {$producto->slug}");
+            $noticia->timestamps = false;
+            $noticia->save();
+            $this->line("Slug generado para: {$noticia->titulo} -> {$noticia->slug}");
             $count++;
         }
 
-        $this->info("¡Completado! Se han actualizado {$count} productos.");
+        $this->info("¡Completado! Se han actualizado {$count} noticias.");
     }
 }

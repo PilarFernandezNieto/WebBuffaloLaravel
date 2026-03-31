@@ -1,26 +1,25 @@
 <?php
 
-use App\Mail\ContactForm;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CamisetasController;
+use App\Http\Controllers\ContenidoController;
 use App\Http\Controllers\DiscosController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MusicoController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PaginasController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductoController;
-use App\Http\Controllers\CamisetasController;
-use App\Http\Controllers\ContenidoController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Mail\ContactForm;
+use Illuminate\Support\Facades\Route;
 
 // Zona pública
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/historia', [PaginasController::class, 'historia'])->name('historia');
 Route::get('/banda', [PaginasController::class, 'banda'])->name('banda');
 Route::get('/noticias', [PaginasController::class, 'noticias'])->name('noticias');
-Route::get('/noticias/{noticia}', [PaginasController::class, 'mostrarNoticia'])->name('noticia.mostrar');
+Route::get('/noticias/{noticia:slug}', [PaginasController::class, 'mostrarNoticia'])->name('noticia.mostrar');
 Route::get('/discografia', [PaginasController::class, 'discografia'])->name('discografia');
 Route::get('/discografia/{disco:slug}', [PaginasController::class, 'mostrarDisco'])->name('discografia.mostrar');
 Route::get('/tienda', [PaginasController::class, 'tienda'])->name('tienda');
@@ -28,9 +27,7 @@ Route::get('/contacto', [PaginasController::class, 'contacto'])->name('contacto'
 Route::get('/politica-privacidad', [PaginasController::class, 'politica'])->name('politica');
 Route::get('/politica-cookies', [PaginasController::class, 'cookies'])->name('cookies');
 
-
-
-Route::get('/403', function() {
+Route::get('/403', function () {
     return view('403');
 });
 
@@ -62,4 +59,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

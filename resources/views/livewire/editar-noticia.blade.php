@@ -8,6 +8,11 @@
             <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
         </div>
         <div class="mt-4">
+            <x-input-label for="slug" :value="__('URL Amigable (Slug)')" />
+            <x-text-input id="slug" class="block mt-1 w-full bg-gray-100 text-gray-500 cursor-not-allowed" type="text"
+                disabled wire:model="slug" />
+        </div>
+        <div class="mt-4">
             <x-input-label for="intro" :value="__('Introducción')" />
             <x-text-input id="intro" class="block mt-1 w-full" type="text" wire:model="intro" :value="old('intro')"
                 placeholder="Introducción" />
