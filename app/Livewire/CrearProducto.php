@@ -9,6 +9,7 @@ use App\Models\Talla;
 use App\Services\ImageService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Mews\Purifier\Facades\Purifier;
 
 class CrearProducto extends Component
 {
@@ -60,8 +61,8 @@ class CrearProducto extends Component
         Producto::create([
             'nombre' => $datos['nombre'],
             'imagen' => $datos['imagen'],
-            'informacion' => $datos['informacion'],
-            'textos' => $datos['textos'],
+            'informacion' => Purifier::clean($datos['informacion']),
+            'textos' => Purifier::clean($datos['textos']),
             'categoria_id' => $datos['categoria'],
             'formato_id' => $datos['formato'],
             'precio' => $datos['precio'],

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>The Electric Buffalo | {{ $pageTitle }}</title>
+    <title>The Electric Buffalo | {!! e($pageTitle) !!}</title>
     <meta name="description"
         content="The Electric Buffalo es una banda de rock asturiana que combina el espíritu del rock clásico americano con una energía moderna. Con influencias de The Allman Brothers y Gov't Mule, su sonido se caracteriza por riffs poderosos y una autenticidad que transmite la esencia del rock en su forma más pura">
     <meta name="robots" content="index, follow">

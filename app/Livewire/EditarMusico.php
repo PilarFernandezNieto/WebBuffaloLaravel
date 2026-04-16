@@ -8,6 +8,7 @@ use App\Traits\ImageHandler;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Mews\Purifier\Facades\Purifier;
 
 class EditarMusico extends Component
 {
@@ -52,10 +53,12 @@ class EditarMusico extends Component
         $this->apellidos =  $musico->apellidos;
         $this->alias =  $musico->alias;
         $this->origen =  $musico->origen;
-        $this->biografia =  $musico->biografia;
+        $this->biografia = Purifier::clean($musico->biografia);
         $this->fecha_nac =  $musico->fecha_nac;
         $this->imagen = $musico->imagen;
         $this->fotografo = $musico->fotografo;
+
+
 
         // OTRA OPCIÓN
         // foreach ($musico->getAttributes() as $key => $value) {

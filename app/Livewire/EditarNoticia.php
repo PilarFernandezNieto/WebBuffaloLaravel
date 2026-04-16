@@ -7,6 +7,7 @@ use App\Services\ImageService;
 use App\Traits\ImageHandler;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
+use Mews\Purifier\Facades\Purifier;
 
 class EditarNoticia extends Component
 {
@@ -71,7 +72,7 @@ class EditarNoticia extends Component
 
         $noticia->titulo = $datos['titulo'];
         $noticia->intro = $datos['intro'];
-        $noticia->texto = $datos['texto'];
+        $noticia->texto = Purifier::clean($datos["texto"]);
         $noticia->portada = $datos['portada'];
         $noticia->fecha = $datos['fecha'];
         $noticia->imagen = $datos['imagen'] ?? $noticia->imagen;

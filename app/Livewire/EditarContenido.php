@@ -7,6 +7,7 @@ use App\Services\ImageService;
 use App\Traits\ImageHandler;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Mews\Purifier\Facades\Purifier;
 
 class EditarContenido extends Component
 {
@@ -37,7 +38,7 @@ class EditarContenido extends Component
 
         $this->id = $contenido->id;
         $this->titulo = $contenido->titulo;
-        $this->texto = $contenido->texto;
+        $this->texto = Purifier::clean($contenido->texto);
         $this->imagen = $contenido->imagen;
         $this->portada = $contenido->portada;
         $this->fecha = $contenido->fecha;

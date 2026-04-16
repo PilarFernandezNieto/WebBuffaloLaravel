@@ -6,6 +6,7 @@ use App\Models\Contenido;
 use App\Services\ImageService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Mews\Purifier\Facades\Purifier;
 
 class CrearContenido extends Component
 {
@@ -34,7 +35,7 @@ class CrearContenido extends Component
 
         Contenido::create([
             'titulo' => $datos['titulo'],
-            'texto' => $datos['texto'],
+            'texto' => Purifier::clean($datos['texto']),
             'fecha' => $datos['fecha'],
             'imagen' => $datos['imagen'],
             'portada' => $datos['portada']

@@ -6,6 +6,7 @@ use App\Models\Musico;
 use App\Services\ImageService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Mews\Purifier\Facades\Purifier;
 
 class CrearMusico extends Component
 {
@@ -45,7 +46,7 @@ class CrearMusico extends Component
             'alias' => $datos['alias'],
             'origen' => $datos['origen'],
             'fecha_nac' => $datos['fecha_nac'],
-            'biografia' => $datos['biografia'],
+            'biografia' => Purifier::clean($datos['biografia']),
             'imagen' => $datos['imagen'],
             'fotografo' => $datos['fotografo']
         ]);

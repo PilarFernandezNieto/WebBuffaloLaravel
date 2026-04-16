@@ -6,6 +6,8 @@ use App\Models\Noticia;
 use App\Services\ImageService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Mews\Purifier\Facades\Purifier;
+
 
 class CrearNoticia extends Component
 {
@@ -37,7 +39,7 @@ class CrearNoticia extends Component
         Noticia::create([
             "titulo" => $datos["titulo"],
             "intro" => $datos["intro"],
-            "texto" => $datos["texto"],
+            "texto" => Purifier::clean($datos["texto"]),
             "fecha" => $datos["fecha"],
             "imagen" => $datos["imagen"],
             "portada" => $datos["portada"]
