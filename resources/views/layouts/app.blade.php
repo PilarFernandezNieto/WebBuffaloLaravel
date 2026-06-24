@@ -23,13 +23,16 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+    {{-- <link rel="preload" as="image" href="{{ asset('img/bufalos_header2.webp') }}" fetchpriority="high"> --}}
+
+
 
     @livewireStyles
     @stack('styles')
 
     <style>
         .imagen-header {
-            background-image: url("{{ asset('img/bufalos_header2.jpg') }}");
+            background-image: url("{{ asset('img/bufalos_header2.webp') }}");
             background-position: 50%;
             background-size: cover;
             position: relative;
