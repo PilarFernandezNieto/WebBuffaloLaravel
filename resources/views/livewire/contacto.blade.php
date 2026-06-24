@@ -52,8 +52,9 @@
         </div>
         <div class="mt-4">
             <div class="flex gap-4 items-center">
-                <label for="privacidad"
-                    class="block font-medium text-sm text-black uppercase">Acepta la <a href="{{route('politica')}}" class="font-medium hover:text-custom-red">política de privacidad</a></label>
+                <label for="privacidad" class="block font-medium text-sm text-black uppercase">Acepta la <a
+                        href="{{ route('politica') }}" class="font-medium hover:text-custom-red">política de
+                        privacidad</a></label>
                 <input type="checkbox" wire:model="privacidad" id="privacidad"
                     class="border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm">
             </div>
@@ -66,4 +67,6 @@
     </form>
 
 </div>
-
+@push('scripts')
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
+@endpush
