@@ -26,10 +26,14 @@
     <script src="https://kit.fontawesome.com/91eae316a2.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
+
+    {{-- <link rel="preload" as="image" href="{{ asset('img/bufalos_header2.webp') }}" fetchpriority="high"> --}}
+
+
 
     @livewireStyles
     @stack('styles')
+
     <style>
         .imagen-header {
             background-image: url("{{ asset('img/bufalos_header2.webp') }}");
