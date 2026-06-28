@@ -29,8 +29,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
     <script defer src="https://kit.fontawesome.com/91eae316a2.js" crossorigin="anonymous"></script>
-    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 
     {{-- <link rel="preload" as="image" href="{{ asset('img/bufalos_header2.webp') }}" fetchpriority="high"> --}}
 
