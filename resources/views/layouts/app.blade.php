@@ -58,6 +58,29 @@
             background-size: cover;
         }
     </style>
+    <!-- Google Consent Mode - Default (denied) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'personalization_storage': 'denied',
+            'wait_for_update': 500
+        });
+    </script>
+    <!-- End Google Consent Mode -->
+
+    <!-- CookieScript -->
+    <script type="text/javascript" charset="UTF-8"
+        src="//cdn.cookie-script.com/s/fa5545b6c667adb43097b75a9bf07211.js" data-navigate-track="reload"></script>
+    <!-- End CookieScript -->
+
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -121,8 +144,6 @@
 
     @livewireScripts
     @stack('scripts')
-    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/fa5545b6c667adb43097b75a9bf07211.js">
-    </script>
 </body>
 
 
