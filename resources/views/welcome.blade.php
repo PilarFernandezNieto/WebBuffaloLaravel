@@ -39,30 +39,31 @@
     @endisset
 
     {{-- 3. DISCOGRAFÍA --}}
-    <section class="max-w-home mx-auto px-edge-home py-section-lg b">
-        <div class="flex items-baseline justify-between gap-6 mb-10 flex-wrap">
-            <h2
-                class="font-titulo font-black uppercase text-ink-heading text-[clamp(20px,2.2vw,26px)] tracking-[-0.015em]">
-                Discografía</h2>
-            <a href="{{ route('discografia') }}"
-                class="font-cuerpo text-xs font-semibold uppercase tracking-[1px] text-oxide hover:text-oxide-hover transition duration-200">Ver
-                todos los discos</a>
-        </div>
-        <div class="flex flex-wrap gap-cols">
-            @foreach ($discos as $disco)
-                <a href="{{ route('discografia.mostrar', $disco->slug) }}" class="flex-1 min-w-[220px] group">
-                    <div
-                        class="aspect-square overflow-hidden shadow-[0_8px_22px_rgba(61,49,42,0.16)] group-hover:shadow-[0_16px_36px_rgba(61,49,42,0.28)] transition-shadow duration-[260ms] ease-in-out">
-                        <img src="{{ asset($disco->imagen ? 'storage/' . $disco->imagen : 'img/no-imagen.jpg') }}"
-                            alt="Portada de {{ $disco->nombre }}"
-                            class="w-full h-full object-cover group-hover:-translate-y-1 transition-transform duration-[260ms] ease-in-out">
-                    </div>
-                    <p
-                        class="mt-3 font-titulo font-black uppercase text-ink-heading group-hover:text-oxide transition-colors duration-200 text-lg">
-                        {{ $disco->nombre }}</p>
-                    <p class="text-ink-muted text-sm">{{ $disco->anio_edicion }}</p>
-                </a>
-            @endforeach
+    <section id="discografia" class="bg-ink px-edge-home pt-[clamp(56px,7vw,88px)] pb-[clamp(64px,8vw,104px)]">
+        <div class="max-w-home mx-auto px-edge-home">
+            <div class="flex items-baseline justify-between gap-5 mb-[clamp(30px,4vw,46px)] flex-wrap">
+                <h2
+                    class="font-titulo font-black uppercase text-onblack-heading text-[clamp(26px,3.4vw,36px)] tracking-[-0.015em]">
+                    Discografía</h2>
+                <a href="{{ route('discografia') }}"
+                    class="inline-flex items-center min-h-[44px] font-cuerpo text-sm font-bold tracking-[0.5px] text-amber hover:text-amber/80 transition duration-200">Ver
+                    todo</a>
+            </div>
+            <ul class="list-none m-0 p-0 flex flex-wrap gap-[clamp(20px,3vw,30px)] items-start">
+                @foreach ($discos as $disco)
+                    <li class="flex-1 basis-[220px] min-w-0">
+                        <a href="{{ route('discografia.mostrar', $disco->slug) }}" class="block group">
+                            {{-- <pre class="text-xs text-onblack-body whitespace-pre-wrap break-words">{{ json_encode($disco, JSON_PRETTY_PRINT) }}</pre> --}}
+                            <img src="{{ asset($disco->imagen ? 'storage/' . $disco->imagen : 'img/no-imagen.jpg') }}"
+                                alt="Portada de {{ $disco->nombre }}"
+                                class="w-full aspect-square object-cover mb-[14px] group-hover:opacity-90 transition-opacity duration-200">
+                            <span
+                                class="block font-cuerpo font-bold text-base text-onblack-heading">{{ $disco->nombre }}</span>
+                            <span class="block text-sm text-onblack-body/70">{{ $disco->anio_edicion }}</span>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </section>
 

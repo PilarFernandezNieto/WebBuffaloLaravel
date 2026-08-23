@@ -1,12 +1,13 @@
-<section class="max-w-content mx-auto px-edge py-section">
+<section class="max-w-home mx-auto px-edge py-section">
     <div class="flex flex-wrap items-center gap-cols-lg">
         <div class="flex-1 min-w-[280px]">
             <img src="{{ asset($contenido->imagen ? 'storage/' . $contenido->imagen : 'img/no-imagen.jpg') }}"
-                alt="{{ $contenido->titulo }}" class="w-full rounded-sharp object-cover aspect-square" fetchpriority="high" width="600" height="600"
-                loading="eager">
+                alt="{{ $contenido->titulo }}" class="w-full rounded-sharp object-cover aspect-square" fetchpriority="high"
+                width="600" height="600" loading="eager">
         </div>
         <div class="flex-1 min-w-[280px]">
-            <h2 class="font-titulo text-ink-heading text-[clamp(20px,2.2vw,26px)] font-black uppercase tracking-[-0.015em] leading-tight mb-5">
+            <h2
+                class="font-titulo text-ink-heading text-[clamp(20px,2.2vw,26px)] font-black uppercase tracking-[-0.015em] leading-tight mb-5">
                 {{ $contenido->titulo }}</h2>
             <div class="contenido text-ink-body text-[16px] leading-[1.75] max-w-[66ch]">{!! $contenido->texto !!}</div>
         </div>
