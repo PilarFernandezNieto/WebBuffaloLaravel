@@ -1,5 +1,5 @@
 <x-app-layout pageTitle="{!! $noticia->titulo !!}">
-    <div class="max-w-content mx-auto px-[clamp(20px,4vw,44px)] py-[clamp(56px,7vw,96px)]">
+    <div class="max-w-content mx-auto px-edge py-section-lg">
 
         {{-- MIGAS DE PAN --}}
         <p class="font-cuerpo text-xs font-semibold uppercase tracking-[1px] text-ink-muted mb-8">

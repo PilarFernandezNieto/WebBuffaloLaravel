@@ -1,6 +1,6 @@
 <x-app-layout pageTitle="{!! $disco->nombre !!}">
 
-    <div class="max-w-content mx-auto px-[clamp(20px,4vw,44px)] pt-[clamp(40px,5vw,64px)]">
+    <div class="max-w-content mx-auto px-edge pt-section">
 
         {{-- MIGAS DE PAN --}}
         <p class="font-cuerpo text-xs font-semibold uppercase tracking-[1px] text-ink-muted mb-8">
@@ -8,7 +8,7 @@
         </p>
 
         {{-- CABECERA --}}
-        <div class="flex flex-wrap gap-[clamp(28px,4vw,56px)] items-start pb-[clamp(40px,5vw,64px)]">
+        <div class="flex flex-wrap gap-cols-lg items-start pb-section">
             <div class="flex-none w-[clamp(160px,22vw,260px)]">
                 <img src="{{ asset($disco->imagen ? 'storage/' . $disco->imagen : 'img/no-imagen.jpg') }}"
                     alt="Portada de {{ $disco->nombre }}"
@@ -27,7 +27,7 @@
 
     {{-- SOBRE EL DISCO --}}
     <section class="bg-ink">
-        <div class="max-w-content mx-auto px-[clamp(20px,4vw,44px)] py-[clamp(40px,5vw,64px)] flex flex-wrap gap-[clamp(28px,4vw,56px)]">
+        <div class="max-w-content mx-auto px-edge py-section flex flex-wrap gap-cols-lg">
             <p class="font-titulo italic text-amber text-[13px] font-semibold uppercase tracking-[1.2px] flex-none basis-[180px]">Sobre el disco</p>
             <div class="flex-1 min-w-[300px] informacion text-onblack-body text-[15px] leading-[1.75] max-w-[70ch] space-y-4">
                 {!! $disco->informacion !!}
@@ -35,7 +35,7 @@
         </div>
     </section>
 
-    <div class="max-w-content mx-auto px-[clamp(20px,4vw,44px)] py-[clamp(40px,5vw,64px)]">
+    <div class="max-w-content mx-auto px-edge py-section">
 
         {{-- OTROS DISCOS --}}
         @php

@@ -116,7 +116,7 @@
         <!-- Page Heading -->
         @isset($header)
             <header class="bg-cream-white border-b border-rule-light">
-                <div class="max-w-content mx-auto py-6 px-[clamp(20px,4vw,44px)]">
+                <div class="max-w-content mx-auto py-6 px-edge">
                     {{ $header }}
                 </div>
             </header>

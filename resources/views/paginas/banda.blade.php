@@ -1,5 +1,5 @@
 <x-app-layout pageTitle="La Banda">
-    <div class="max-w-content mx-auto px-[clamp(20px,4vw,44px)] py-[clamp(56px,7vw,96px)]">
+    <div class="max-w-content mx-auto px-edge py-section-lg">
 
         {{-- CABECERA --}}
         <div class="flex flex-wrap items-baseline justify-between gap-8 mb-4">
@@ -13,7 +13,7 @@
         <x-banda :musicos="$musicos" />
 
         {{-- IN MEMORIAM --}}
-        <section class="bg-ink -mx-[clamp(20px,4vw,44px)] px-[clamp(20px,4vw,44px)] py-[clamp(40px,5vw,64px)] mt-4">
+        <section class="bg-ink -mx-edge px-edge py-section mt-4">
             <div class="flex flex-wrap gap-8">
                 <p class="font-titulo italic text-amber text-[13px] font-semibold uppercase tracking-[1.2px] flex-none basis-[180px]">In memoriam</p>
                 <div class="flex-1 min-w-[260px]">
@@ -25,7 +25,7 @@
         </section>
 
         {{-- CTA CIERRE --}}
-        <div class="flex flex-wrap items-center justify-between gap-6 pt-[clamp(40px,5vw,64px)]">
+        <div class="flex flex-wrap items-center justify-between gap-6 pt-section">
             <h2 class="font-titulo font-black uppercase text-ink-heading text-[clamp(20px,2.2vw,26px)] tracking-[-0.015em]">Escúchalos juntos</h2>
             <div class="flex flex-wrap gap-4">
                 <x-button :href="route('discografia')">Discografía</x-button>

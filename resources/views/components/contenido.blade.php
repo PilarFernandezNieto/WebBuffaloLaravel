@@ -1,5 +1,5 @@
-<section class="max-w-content mx-auto px-[clamp(20px,4vw,44px)] py-[clamp(40px,5vw,64px)]">
-    <div class="flex flex-wrap items-center gap-[clamp(28px,4vw,56px)]">
+<section class="max-w-content mx-auto px-edge py-section">
+    <div class="flex flex-wrap items-center gap-cols-lg">
         <div class="flex-1 min-w-[280px]">
             <img src="{{ asset($contenido->imagen ? 'storage/' . $contenido->imagen : 'img/no-imagen.jpg') }}"
                 alt="{{ $contenido->titulo }}" class="w-full rounded-sharp object-cover aspect-square" fetchpriority="high" width="600" height="600"

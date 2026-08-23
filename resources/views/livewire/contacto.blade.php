@@ -1,4 +1,4 @@
-<div class="flex flex-wrap gap-[clamp(28px,4vw,56px)]">
+<div class="flex flex-wrap gap-cols-lg">
 
     {{-- FORMULARIO --}}
     <div class="flex-1 basis-[440px] min-w-[300px] border-t border-rule-light pt-8">

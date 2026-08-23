@@ -1,4 +1,4 @@
-<footer class="bg-ink px-[clamp(20px,4vw,48px)] py-[clamp(40px,5vw,52px)]">
+<footer class="bg-ink px-edge-home py-[clamp(40px,5vw,52px)]">
     <div class="max-w-home mx-auto">
 
         <div class="flex flex-wrap items-center justify-between gap-x-10 gap-y-8">

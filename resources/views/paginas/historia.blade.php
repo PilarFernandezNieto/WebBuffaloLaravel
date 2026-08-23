@@ -3,8 +3,8 @@
     {{-- HERO OSCURO A SANGRE --}}
     <section class="relative flex items-end min-h-[clamp(415px,58vh,600px)] bg-ink-hero border-b-[3px] border-ink overflow-hidden">
         <img src="{{ asset('img/risas_baja.jpg') }}" alt="The Electric Buffalo" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-[rgba(38,28,21,0.9)] via-[rgba(38,28,21,0.35)] to-transparent"></div>
-        <div class="relative z-10 w-full max-w-content mx-auto px-[clamp(20px,4vw,44px)] pb-[clamp(32px,5vw,48px)]">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-hero/90 via-ink-hero/35 to-transparent"></div>
+        <div class="relative z-10 w-full max-w-content mx-auto px-edge pb-[clamp(32px,5vw,48px)]">
             <div class="flex items-center gap-3 mb-3">
                 <span class="inline-block h-px w-11 bg-amber"></span>
                 <span class="font-titulo italic text-amber text-[13px] font-semibold uppercase tracking-[1.2px]">Historia</span>
@@ -14,10 +14,10 @@
         </div>
     </section>
 
-    <div class="max-w-content mx-auto px-[clamp(20px,4vw,44px)] py-[clamp(56px,7vw,96px)] space-y-[clamp(56px,7vw,96px)]">
+    <div class="max-w-content mx-auto px-edge py-section-lg space-y-section-lg">
 
         {{-- BLOQUE 1: texto + foto --}}
-        <section class="flex flex-wrap gap-[clamp(28px,4vw,56px)] items-start">
+        <section class="flex flex-wrap gap-cols-lg items-start">
             <div class="flex-1 min-w-[300px] basis-[480px]">
                 <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-4">2006 · El origen</p>
                 <div class="space-y-5 text-[15px] leading-[1.72] text-ink-body max-w-[70ch]">
@@ -33,7 +33,7 @@
         </section>
 
         {{-- BLOQUE 2: foto + texto (alternado) --}}
-        <section class="flex flex-wrap-reverse gap-[clamp(28px,4vw,56px)] items-start">
+        <section class="flex flex-wrap-reverse gap-cols-lg items-start">
             <figure class="flex-1 min-w-[260px] basis-[320px]">
                 <img src="{{ asset('img/TrioJovenVertical.jpg') }}" alt="Trío joven" class="w-full aspect-square object-cover object-top">
                 <figcaption class="text-[11px] font-titulo italic text-ink-muted text-right pt-[7px]">Foto de Manfred</figcaption>
@@ -49,8 +49,8 @@
         </section>
 
         {{-- CIERRE: cartel flanqueado por texto --}}
-        <section class="border-t border-rule-light pt-[clamp(40px,5vw,64px)]">
-            <div class="flex flex-wrap gap-[clamp(28px,4vw,56px)] items-start">
+        <section class="border-t border-rule-light pt-section">
+            <div class="flex flex-wrap gap-cols-lg items-start">
                 <div class="flex-1 min-w-[260px] basis-[280px] space-y-4">
                     <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px]">2016 · La llamada a filas</p>
                     <p class="text-[15px] leading-[1.72] text-ink-body">Jandro "Espina", un ser de luz y amor, se iba a los 45. Dejaba una mujer y una hija desoladas y una innumerable cantidad de amigos con el corazón hecho pedazos.</p>
@@ -67,8 +67,8 @@
         </section>
 
         {{-- PATROLMAN --}}
-        <section class="bg-ink -mx-[clamp(20px,4vw,44px)] px-[clamp(20px,4vw,44px)] py-[clamp(40px,5vw,64px)]">
-            <div class="flex flex-wrap gap-[clamp(28px,4vw,56px)] items-center">
+        <section class="bg-ink -mx-edge px-edge py-section">
+            <div class="flex flex-wrap gap-cols-lg items-center">
                 <div class="flex-1 min-w-[260px]">
                     <p class="font-titulo italic text-amber text-[13px] font-semibold uppercase tracking-[1.2px] mb-4">2023 · Patrolman</p>
                     <p class="text-onblack-body text-[15px] leading-[1.72] max-w-[70ch]">
