@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Noticia;
-use Illuminate\Http\Request;
+
 
 
 class NoticiaController extends Controller
@@ -46,6 +46,4 @@ class NoticiaController extends Controller
     /**
      * No utilizamos el método update porque las noticias se actualizan en componente Livewire
      */
-
-
 }
