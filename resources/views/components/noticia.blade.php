@@ -1,44 +1,22 @@
 @props(['noticia'])
 
-<article
-    class="group flex flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md hover:shadow-custom-red transition-shadow duration-500">
+<article class="flex flex-col border-t border-rule-light pt-5">
 
-    {{-- 1. IMAGEN CON ROL ACTIVO --}}
-    <div class="overflow-hidden">
+    <a href="{{ route('noticia.mostrar', $noticia) }}" class="block aspect-[4/3] overflow-hidden">
         <img src="{{ asset($noticia->imagen ? 'storage/' . $noticia->imagen : 'img/no-imagen.jpg') }}"
-            alt="{{ $noticia->titulo }}"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-    </div>
+            alt="{{ $noticia->titulo }}" class="w-full h-full object-cover hover:opacity-[.88] transition-opacity duration-200">
+    </a>
 
-    {{-- CONTENIDO --}}
-    <div class="flex flex-col flex-1 p-5 gap-3">
+    <p class="font-cuerpo text-oxide text-xs font-bold tracking-[1.5px] mt-4">{{ str_replace('-', '·', $noticia->fecha_formateada) }}</p>
 
-        {{-- 2. JERARQUÍA CORRECTA --}}
-        <h3 class="text-xl font-medium text-custom-red leading-snug">
-            {{ $noticia->titulo }}
-        </h3>
-        <p class="text-base text-gray-600 line-clamp-2">
-            {{ $noticia->intro }}
-        </p>
+    <h2 class="font-titulo font-black uppercase text-ink-heading text-[clamp(19px,2.2vw,23px)] leading-tight mt-2">
+        <a href="{{ route('noticia.mostrar', $noticia) }}" class="hover:text-oxide transition-colors duration-200">{{ $noticia->titulo }}</a>
+    </h2>
 
-        <div class="flex-1"></div>
+    <p class="text-ink-body text-[15px] leading-[1.7] mt-2">{{ $noticia->intro }}</p>
 
-        {{-- FOOTER DE LA CARD --}}
-        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
-
-            {{-- 3. FECHA EN SU SITIO --}}
-            <time class="text-xs text-gray-500 italic">
-                {{ $noticia->fecha_formateada }}
-            </time>
-
-            {{-- 4. CTA CON DIRECCIÓN --}}
-            <a href="{{ route('noticia.mostrar', $noticia) }}"
-                class="text-sm font-medium text-custom-red hover:text-custom-red-darker flex items-center gap-1 transition-colors">
-                Leer noticia
-                <span aria-hidden="true">→</span>
-            </a>
-
-        </div>
-    </div>
-
+    <a href="{{ route('noticia.mostrar', $noticia) }}"
+        class="mt-auto pt-4 font-cuerpo text-xs font-semibold uppercase tracking-[1px] text-oxide hover:text-oxide-hover transition duration-200">
+        Leer noticia
+    </a>
 </article>

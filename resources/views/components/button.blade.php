@@ -1,7 +1,7 @@
 @php
     $isDisabled = $attributes->get('disabled');
     $classes =
-        'inline-flex items-center px-4 py-2 bg-custom-red border border-transparent rounded-md text-white hover:bg-custom-red-darker focus:bg-custom-red active:bg-custom-red transition ease-in-out duration-500';
+        'inline-flex items-center justify-center min-h-[46px] px-[26px] py-3 bg-oxide border border-oxide rounded-sharp font-cuerpo text-sm font-bold uppercase tracking-[0.5px] text-cream-white hover:bg-oxide-hover hover:border-oxide-hover transition duration-[220ms] ease-in-out';
 @endphp
 @if ($isDisabled)
     <button {{ $attributes->merge(['class' => $classes, 'disabled' => 'disabled']) }}>

@@ -1,43 +1,29 @@
 @foreach ($musicos as $musico)
-    <div x-data="{ open: false }" class="flex flex-col">
+    <article class="flex flex-wrap gap-[clamp(20px,3vw,36px)] py-[clamp(26px,3.5vw,36px)] border-t border-rule-light {{ $loop->last ? 'border-b' : '' }}">
 
-        {{-- FOTO --}}
-        <div class="overflow-hidden rounded-lg cursor-pointer" @click="open = !open">
+        {{-- RETRATO --}}
+        <div class="flex-none w-[clamp(120px,14vw,168px)]">
             <img src="{{ asset($musico->imagen ? 'storage/' . $musico->imagen : 'img/no-imagen.jpg') }}"
-                alt="{{ $musico->nombre }}" class="w-full h-auto transition-transform duration-500 hover:scale-105">
+                alt="{{ $musico->nombre }}" class="w-full aspect-square object-cover">
+            @if ($musico->fotografo)
+                <p class="text-[11px] font-titulo italic text-ink-muted pt-[7px]">Foto de {{ $musico->fotografo }}</p>
+            @endif
         </div>
 
-        {{-- IDENTIDAD --}}
-        <div class="mt-4 flex items-start justify-between">
-            <div>
-                <h2 class="text-xl font-medium text-gray-900">
-                    {{ $musico->nombre }} {{ $musico->apellidos }}
-                </h2>
+        {{-- TEXTO --}}
+        <div class="flex-1 min-w-[320px]">
+            <div class="flex flex-wrap items-baseline gap-x-[14px] gap-y-1">
+                <h2 class="font-titulo font-black uppercase text-ink-heading text-xl">{{ $musico->nombre }} {{ $musico->apellidos }}</h2>
                 @if ($musico->alias)
-                    <p class="text-sm text-custom-red font-medium">"{{ $musico->alias }}"</p>
+                    <span class="font-titulo italic font-bold text-oxide">"{{ $musico->alias }}"</span>
                 @endif
                 @if ($musico->origen)
-                    <p class="text-xs text-gray-400 mt-1">{{ $musico->origen }}</p>
+                    <span class="font-cuerpo text-[11px] font-bold uppercase tracking-[1.3px] text-ink-muted">{{ $musico->origen }}</span>
                 @endif
             </div>
-
-            {{-- TOGGLE --}}
-            <button @click="open = !open"
-                class="text-sm text-custom-red hover:text-custom-red-darker transition-colors mt-1 flex items-center gap-1">
-                <span x-text="open ? '− Cerrar' : '+ Bio'"></span>
-            </button>
+            <div class="mt-3 space-y-4 text-[15px] leading-[1.72] text-ink-body max-w-[70ch]">
+                {!! $musico->biografia !!}
+            </div>
         </div>
-
-        {{-- CRÉDITO FOTO --}}
-        @if ($musico->fotografo)
-            <p class="text-xs text-gray-500 italic mt-1">Foto de {{ $musico->fotografo }}</p>
-        @endif
-
-        {{-- BIO DESPLEGABLE --}}
-        <div x-show="open" x-transition
-            class="bg-white border border-gray-100 shadow-sm rounded-lg p-5 mt-4 leading-7 text-base text-gray-700">
-            {!! $musico->biografia !!}
-        </div>
-
-    </div>
+    </article>
 @endforeach

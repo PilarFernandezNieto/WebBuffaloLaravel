@@ -1,32 +1,27 @@
 @props(['disco'])
 
-<article x-data="{ open: false }" class="relative rounded-xl overflow-hidden shadow-lg max-w-[600px] w-full mx-auto">
+<article class="flex flex-wrap gap-[clamp(20px,3vw,36px)] py-[clamp(28px,3.5vw,40px)] border-t border-rule-light">
 
-    {{-- IMAGEN DE FONDO --}}
-    <div class="relative">
-        <img src="{{ asset($disco->imagen ? 'storage/' . $disco->imagen : 'img/no-imagen.jpg') }}"
-            alt="portada_{{ $disco->nombre }}" class="w-full h-64 object-cover object-top">
-        {{-- OVERLAY --}}
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-        {{-- TÍTULO ENCIMA DE LA IMAGEN --}}
-        <div class="absolute bottom-0 left-0 p-8">
-            <p class="text-custom-amber text-sm font-medium mb-1">{{ $disco->anio_edicion }}</p>
-            <h2 class="text-4xl font-medium text-white leading-snug">{{ $disco->nombre }}</h2>
-            <button @click="open = !open"
-                class="mt-4 inline-flex items-center gap-2 bg-custom-red hover:bg-custom-red-darker text-white text-sm font-medium px-5 py-2.5 rounded transition-colors duration-300">
-                <span x-text="open ? '− Cerrar' : '+ Leer más'"></span>
-            </button>
+    {{-- PORTADA --}}
+    <a href="{{ route('discografia.mostrar', $disco->slug) }}" class="group flex-none w-[clamp(140px,17vw,208px)]">
+        <div class="aspect-square overflow-hidden shadow-[0_8px_22px_rgba(61,49,42,0.16)] group-hover:shadow-[0_16px_36px_rgba(61,49,42,0.28)] transition-shadow duration-[260ms] ease-in-out">
+            <img src="{{ asset($disco->imagen ? 'storage/' . $disco->imagen : 'img/no-imagen.jpg') }}"
+                alt="Portada de {{ $disco->nombre }}"
+                class="w-full h-full object-cover group-hover:-translate-y-1 transition-transform duration-[260ms] ease-in-out">
         </div>
-    </div>
+    </a>
 
-    {{-- TEXTO DESPLEGABLE --}}
-
-    <div x-show="open" x-transition class="bg-white px-8 py-6 informacion text-base leading-7 text-gray-800 space-y-4">
-        {!! $disco->textos !!}
-        <div class="pt-4">
-            <x-button :href="route('discografia.mostrar', $disco->slug)">Ver ficha</x-button>
+    {{-- TEXTO --}}
+    <div class="flex-1 min-w-[340px]">
+        <p class="font-titulo italic text-oxide text-[13px] font-semibold">
+            {{ $disco->anio_edicion }}@if ($disco->sello) &middot; {{ $disco->sello }} @endif
+        </p>
+        <h2 class="font-titulo font-black uppercase text-ink-heading text-[clamp(19px,2.4vw,28px)] leading-tight tracking-[-0.02em] mt-1">
+            <a href="{{ route('discografia.mostrar', $disco->slug) }}" class="hover:text-oxide transition-colors duration-200">{{ $disco->nombre }}</a>
+        </h2>
+        <div class="mt-3 text-[15px] leading-[1.7] text-ink-body max-w-[70ch] line-clamp-[6]">
+            {!! $disco->textos !!}
         </div>
+        <x-button-ghost :href="route('discografia.mostrar', $disco->slug)" class="mt-5">Ver ficha</x-button-ghost>
     </div>
-
 </article>

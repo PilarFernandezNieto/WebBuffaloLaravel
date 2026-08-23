@@ -1,14 +1,14 @@
-<section class="w-95p lg:w-4/5 max-w-1300px mx-auto py-20 bg-white rounded-lg px-4 md:px-8 shadow my-10">
-    <div class="md:grid md:grid-cols-2 md:gap-10 lg:w-4/5 mx-auto">
-        <div class="mb-4 md:mb-0">
+<section class="max-w-content mx-auto px-[clamp(20px,4vw,44px)] py-[clamp(40px,5vw,64px)]">
+    <div class="flex flex-wrap items-center gap-[clamp(28px,4vw,56px)]">
+        <div class="flex-1 min-w-[280px]">
             <img src="{{ asset($contenido->imagen ? 'storage/' . $contenido->imagen : 'img/no-imagen.jpg') }}"
-                alt="{{ $contenido->titulo }}" class="w-full" fetchpriority="high" width="600" height="600"
+                alt="{{ $contenido->titulo }}" class="w-full rounded-sharp object-cover aspect-square" fetchpriority="high" width="600" height="600"
                 loading="eager">
         </div>
-        <div class="p-0 md:px-4">
-            <h2 class="text-custom-red uppercase tracking-[0.7rem] font-bold text-3xl md:text-4xl mb-8">
+        <div class="flex-1 min-w-[280px]">
+            <h2 class="font-titulo text-ink-heading text-[clamp(20px,2.2vw,26px)] font-black uppercase tracking-[-0.015em] leading-tight mb-5">
                 {{ $contenido->titulo }}</h2>
-            <div class="text-slate-800 text-base contenido leading-7">{!! $contenido->texto !!}</div>
+            <div class="contenido text-ink-body text-[16px] leading-[1.75] max-w-[66ch]">{!! $contenido->texto !!}</div>
         </div>
     </div>
 </section>

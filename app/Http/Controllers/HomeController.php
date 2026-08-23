@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contenido;
 use App\Models\Noticia;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,9 +15,14 @@ class HomeController extends Controller
             ->select('id','titulo', 'texto', 'imagen')
             ->first();
 
+        $discos = Producto::where('categoria_id', 1)
+            ->orderBy('anio_edicion', 'desc')
+            ->limit(3)
+            ->get();
 
         return view('welcome', [
             'contenido' => $contenido,
+            'discos' => $discos,
         ] );
     }
 }

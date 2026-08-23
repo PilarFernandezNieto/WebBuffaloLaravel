@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Suez+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 :root {
     --fuente-principal: "Raleway", sans-serif;
-    --fuente-bufalo: "Suez One", serif;
+    --fuente-bufalo: "Aleo", serif;
     --fulvous: #e58517;
     --fireBrick: #ac2c28;
     --claro: #f0d4a5;
@@ -18,21 +18,34 @@
 .fuente-bufalo {
     font-family: var(--fuente-bufalo);
 }
+body {
+    background-color: #f3ead9;
+    color: #3e3025;
+}
 a {
     text-decoration: none;
 }
+:focus-visible {
+    outline: 3px solid #bf3a2e;
+    outline-offset: 3px;
+}
 [type="checkbox"]:checked {
-    background-color: #ac2c28;
+    background-color: #9a3a1e;
 }
 
 [type="checkbox"] {
-    color: #ac2c28;
+    color: #9a3a1e;
 }
 
-.contenido a {
-    color: #000;
-    font-weight: 500;
+.contenido a,
+.informacion a {
+    color: #9a3a1e;
+    font-weight: 600;
 }
-.contenido a:hover {
-    color: #ac2c28;
+.contenido a:hover,
+.informacion a:hover {
+    color: #75290f;
+}
+.text-pretty {
+    text-wrap: pretty;
 }

@@ -19,11 +19,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@400;500;600;700&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap">
     </noscript>
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -101,41 +101,29 @@
     <!-- End Google Tag Manager -->
 </head>
 
-<body class="font-sans antialiased fuente-principal bg-stone-50">
+<body class="font-cuerpo antialiased fuente-principal bg-cream text-ink-body">
+    <a href="#contenido"
+        class="absolute left-[-9999px] top-2 z-[999] focus:left-2 bg-ink text-cream-white font-cuerpo text-sm font-bold px-4 py-2 rounded-sharp transition-all">
+        Saltar al contenido
+    </a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL6BXLJP" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     @include('layouts.navigation-public')
 
-    <div class="min-h-screen ">
-        @if (request()->is('/'))
-            <div class="imagen-header min-h-[400px] md:min-h-[560px] relative">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <div class="relative z-10 p-8 md:p-16 space-y-3 w-full">
-                    <div class="absolute top-64 md:top-80 ">
-                        <h1 class="font-titulo text-white text-4xl md:text-6xl tracking-[0.5rem]">
-                            The Electric Buffalo
-                        </h1>
-                        <p class="font-titulo text-custom-red text-5xl md:text-7xl tracking-[0.3rem]">
-                            Patrolman
-                        </p>
-                    </div>
-                </div>
-            </div>
-        @endif
-
+    <div class="min-h-screen">
         <!-- Page Heading -->
         @isset($header)
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <header class="bg-cream-white border-b border-rule-light">
+                <div class="max-w-content mx-auto py-6 px-[clamp(20px,4vw,44px)]">
                     {{ $header }}
                 </div>
             </header>
         @endisset
 
         <!-- Page Content -->
-        <main>
+        <main id="contenido">
             {{ $slot }}
         </main>
         <x-footer />
