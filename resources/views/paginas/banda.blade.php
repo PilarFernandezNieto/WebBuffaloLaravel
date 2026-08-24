@@ -2,18 +2,22 @@
     <div class="max-w-content mx-auto px-edge py-section-lg">
 
         {{-- CABECERA --}}
-        <div class="flex flex-wrap items-baseline justify-between gap-8 mb-4">
+        <div class="flex flex-wrap items-center justify-between gap-8 mb-4">
             <div>
-                <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-3">La Banda</p>
-                <h1 class="font-titulo font-black uppercase text-ink-heading text-[clamp(30px,3.6vw,42px)] tracking-[-0.02em]">Cuatro currantes</h1>
+                <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-3">La
+                    Banda</p>
+                <h1
+                    class="font-titulo font-black uppercase text-ink-heading text-[clamp(30px,3.6vw,42px)] tracking-[-0.02em]">
+                    Ahora</h1>
             </div>
-            <p class="text-ink-body text-base leading-[1.65] max-w-[56ch]">Cuatro músicos asturianos que llevan haciendo la música que les apetece desde hace casi veinte años, sin prisa ni pretensión.</p>
+            <p class="text-ink-body text-base leading-[1.65] max-w-[56ch]">Cuatro músicos asturianos que llevan haciendo
+                la música que les apetece desde hace casi veinte años, sin prisa ni pretensión.</p>
         </div>
 
         <x-banda :musicos="$musicos" />
 
         {{-- IN MEMORIAM --}}
-        <section class="bg-ink -mx-edge px-edge py-section mt-4">
+        {{-- <section class="bg-ink -mx-edge px-edge py-section mt-4">
             <div class="flex flex-wrap gap-8">
                 <p class="font-titulo italic text-amber text-[13px] font-semibold uppercase tracking-[1.2px] flex-none basis-[180px]">In memoriam</p>
                 <div class="flex-1 min-w-[260px]">
@@ -22,15 +26,7 @@
                     <a href="{{ route('historia') }}" class="inline-block mt-3 font-cuerpo text-xs font-semibold uppercase tracking-[1px] text-amber hover:text-amber/80 transition duration-200">Lee la historia completa →</a>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
-        {{-- CTA CIERRE --}}
-        <div class="flex flex-wrap items-center justify-between gap-6 pt-section">
-            <h2 class="font-titulo font-black uppercase text-ink-heading text-[clamp(20px,2.2vw,26px)] tracking-[-0.015em]">Escúchalos juntos</h2>
-            <div class="flex flex-wrap gap-4">
-                <x-button :href="route('discografia')">Discografía</x-button>
-                <x-button-ghost :href="route('historia')">Historia</x-button-ghost>
-            </div>
-        </div>
     </div>
 </x-app-layout>
