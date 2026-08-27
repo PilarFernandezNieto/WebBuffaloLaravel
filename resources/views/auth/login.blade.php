@@ -1,46 +1,77 @@
 <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
 
 
 
-    <form method="POST" action="{{ route('login') }}" novalidate>
+
+
+    <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2.5">
+        Panel de administración
+    </p>
+    <h1 class="heading-auth">
+        Iniciar sesión
+    </h1>
+
+    <x-auth-session-status
+        class="mb-5 block border-l-4 border-green-600 bg-green-50 text-green-700 font-semibold text-sm p-3 rounded-sharp"
+        :status="session('status')" />
+
+    @if ($errors->any())
+        <p role="alert"
+            class="text-sm font-semibold leading-[1.55] text-oxide border-l-4 border-oxide-light bg-cream-white p-3 rounded-sharp mb-5">
+            {{ __('Credenciales incorrectas. Revisa el correo y la contraseña.') }}
+        </p>
+    @endif
+
+    <form method="POST" action="{{ route('login') }}" novalidate class="flex flex-col gap-5">
         @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <div class="flex flex-col gap-2">
+            <x-input-label for="email" :value="__('Correo electrónico')" />
+            <x-text-input id="email" class="block w-full" type="email" name="email" :value="old('email')"
+                placeholder="tu@theelectricbuffalo.com" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" />
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="flex flex-col gap-2">
+            <x-input-label for="password" :value="__('Contraseña')" />
+            <div class="flex gap-2.5 items-stretch">
+                <x-text-input id="password" class="block w-full flex-1 min-w-0" type="password" name="password"
+                    placeholder="••••••••" required autocomplete="current-password" />
+                <button type="button" id="toggle-password"
+                    class="shrink-0 flex items-center font-cuerpo bg-transparent border border-rule-input text-ink-muted text-[11px] font-bold tracking-[1.2px] uppercase px-4 rounded-sharp cursor-pointer hover:bg-ink hover:border-ink hover:text-cream-white transition duration-200">
+                    Ver
+                </button>
+            </div>
+            <x-input-error :messages="$errors->get('password')" />
         </div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox"
-                    class="rounded border-gray-300 text-custom-red shadow-sm focus:ring-custom-red" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Recordarme') }}</span>
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+            <label for="remember_me" class="flex items-center gap-2.5 cursor-pointer">
+                <input id="remember_me" type="checkbox" name="remember"
+                    class="w-5 h-5 accent-oxide rounded-sharp cursor-pointer">
+                <span class="text-sm text-ink-body">Mantener la sesión</span>
             </label>
-        </div>
-
-        <div class="flex justify-between my-5">
-            {{-- <x-link :href="route('register')" class="text-xs">Crea tu cuenta</x-link> --}}
-            <x-link :href="route('password.request')" class="text-xs">¿Has olvidado tu contraseña?</x-link>
+            <a href="{{ route('password.request') }}"
+                class="text-[13px] font-semibold text-oxide hover:text-oxide-hover">
+                ¿Olvidaste la contraseña?
+            </a>
         </div>
 
         <x-primary-button class="w-full justify-center">
-            {{ __('Inicia sesión') }}
+            {{ __('Entrar') }}
         </x-primary-button>
     </form>
+
+    @push('scripts')
+        <script>
+            const toggle = document.getElementById('toggle-password');
+            const password = document.getElementById('password');
+            toggle?.addEventListener('click', () => {
+                const isHidden = password.type === 'password';
+                password.type = isHidden ? 'text' : 'password';
+                toggle.textContent = isHidden ? 'Ocultar' : 'Ver';
+                toggle.setAttribute('aria-pressed', isHidden ? 'true' : 'false');
+            });
+        </script>
+    @endpush
 </x-guest-layout>

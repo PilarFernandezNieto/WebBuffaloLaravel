@@ -6,34 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} | Admin</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-gray-900 antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-        @if (session('error'))
-            <div class="uppercase border border-red-600 bg-red-100 text-red-600 font-bold p-2 m-3">
-                {{ session('error') }}
-            </div>
-        @endif
-        <div>
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+<body class="font-cuerpo antialiased bg-cream text-ink-body">
+    @if (session('error'))
+        <div
+            class="uppercase border-l-4 border-oxide bg-cream-white text-oxide font-bold text-sm p-3 m-4 rounded-sharp text-center">
+            {{ session('error') }}
         </div>
+    @endif
 
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+    <div class="min-h-screen flex items-center justify-center px-edge py-[clamp(24px,5vw,64px)]">
+        <main class="w-full max-w-[420px]">
+
+            <div class="flex items-center gap-3 mb-6">
+                <a href="{{ route('welcome') }}">
+
+                    <x-application-logo />
+
+                </a>
+            </div>
+
             {{ $slot }}
-        </div>
+        </main>
     </div>
+
+    @stack('scripts')
 </body>
 
 </html>

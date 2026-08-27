@@ -1,71 +1,74 @@
-<div class="flex flex-col items-center justify-center gap-4">
-    <form class="w-95p lg:w-4/5 mx-auto" wire:submit.prevent='editarNoticia' method="POST">
+<div>
+    <form class="flex flex-col gap-5" wire:submit.prevent='editarNoticia' method="POST">
 
-        <div>
+        <div class="flex flex-col gap-1.5">
             <x-input-label for="titulo" :value="__('Título')" />
-            <x-text-input id="titulo" class="block mt-1 w-full" type="text" wire:model="titulo" :value="old('titulo')"
+            <x-text-input id="titulo" class="block w-full" type="text" wire:model="titulo" :value="old('titulo')"
                 placeholder="Título" />
-            <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
+            <x-input-error :messages="$errors->get('titulo')" />
         </div>
-        <div class="mt-4">
-            <x-input-label for="slug" :value="__('URL Amigable (Slug)')" />
-            <x-text-input id="slug" class="block mt-1 w-full bg-gray-100 text-gray-500 cursor-not-allowed" type="text"
+
+        <div class="flex flex-col gap-1.5">
+            <x-input-label for="slug" :value="__('URL amigable')" />
+            <x-text-input id="slug" class="block w-full bg-cream-hover text-ink-muted cursor-not-allowed" type="text"
                 disabled wire:model="slug" />
         </div>
-        <div class="mt-4">
+
+        <div class="flex flex-col gap-1.5">
             <x-input-label for="intro" :value="__('Introducción')" />
-            <x-text-input id="intro" class="block mt-1 w-full" type="text" wire:model="intro" :value="old('intro')"
-                placeholder="Introducción" />
-            <x-input-error :messages="$errors->get('intro')" class="mt-2" />
+            <x-text-input id="intro" class="block w-full" type="text" wire:model="intro" :value="old('intro')"
+                placeholder="Resumen breve para el listado" />
+            <x-input-error :messages="$errors->get('intro')" />
         </div>
 
-        <div class="mt-4">
-            <x-input-label for="fecha" :value="__('Fecha')" />
-            <x-text-input id="fecha" class="block mt-1 w-full" type="date" wire:model="fecha" :value="old('fecha')"
-                placeholder="Fecha" />
-            <x-input-error :messages="$errors->get('fecha')" class="mt-2" />
+        <div class="flex flex-wrap items-end gap-5">
+            <div class="flex flex-col gap-1.5 max-w-[260px]">
+                <x-input-label for="fecha" :value="__('Fecha')" />
+                <x-text-input id="fecha" class="block w-full" type="date" wire:model="fecha" :value="old('fecha')" />
+                <x-input-error :messages="$errors->get('fecha')" />
+            </div>
+            <label class="flex items-center gap-3 cursor-pointer bg-cream-white border border-rule-light rounded-sharp px-[18px] h-[50px]">
+                <input type="checkbox" wire:model="portada" id="portada" {{ $portada ? 'checked' : '' }}
+                    class="w-5 h-5 accent-oxide rounded-sharp cursor-pointer">
+                <span class="text-sm font-semibold text-ink-body whitespace-nowrap">Mostrar en portada</span>
+            </label>
         </div>
 
-
-        <div class="mt-4">
+        <div class="flex flex-col gap-1.5">
             <x-input-label for="texto" :value="__('Texto')" />
             <div wire:ignore>
                 <textarea wire:model="texto" id="texto" wire:model.defer="texto" wire:ignore
-                    class="block mt-1 w-full h-52 border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"></textarea>
+                    class="block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
             </div>
-
         </div>
-        <div class="mt-4">
-            <x-input-label for="imagen" :value="__('Imagen')" />
-            <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen_nueva"
-                accept="image/*" />
-            <div class="my-5 w-80">
-                <x-input-label :value="__('Imagen Actual')" />
-                <img src="{{ asset('/storage/' . $imagen) }}" alt="{{ 'Imagen ' . $id }}">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[520px]">
+            <div class="flex flex-col gap-1.5">
+                <x-input-label :value="__('Imagen actual')" />
+                <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                    <img src="{{ asset('storage/' . $imagen) }}" alt="{{ 'Imagen ' . $id }}" class="w-full h-full object-cover">
+                </div>
             </div>
-            <div class="my-5 w-80">
+            <div class="flex flex-col gap-1.5">
+                <x-input-label for="imagen_nueva" :value="__('Nueva imagen')" />
+                <x-text-input id="imagen_nueva" class="block w-full" type="file" wire:model="imagen_nueva" accept="image/*" />
                 @if ($imagen_nueva)
-                    Imagen nueva:
-                    <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Imagen Noticia">
+                    <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                        <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Nueva imagen de la noticia" class="w-full h-full object-cover">
+                    </div>
                 @endif
+                <x-input-error :messages="$errors->get('imagen_nueva')" />
             </div>
-
-            <x-input-error :messages="$errors->get('imagen_nueva')" class="mt-2" />
-        </div>
-        <div class="mt-4">
-            <div class="flex gap-4 items-center">
-                <x-input-label for="portada" :value="__('Portada')" />
-                <input type="checkbox" wire:model="portada" id="portada"
-                    class="border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"
-                    {{ $portada ? 'checked' : '' }}>
-            </div>
-            <x-input-error :messages="$errors->get('portada')" class="mt-2" />
         </div>
 
-        <x-primary-button class="w-full mt-4 justify-center">Guardar Cambios</x-primary-button>
+        <div class="flex gap-3.5 mt-2">
+            <x-primary-button>Guardar</x-primary-button>
+            <x-link :href="route('admin.noticias.index')" class="flex items-center min-h-[50px]">Cancelar</x-link>
+        </div>
+
         @if ($errors->any())
-            <div class="mt-4 text-red-500">
-                <ul>
+            <div class="border-l-4 border-oxide bg-cream-white text-oxide text-sm font-semibold p-3 rounded-sharp">
+                <ul class="list-disc list-inside">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
@@ -73,7 +76,6 @@
             </div>
         @endif
     </form>
-    <x-link :href="route('admin.noticias.index')" class="p-4">Volver</x-link>
 </div>
 @push('scripts')
     <script>

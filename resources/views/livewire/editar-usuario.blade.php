@@ -1,48 +1,48 @@
-<div class="flex flex-col items-center justify-center p-5">
-    <form class="w-95p lg:w-4/5 mx-auto" wire:submit.prevent='editarUsuario' method="POST">
-        <!-- Name -->
-        <div>
+<div>
+    <form class="flex flex-col gap-5" wire:submit.prevent='editarUsuario' method="POST">
+        <div class="flex flex-col gap-1.5">
             <x-input-label for="name" :value="__('Nombre')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" wire:model="name" :value="old('name')"
-                placeholder="Nombre" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <x-text-input id="name" class="block w-full" type="text" wire:model="name" :value="old('name')"
+                placeholder="Nombre y apellidos" />
+            <x-input-error :messages="$errors->get('name')" />
         </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="text" wire:model="email" :value="old('email')"
-                placeholder="Email" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <div class="flex flex-col gap-1.5">
+            <x-input-label for="email" :value="__('Correo electrónico')" />
+            <x-text-input id="email" class="block w-full" type="text" wire:model="email" :value="old('email')"
+                placeholder="nombre@theelectricbuffalo.com" />
+            <x-input-error :messages="$errors->get('email')" />
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Contraseña')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" wire:model="password"
-                :value="old('password')" placeholder="Contraseña" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="flex flex-col gap-1.5">
+            <x-input-label for="password" :value="__('Nueva contraseña')" />
+            <x-text-input id="password" class="block w-full" type="password" wire:model="password"
+                :value="old('password')" placeholder="Dejar en blanco para no cambiarla" />
+            <x-input-error :messages="$errors->get('password')" />
         </div>
 
-        <div class="mt-4 flex justify-evenly">
+        <div class="flex flex-col gap-3.5 bg-cream-white border border-rule-light rounded-sharp p-4">
             <div>
-                <div class="flex gap-4 items-center">
-                    <x-input-label for="admin" :value="__('Es Admin')" />
+                <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" wire:model="admin" id="admin"
-                        class="border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm">
-                </div>
-                <x-input-error :messages="$errors->get('admin')" class="mt-2" />
+                        class="w-5 h-5 accent-oxide rounded-sharp cursor-pointer">
+                    <span class="text-sm font-semibold text-ink-body">Es administrador</span>
+                </label>
+                <x-input-error :messages="$errors->get('admin')" class="mt-1" />
             </div>
             <div>
-                <div class="flex gap-4 items-center">
-                    <x-input-label for="verified" :value="__('Verificado')" />
+                <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" wire:model="verified" id="verified" {{ $verified ? 'checked' : '' }}
-                        class="border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm">
-                </div>
-                <x-input-error :messages="$errors->get('verified')" class="mt-2" />
+                        class="w-5 h-5 accent-oxide rounded-sharp cursor-pointer">
+                    <span class="text-sm font-semibold text-ink-body">Verificado</span>
+                </label>
+                <x-input-error :messages="$errors->get('verified')" class="mt-1" />
             </div>
         </div>
-        <x-primary-button class="w-full mt-4 justify-center">Guardar Cambios</x-primary-button>
+
+        <div class="flex gap-3.5 mt-2">
+            <x-primary-button>Guardar</x-primary-button>
+            <x-link :href="route('admin.usuarios.index')" class="flex items-center min-h-[50px]">Cancelar</x-link>
+        </div>
     </form>
-    <x-link :href="route('admin.usuarios.index')" class="p-4">Volver</x-link>
 </div>

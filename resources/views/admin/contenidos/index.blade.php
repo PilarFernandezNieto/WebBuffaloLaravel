@@ -1,19 +1,15 @@
 <x-admin-layout>
-    <x-slot name="header">
-        <x-admin-page-header title="Panel Administrador" />
-    </x-slot>
+    @include('admin.partials.tabs')
 
-    <div class="py-12 px-4">
-        <div class="max-w-7xl mx-auto">
-            @if (session()->has('mensaje'))
-                <div class="uppercase border border-green-600 bg-green-100 text-green-600 font-bold p-2 my-3">
-                    {{ session('mensaje') }}
-                </div>
-            @endif
-            <livewire:listado-contenidos />
+    <div class="max-w-[1180px] w-full mx-auto px-edge py-[clamp(24px,3.5vw,44px)]">
 
-            <x-button-link :href="route('admin.contenidos.create')" class="mt-5">Nuevo Contenido</x-button-link>
+        <x-admin.page-heading eyebrow="Panel" :eyebrow-href="route('admin.index')" title="Contenidos">
+            <x-button-link :href="route('admin.contenidos.create')">Nuevo contenido</x-button-link>
+        </x-admin.page-heading>
 
-        </div>
+        <x-admin.flash />
+
+        <livewire:listado-contenidos />
+
     </div>
 </x-admin-layout>

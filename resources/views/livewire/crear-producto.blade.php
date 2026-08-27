@@ -1,70 +1,79 @@
-<div class="flex flex-col items-center justify-center gap-4 p-5">
-    <form class="w-95p lg:w-4/5 mx-auto" wire:submit.prevent='crearProducto' method="POST">
-        <fieldset class="border border-custom-red p-4 rounded-md mb-4">
-            <legend class="text-custom-red text-lg uppercase px-1">Datos comunes</legend>
-            <div>
+<div>
+    <form class="flex flex-col gap-6" wire:submit.prevent='crearProducto' method="POST">
+        <fieldset class="border border-rule-light bg-cream-field rounded-sharp p-5 flex flex-col gap-5">
+            <legend class="font-titulo text-oxide text-xs font-bold uppercase tracking-[1px] px-1">Datos comunes</legend>
+
+            <div class="flex flex-col gap-1.5">
                 <x-input-label for="nombre" :value="__('Nombre')" />
-                <x-text-input id="nombre" class="block mt-1 w-full" type="text" wire:model="nombre" :value="old('nombre')"
+                <x-text-input id="nombre" class="block w-full" type="text" wire:model="nombre" :value="old('nombre')"
                     placeholder="Nombre" />
-                <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
+                <x-input-error :messages="$errors->get('nombre')" />
             </div>
-            <div class="mt-4">
-                <x-input-label for="imagen" :value="__('Imagen')" />
-                <x-text-input id="imagen" class="block mt-1 " type="file" wire:model="imagen"
-                    accept="image/*" />
-                <div class="my-5 w-[50%] min-w-40">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[520px]">
+                <div class="flex flex-col gap-1.5">
+                    <x-input-label :value="__('Imagen actual')" />
+                    <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-[11px] font-bold uppercase tracking-[0.6px] text-ink-muted">
+                        Sin imagen todavía
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <x-input-label for="imagen" :value="__('Imagen')" />
+                    <x-text-input id="imagen" class="block w-full" type="file" wire:model="imagen" accept="image/*" />
                     @if ($imagen)
-                        Imagen:
-                        <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen Noticia">
+                        <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                            <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen del producto" class="w-full h-full object-cover">
+                        </div>
                     @endif
+                    <x-input-error :messages="$errors->get('imagen')" />
                 </div>
-                <x-input-error :messages="$errors->get('imagen')" class="mt-2" />
             </div>
-            <div class="md:grid md:grid-cols-3 gap-4">
-                <div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                <div class="flex flex-col gap-1.5">
                     <x-input-label for="precio" :value="__('Precio')" />
-                    <x-text-input id="precio" class="block mt-1 w-full" type="text" wire:model="precio"
+                    <x-text-input id="precio" class="block w-full" type="text" wire:model="precio"
                         :value="old('precio')" placeholder="Precio" />
-                    <x-input-error :messages="$errors->get('precio')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('precio')" />
                 </div>
-                <div>
+                <div class="flex flex-col gap-1.5">
                     <x-input-label for="categoria" :value="__('Categoría')" />
                     <select wire:model="categoria" id="categoria"
-                        class="w-full border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm mt-1">
+                        class="block w-full min-h-[50px] px-4 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus">
                         <option value="">-- Seleccione --</option>
                         @foreach ($categorias as $categoria)
                             <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
                         @endforeach
                     </select>
                 </div>
-                <div>
+                <div class="flex flex-col gap-1.5">
                     <x-input-label for="stock" :value="__('Stock')" />
-                    <x-text-input id="stock" class="block mt-1 w-full" type="text" wire:model="stock"
+                    <x-text-input id="stock" class="block w-full" type="text" wire:model="stock"
                         :value="old('stock')" placeholder="Stock" />
-                    <x-input-error :messages="$errors->get('stock')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('stock')" />
                 </div>
             </div>
-
         </fieldset>
-        <fieldset class="border border-custom-red p-4 rounded-md mb-4">
-            <legend class="text-custom-red text-lg uppercase px-1">Discos</legend>
-            <div class="md:grid md:grid-cols-3 gap-4">
-                <div>
+
+        <fieldset class="border border-rule-light bg-cream-field rounded-sharp p-5 flex flex-col gap-5">
+            <legend class="font-titulo text-oxide text-xs font-bold uppercase tracking-[1px] px-1">Discos</legend>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                <div class="flex flex-col gap-1.5">
                     <x-input-label for="anio_edicion" :value="__('Año de edición')" />
-                    <x-text-input id="anio_edicion" class="block mt-1 w-full" type="text" wire:model="anio_edicion"
+                    <x-text-input id="anio_edicion" class="block w-full" type="text" wire:model="anio_edicion"
                         :value="old('anio_edicion')" placeholder="Año de edición" />
-                    <x-input-error :messages="$errors->get('anio_edicion')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('anio_edicion')" />
                 </div>
-                <div>
+                <div class="flex flex-col gap-1.5">
                     <x-input-label for="sello" :value="__('Sello')" />
-                    <x-text-input id="sello" class="block mt-1 w-full" type="text" wire:model="sello"
+                    <x-text-input id="sello" class="block w-full" type="text" wire:model="sello"
                         :value="old('sello')" placeholder="Sello" />
-                    <x-input-error :messages="$errors->get('sello')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('sello')" />
                 </div>
-                <div>
+                <div class="flex flex-col gap-1.5">
                     <x-input-label for="formato" :value="__('Formato')" />
                     <select wire:model="formato" id="formato"
-                        class="w-full border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm mt-1">
+                        class="block w-full min-h-[50px] px-4 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus">
                         <option value="">-- Seleccione --</option>
                         @foreach ($formatos as $formato)
                             <option value="{{ $formato->id }}">{{ $formato->nombre }}</option>
@@ -74,19 +83,19 @@
             </div>
         </fieldset>
 
-        <fieldset class="border border-custom-red p-4 rounded-md mb-4">
-            <legend class="text-custom-red text-lg uppercase px-1">Camisetas</legend>
-            <div class="md:grid md:grid-cols-2 gap-4">
-                <div>
+        <fieldset class="border border-rule-light bg-cream-field rounded-sharp p-5 flex flex-col gap-5">
+            <legend class="font-titulo text-oxide text-xs font-bold uppercase tracking-[1px] px-1">Camisetas</legend>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="flex flex-col gap-1.5">
                     <x-input-label for="color" :value="__('Color')" />
-                    <x-text-input id="color" class="block mt-1 w-full" type="text" wire:model="color"
+                    <x-text-input id="color" class="block w-full" type="text" wire:model="color"
                         :value="old('color')" placeholder="Color" />
-                    <x-input-error :messages="$errors->get('color')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('color')" />
                 </div>
-                <div>
+                <div class="flex flex-col gap-1.5">
                     <x-input-label for="talla" :value="__('Talla')" />
                     <select wire:model="talla" id="talla"
-                        class="w-full border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm mt-1">
+                        class="block w-full min-h-[50px] px-4 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus">
                         <option value="">-- Seleccione --</option>
                         @foreach ($tallas as $talla)
                             <option value="{{ $talla->id }}">{{ $talla->nombre }}</option>
@@ -95,26 +104,30 @@
                 </div>
             </div>
         </fieldset>
-        <div class="mt-4">
+
+        <div class="flex flex-col gap-1.5">
             <x-input-label for="informacion" :value="__('Información')" />
             <div wire:ignore>
                 <textarea wire:model="informacion" id="informacion" wire:model.defer="informacion" wire:ignore
-                    class="block mt-1 w-full h-52 border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"></textarea>
+                    class="block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
             </div>
         </div>
-        <div class="mt-4">
+        <div class="flex flex-col gap-1.5">
             <x-input-label for="textos" :value="__('Textos')" />
             <div wire:ignore>
                 <textarea wire:model="textos" id="textos" wire:model.defer="textos" wire:ignore
-                    class="tinymce block mt-1 w-full h-52 border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"></textarea>
+                    class="tinymce block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
             </div>
         </div>
 
+        <div class="flex gap-3.5 mt-2">
+            <x-primary-button>Guardar</x-primary-button>
+            <x-link :href="route('admin.productos.index')" class="flex items-center min-h-[50px]">Cancelar</x-link>
+        </div>
 
-        <x-primary-button class="w-full mt-4 justify-center">Crear</x-primary-button>
         @if ($errors->any())
-            <div class="mt-4 text-red-500">
-                <ul>
+            <div class="border-l-4 border-oxide bg-cream-white text-oxide text-sm font-semibold p-3 rounded-sharp">
+                <ul class="list-disc list-inside">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
@@ -122,7 +135,6 @@
             </div>
         @endif
     </form>
-    <x-link :href="route('admin.productos.index')" class="p-4">Volver</x-link>
 </div>
 @push('scripts')
     <script>

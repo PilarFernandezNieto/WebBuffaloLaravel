@@ -1,83 +1,84 @@
-<div class="flex flex-col items-center justify-center">
-    <form class="w-95p lg:w-4/5 mx-auto" wire:submit.prevent='editarMusico' method="POST">
-        <div class="lg:grid lg:grid-cols-12 lg:gap-3">
-            <div class="col-span-5">
+<div>
+    <form class="flex flex-col gap-5" wire:submit.prevent='editarMusico' method="POST">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-1.5">
                 <x-input-label for="nombre" :value="__('Nombre')" />
-                <x-text-input id="nombre" class="block mt-1 w-full" type="text" wire:model="nombre" :value="old('nombre')"
+                <x-text-input id="nombre" class="block w-full" type="text" wire:model="nombre" :value="old('nombre')"
                     placeholder="Nombre" />
-                <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
+                <x-input-error :messages="$errors->get('nombre')" />
             </div>
-            <div class="col-span-7 mt-4 lg:mt-0">
+            <div class="flex flex-col gap-1.5">
                 <x-input-label for="apellidos" :value="__('Apellidos')" />
-                <x-text-input id="apellidos" class="block mt-1 w-full" type="text" wire:model="apellidos"
+                <x-text-input id="apellidos" class="block w-full" type="text" wire:model="apellidos"
                     :value="old('apellidos')" placeholder="Apellidos" />
-                <x-input-error :messages="$errors->get('apellidos')" class="mt-2" />
-            </div>
-        </div>
-        <div class="lg:grid lg:grid-cols-3 lg:gap-3 mt-4">
-            <div>
-                <x-input-label for="alias" :value="__('Alias')" />
-                <x-text-input id="alias" class="block mt-1 w-full" type="text" wire:model="alias"
-                    :value="old('alias')" placeholder="Alias" />
-                <x-input-error :messages="$errors->get('alias')" class="mt-2" />
-            </div>
-            <div class="mt-4 lg:mt-0">
-                <x-input-label for="origen" :value="__('Origen')" />
-                <x-text-input id="origen" class="block mt-1 w-full" type="text" wire:model="origen"
-                    :value="old('origen')" placeholder="Origen" />
-                <x-input-error :messages="$errors->get('origen')" class="mt-2" />
-            </div>
-            <div class="mt-4 lg:mt-0">
-                <x-input-label for="fecha_nac" :value="__('Fecha de nacimiento')" class="md:text-xs lg:text-sm" />
-                <x-text-input id="fecha_nac" class="block mt-1 w-full" type="date" wire:model="fecha_nac"
-                    :value="old('fecha_nac')" placeholder="Fecha de nacimiento" />
-                <x-input-error :messages="$errors->get('fecha_nac')" class="mt-2" />
+                <x-input-error :messages="$errors->get('apellidos')" />
             </div>
         </div>
 
-        <div class="mt-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div class="flex flex-col gap-1.5">
+                <x-input-label for="alias" :value="__('Alias')" />
+                <x-text-input id="alias" class="block w-full" type="text" wire:model="alias" :value="old('alias')"
+                    placeholder="Apodo en el escenario" />
+                <x-input-error :messages="$errors->get('alias')" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <x-input-label for="origen" :value="__('Origen')" />
+                <x-text-input id="origen" class="block w-full" type="text" wire:model="origen" :value="old('origen')"
+                    placeholder="Ciudad" />
+                <x-input-error :messages="$errors->get('origen')" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+                <x-input-label for="fecha_nac" :value="__('Fecha de nacimiento')" />
+                <x-text-input id="fecha_nac" class="block w-full" type="date" wire:model="fecha_nac"
+                    :value="old('fecha_nac')" />
+                <x-input-error :messages="$errors->get('fecha_nac')" />
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
             <x-input-label for="biografia" :value="__('Biografía')" />
             <div wire:ignore>
                 <textarea wire:model="biografia" id="biografia" wire:model.defer="biografia" wire:ignore
-                    class="block mt-1 w-full h-52 border-gray-300 focus:border-custom-red focus:ring-custom-red rounded-md shadow-sm"></textarea>
+                    class="block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
             </div>
-
+            <x-input-error :messages="$errors->get('biografia')" />
         </div>
-        <div class="mt-4">
-            <x-input-label for="imagen" :value="__('Imagen')" />
-            <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen_nueva"
-                accept="image/*" />
-            <div class="my-5 w-80">
-                <x-input-label :value="__('Imagen Actual')" />
-                <img src="{{ asset('/storage/' . $imagen) }}" alt="{{ 'Imagen ' . $nombre }}">
+
+        <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-1.5">
+                <x-input-label :value="__('Imagen actual')" />
+                <div class="w-52 aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                    <img src="{{ asset('storage/' . $imagen) }}" alt="Imagen de {{ $nombre }}"
+                        class="w-full h-full object-cover">
+                </div>
             </div>
-            <div class="my-5 w-80">
+            <div class="flex flex-col gap-1.5">
+                <x-input-label for="imagen_nueva" :value="__('Nueva imagen')" />
+                <x-text-input id="imagen_nueva" class="block w-full" type="file" wire:model="imagen_nueva"
+                    accept="image/*" />
                 @if ($imagen_nueva)
-                    Imagen nueva:
-                    <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Imagen Músico">
+                    <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                        <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Nueva imagen del músico"
+                            class="w-full h-full object-cover">
+                    </div>
                 @endif
+                <x-input-error :messages="$errors->get('imagen_nueva')" />
             </div>
+        </div>
 
-            <x-input-error :messages="$errors->get('imagen_nueva')" class="mt-2" />
-        </div>
-        <div class="mt-4">
+        <div class="flex flex-col gap-1.5">
             <x-input-label for="fotografo" :value="__('Foto de')" />
-            <x-text-input id="fotografo" class="block mt-1 w-full" type="text" wire:model="fotografo"
-                :value="old('fotografo')" placeholder="Foto de" />
-            <x-input-error :messages="$errors->get('fotografo')" class="mt-2" />
+            <x-text-input id="fotografo" class="block w-full" type="text" wire:model="fotografo" :value="old('fotografo')"
+                placeholder="Nombre del fotógrafo" />
+            <x-input-error :messages="$errors->get('fotografo')" />
         </div>
-        <x-primary-button class="w-full mt-4 justify-center">Guardar Cambios</x-primary-button>
-        @if ($errors->any())
-            <div class="mt-4 text-red-500">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+
+        <div class="flex gap-3.5 mt-2">
+            <x-primary-button>Guardar</x-primary-button>
+            <x-link :href="route('admin.musicos.index')" class="flex items-center min-h-[50px]">Cancelar</x-link>
+        </div>
     </form>
-    <x-link :href="route('admin.musicos.index')" class="p-4">Volver</x-link>
 </div>
 @push('scripts')
     <script>

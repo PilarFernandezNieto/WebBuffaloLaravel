@@ -49,3 +49,9 @@ a {
 .text-pretty {
     text-wrap: pretty;
 }
+
+@layer components {
+    .heading-auth {
+        @apply font-titulo font-black uppercase text-ink-heading leading-[1.05] tracking-[-0.02em] text-[clamp(20px,3.4vw,28px)] mb-[clamp(26px,3vw,34px)];
+    }
+}

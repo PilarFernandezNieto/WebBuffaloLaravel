@@ -1,11 +1,14 @@
 <x-admin-layout>
-    <x-slot name="header">
-        <x-admin-page-header title="Panel Administrador - Editar Noticia" />
-    </x-slot>
+    <div class="max-w-[760px] w-full mx-auto px-edge py-[clamp(24px,3.5vw,44px)]">
+        <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2">
+            <a href="{{ route('admin.noticias.index') }}">Noticias</a>
+        </p>
+        <h1
+            class="font-titulo font-black uppercase text-ink-heading leading-[1.05] tracking-[-0.02em] text-[clamp(26px,3.2vw,36px)] mb-[clamp(24px,3vw,32px)]">
+            Editar noticia
+        </h1>
 
-    <div class="py-12 px-4">
-        <div class="md:w-3/5 mx-auto bg-white overflow-hidden shadow-sm sm:rounded-lg text-gray-900 py-10">
-            <h1 class="text-2xl font-bold text-center mb-10 text-custom-red">Editar Noticia</h1>
+        <div class="bg-cream-field border border-rule-light rounded-sharp p-[clamp(20px,3vw,32px)]">
             <livewire:editar-noticia :noticia="$noticia" />
         </div>
     </div>

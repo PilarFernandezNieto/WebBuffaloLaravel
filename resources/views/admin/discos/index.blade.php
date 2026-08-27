@@ -1,19 +1,24 @@
 <x-admin-layout>
-    <x-slot name="header">
-        <x-admin-page-header title="Panel Administrador - Listado de discos" />
-    </x-slot>
+    @include('admin.partials.tabs')
 
-    <div class="py-12 px-4">
-        <div class="max-w-7xl mx-auto">
-            @if (session()->has('mensaje'))
-                <div class="uppercase border border-green-600 bg-green-100 text-green-600 font-bold p-2 my-3">
-                    {{ session('mensaje') }}
-                </div>
-            @endif
-            <livewire:listado-discos />
+    <div class="max-w-[1180px] w-full mx-auto px-edge py-[clamp(24px,3.5vw,44px)]">
 
-            <x-button-link :href="route('admin.productos.create')" class="mt-5">Nuevo Producto</x-button-link>
+        <x-admin.page-heading eyebrow="Panel" :eyebrow-href="route('admin.index')" title="Discos">
+            <x-button-link :href="route('admin.productos.create')">Nuevo producto</x-button-link>
+        </x-admin.page-heading>
 
-        </div>
+        <nav aria-label="Tipo de producto" class="flex gap-2 flex-wrap mb-6">
+            <a href="{{ route('admin.productos.index') }}"
+                class="text-xs font-bold uppercase tracking-[1px] px-4 py-2 rounded-sharp border {{ request()->routeIs('admin.productos.index') ? 'bg-oxide text-cream-white border-oxide' : 'border-rule-input text-ink-muted hover:border-oxide hover:text-oxide' }}">Todos</a>
+            <a href="{{ route('admin.discos.index') }}"
+                class="text-xs font-bold uppercase tracking-[1px] px-4 py-2 rounded-sharp border {{ request()->routeIs('admin.discos.*') ? 'bg-oxide text-cream-white border-oxide' : 'border-rule-input text-ink-muted hover:border-oxide hover:text-oxide' }}">Discos</a>
+            <a href="{{ route('admin.camisetas.index') }}"
+                class="text-xs font-bold uppercase tracking-[1px] px-4 py-2 rounded-sharp border {{ request()->routeIs('admin.camisetas.*') ? 'bg-oxide text-cream-white border-oxide' : 'border-rule-input text-ink-muted hover:border-oxide hover:text-oxide' }}">Camisetas</a>
+        </nav>
+
+        <x-admin.flash />
+
+        <livewire:listado-discos />
+
     </div>
 </x-admin-layout>
