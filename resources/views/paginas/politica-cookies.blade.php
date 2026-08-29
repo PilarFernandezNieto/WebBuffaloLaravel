@@ -3,7 +3,7 @@
         <h1 class="text-5xl mb-10">Política de cookies</h1>
 
         <div>
-            En <a href="https://www.theelectricbuffalo.com/" target="_blank" class="font-bold hover:text-custom-red">The
+            En <a href="https://www.theelectricbuffalo.com/" target="_blank" class="font-bold hover:text-oxide">The
                 Electric Buffalo</a> utilizamos cookies para mejorar tu experiencia de navegación y entender cómo
             interactúas con nuestro sitio web.
         </div>
@@ -67,13 +67,13 @@
         <div>
             <h2 class="text-2xl mt-4 font-medium mb-2">Más información</h2>
             <p>Para saber más sobre cómo usamos tus datos, consulta nuestra <a href="/politica-cookies"
-                    class="font-semibold hover:text-custom-red">Política de cookies</a>.</p>
+                    class="font-semibold hover:text-oxide">Política de cookies</a>.</p>
             <p>Fecha de la última actualización: 15/04/2025</p>
 
             <p>
                 Si tienes preguntas o inquietudes sobre esta Política de cookies, puedes contactarnos a través de <a
                     href="mailto:info@theelectricbuffalo.com"
-                    class="font-semibold hover:text-custom-red">info@theelectribuffalo.com</a>
+                    class="font-semibold hover:text-oxide">info@theelectribuffalo.com</a>
             </p>
         </div>
     </div>

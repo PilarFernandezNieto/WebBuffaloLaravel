@@ -12,14 +12,15 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/91eae316a2.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans antialiased fuente-principal ">
     <div class=" w-4/6 mx-auto mt-8 bg-white border border-gray-200 rounded-lg shadow-md ">
         <!-- Header -->
-        <div class="bg-custom-white text-custom-red text-center py-4">
+        <div class="bg-custom-white text-oxide text-center py-4">
             <h1 class="text-2xl font-semibold">Mensaje Recibido desde la Web</h1>
         </div>
         <!-- Content -->
@@ -42,4 +43,3 @@
             &copy; {{ date('Y') }} The Electric Buffalo. Todos los derechos reservados.
         </div>
     </div>
-

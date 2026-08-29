@@ -3,7 +3,7 @@
         <h1 class="text-5xl mb-10">Política de privacidad</h1>
 
         <p>
-            En <a href="https://www.theelectricbuffalo.com/" target="_blank" class="font-bold hover:text-custom-red">The
+            En <a href="https://www.theelectricbuffalo.com/" target="_blank" class="font-bold hover:text-oxide">The
                 Electric Buffalo</a> nos tomamos muy en
             serio la privacidad de nuestros usuarios. Esta Política de Privacidad describe cómo manejamos la información
             personal proporcionada a través de nuestro formulario de
@@ -48,7 +48,9 @@
         <p>Fecha de la última actualización: 29/12/2024</p>
 
         <p>
-            Si tienes preguntas o inquietudes sobre esta Política de Privacidad, puedes contactarnos a través de <a href="mailto:info@theelectricbuffalo.com" class="font-bold hover:text-custom-red">info@theelectribuffalo.com</a>
+            Si tienes preguntas o inquietudes sobre esta Política de Privacidad, puedes contactarnos a través de <a
+                href="mailto:info@theelectricbuffalo.com"
+                class="font-bold hover:text-oxide">info@theelectribuffalo.com</a>
         </p>
     </div>
 

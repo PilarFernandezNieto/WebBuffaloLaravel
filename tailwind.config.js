@@ -26,7 +26,6 @@ export default {
                 spotify: "#1DB954",
                 bandcamp: "#1DA0C3",
 
-                // Design tokens — rediseño "cartel de rock sureño"
                 cream: {
                     DEFAULT: "#F3EAD9",
                     field: "#FBF5E9",
@@ -59,6 +58,11 @@ export default {
                     input: "#B9A992",
                     dark: "#463729",
                     "on-dark": "#6B5744",
+                },
+                actions: {
+                    edit: "#2F6B52 ",
+                    edit_hover: "#1D4633 ",
+                    delete: "#932412",
                 },
             },
             minHeight: {
