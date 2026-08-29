@@ -31,8 +31,11 @@ class ImageService
      */
     public static function save(UploadedFile $file, string $folder): string
     {
-        $dimensions  = self::$dimensions[$folder] ?? ['width' => 900, 'height' => 600];
-        $filename    = Str::uuid() . '.webp';
+        $dimensions   = self::$dimensions[$folder] ?? ['width' => 900, 'height' => 600];
+        $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $slug         = Str::of($originalName)->slug('_');
+        $timestamp    = now()->format('Y-m-d_His');
+        $filename     = "{$slug}-{$timestamp}.webp";
         $storagePath = storage_path("app/public/{$folder}/{$filename}");
 
         // Aseguramos que existe la carpeta destino
