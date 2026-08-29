@@ -27,59 +27,55 @@
                 {{ __('Contacto') }}
             </x-link-nav>
 
-            @auth
-                <div class="ms-2">
-                    <x-dropdown align="right" width="48">
-                        <x-slot name="trigger">
-                            <button
-                                class="inline-flex items-center gap-1 px-3 py-2 text-xs font-semibold uppercase tracking-[1px] text-cream/90 hover:text-amber transition duration-200">
-                                {{ Auth::user()->name }}
-                                <svg class="h-3 w-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </x-slot>
-                        <x-slot name="content">
-                            <x-dropdown-link :href="route('admin.index')">{{ __('Admin') }}</x-dropdown-link>
-                            <x-dropdown-link :href="route('profile.edit')">{{ __('Profile') }}</x-dropdown-link>
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault(); this.closest('form').submit();">
-                                    {{ __('Cerrar sesión') }}
-                                </x-dropdown-link>
-                            </form>
-                        </x-slot>
-                    </x-dropdown>
-                </div>
-            @endauth
         </div>
 
         <!-- Social icons -->
         <div class="hidden lg:flex items-center gap-3">
-            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank"
-                aria-label="Facebook de The Electric Buffalo"
-                class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-cream/90 text-[15px] hover:border-amber hover:text-amber transition duration-200 ease-in-out">
-                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.instagram.com/theelectricbuffalo/" target="_blank"
-                aria-label="Instagram de The Electric Buffalo"
-                class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-cream/90 text-[15px] hover:border-amber hover:text-amber transition duration-200 ease-in-out">
+            <x-button-icon href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank"
+                aria-label="Facebook de The Electric Buffalo"><i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            </x-button-icon>
+            <x-button-icon href="https://www.instagram.com/theelectricbuffalo/" target="_blank"
+                aria-label="Instagram de The Electric Buffalo">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.youtube.com/@theelectricbuffalo666" target="_blank"
-                aria-label="YouTube de The Electric Buffalo"
-                class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-cream/90 text-[15px] hover:border-amber hover:text-amber transition duration-200 ease-in-out">
+            </x-button-icon>
+            <x-button-icon href="https://www.youtube.com/@theelectricbuffalo666" target="_blank"
+                aria-label="YouTube de The Electric Buffalo">
                 <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-            </a>
-            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank"
-                aria-label="Bandcamp de The Electric Buffalo"
-                class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-cream/90 text-[15px] hover:border-amber hover:text-amber transition duration-200 ease-in-out">
+            </x-button-icon>
+            <x-button-icon href="https://theelectricbuffalo.bandcamp.com/" target="_blank"
+                aria-label="Bandcamp de The Electric Buffalo">
                 <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
-            </a>
+            </x-button-icon>
         </div>
+
+        @auth
+            <div class="ms-2">
+                <x-dropdown align="right" width="48">
+                    <x-slot name="trigger">
+                        <button
+                            class="inline-flex items-center gap-1 px-3 py-2 text-xs font-semibold uppercase tracking-[1px] text-cream/90 hover:text-amber transition duration-200">
+                            {{ Auth::user()->name }}
+                            <svg class="h-3 w-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </x-slot>
+                    <x-slot name="content">
+                        <x-dropdown-link :href="route('admin.index')">{{ __('Admin') }}</x-dropdown-link>
+                        <x-dropdown-link :href="route('profile.edit')">{{ __('Profile') }}</x-dropdown-link>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <x-dropdown-link :href="route('logout')"
+                                onclick="event.preventDefault(); this.closest('form').submit();">
+                                {{ __('Cerrar sesión') }}
+                            </x-dropdown-link>
+                        </form>
+                    </x-slot>
+                </x-dropdown>
+            </div>
+        @endauth
 
         <!-- Hamburger -->
         <div class="flex items-center lg:hidden">
@@ -100,22 +96,21 @@
     <div :class="{ 'block': open, 'hidden': !open }"
         class="hidden lg:hidden border-t border-rule-dark pt-4 pb-4 px-[clamp(18px,4vw,40px)]">
         <div class="flex justify-center text-cream/90 text-2xl gap-4">
-            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank"
-                aria-label="Icono Facebook" class="hover:text-amber transition duration-200">
+            <x-button-icon href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank"
+                aria-label="Icono Facebook">
                 <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.instagram.com/theelectricbuffalo/" target="_blank" aria-label="Icono Instagram"
-                class="hover:text-amber transition duration-200">
+            </x-button-icon>
+            <x-button-icon href="https://www.instagram.com/theelectricbuffalo/" target="_blank"
+                aria-label="Icono Instagram">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.youtube.com/@theelectricbuffalo666" target="_blank" aria-label="Icono Youtube"
-                class="hover:text-amber transition duration-200">
+            </x-button-icon>
+            <x-button-icon href="https://www.youtube.com/@theelectricbuffalo666" target="_blank"
+                aria-label="Icono Youtube">
                 <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-            </a>
-            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" aria-label="Icono Bandcamp"
-                class="hover:text-amber transition duration-200">
+            </x-button-icon>
+            <x-button-icon href="https://theelectricbuffalo.bandcamp.com/" target="_blank" aria-label="Icono Bandcamp">
                 <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
-            </a>
+            </x-button-icon>
         </div>
         <div class="pt-4 space-y-1">
             <x-responsive-link-nav :href="route('historia')" :active="request()->routeIs('historia')">{{ __('Historia') }}</x-responsive-link-nav>
