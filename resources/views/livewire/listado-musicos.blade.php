@@ -38,8 +38,9 @@
                     </td>
                     <td class="px-4 py-3.5 whitespace-nowrap">
                         <div class="flex gap-3.5 items-center">
-                            <x-link-edit href="{{ route('admin.musicos.edit', $musico->id) }}"
-                                class="fa-regular fa-pen-to-square"></i></x-link-edit>
+                            <x-link-edit href="{{ route('admin.musicos.edit', $musico->id) }}">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </x-link-edit>
                             <x-button-trash type="button"
                                 wire:click="$dispatch('mostrarAlerta',{{ $musico->id }})"><i
                                     class="fa-regular fa-trash-can"></i></x-button-trash>
