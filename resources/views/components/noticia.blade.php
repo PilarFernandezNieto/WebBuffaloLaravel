@@ -18,7 +18,7 @@
                 class="hover:text-oxide transition-colors duration-200 ">{{ $noticia->titulo }}</a>
             </{{ $headingTag }}>
 
-            <p class="text-ink-body text-[15px] leading-[1.7] mb-4 text-pretty min-h-[50px]">{{ $noticia->intro }}</p>
+            <p class="text-ink-body text-base leading-[1.7] mb-4 text-pretty min-h-[50px]">{{ $noticia->intro }}</p>
 
             <a href="{{ route('noticia.mostrar', $noticia) }}"
                 class="mt-auto inline-flex items-center min-h-[44px] font-cuerpo text-sm font-bold  tracking-[1px] text-oxide hover:text-oxide-hover transition duration-200">

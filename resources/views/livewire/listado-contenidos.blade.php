@@ -2,23 +2,35 @@
     <table class="w-full min-w-[640px] border-collapse text-left">
         <thead>
             <tr class="bg-cream-hover">
-                <th class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">Id</th>
-                <th class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">Portada</th>
-                <th class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">Título</th>
-                <th class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">Imagen</th>
-                <th class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">Acciones</th>
+                <th
+                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    Id</th>
+                <th
+                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    Portada</th>
+                <th
+                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    Título</th>
+                <th
+                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    Imagen</th>
+                <th
+                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    Acciones</th>
             </tr>
         </thead>
         <tbody>
             @forelse ($contenidos as $contenido)
                 <tr class="border-b border-rule-light-soft last:border-b-0">
-                    <td class="px-4 py-3.5 text-[13px] font-bold text-ink-muted whitespace-nowrap">{{ $contenido->id }}</td>
+                    <td class="px-4 py-3.5 text-sm font-bold text-ink-muted whitespace-nowrap">{{ $contenido->id }}
+                    </td>
                     <td class="px-4 py-3.5">
                         <i class="{{ $contenido->portada == 1 ? 'fa-regular fa-square-check text-oxide text-lg' : 'fa-regular fa-square text-ink-muted/50 text-lg' }}"
                             title="{{ $contenido->portada == 1 ? 'Portada' : 'No portada' }}"></i>
                     </td>
-                    <td class="px-4 py-3.5 min-w-[180px]">
-                        <span class="block text-[15px] font-bold text-ink-heading text-pretty">{{ $contenido->titulo }}</span>
+                    <td class="px-4 py-3.5 min-w-44">
+                        <span
+                            class="block text-base font-bold text-ink-heading text-pretty">{{ $contenido->titulo }}</span>
                     </td>
                     <td class="px-4 py-3.5">
                         <img src="{{ asset('storage/' . $contenido->imagen) }}" alt="Imagen de {{ $contenido->titulo }}"
@@ -35,37 +47,11 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="5" class="px-4 py-6 text-sm text-ink-muted text-center">No hay contenidos todavía.</td>
+                    <td colspan="5" class="px-4 py-6 text-sm text-ink-muted text-center">No hay contenidos todavía.
+                    </td>
                 </tr>
             @endforelse
         </tbody>
     </table>
 </div>
-@push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        Livewire.on('mostrarAlerta', contenidoId => {
-            Swal.fire({
-                title: '¿Quieres eliminar este elemento?',
-                text: "Esta acción no se puede deshacer!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#AC2C28',
-                cancelButtonColor: '#5A4938',
-                confirmButtonText: 'Sí, elimínalo!',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Livewire.dispatch('eliminarContenido', {
-                        id: contenidoId
-                    });
-                    Swal.fire(
-                        '¡Eliminado!',
-                        'El contenido ha sido eliminado',
-                        'success'
-                    )
-                }
-            })
-        })
-    </script>
-@endpush
+<x-confirm-delete-alert event="eliminarContenido" />

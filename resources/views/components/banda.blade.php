@@ -21,7 +21,7 @@
                 @endif
                 @if ($musico->origen)
                     <span
-                        class="font-cuerpo text-[11px] font-bold uppercase tracking-[1.3px] text-ink-muted">{{ $musico->origen }}</span>
+                        class="font-cuerpo text-xs font-bold uppercase tracking-[1.3px] text-ink-muted">{{ $musico->origen }}</span>
                 @endif
             </div>
             <div class="mt-3 space-y-4 text-base leading-normal text-ink-body max-w-2xl">

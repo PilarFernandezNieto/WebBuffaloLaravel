@@ -10,7 +10,7 @@
         <div class="relative z-10 w-full max-w-home mx-auto px-edge-home pb-[clamp(32px,5vw,56px)]">
             <div class="flex items-center gap-[14px] mb-4">
                 <span class="inline-block h-px w-11 bg-amber"></span>
-                <span class="font-titulo italic text-amber text-[13px] font-semibold uppercase tracking-[1.3px]">
+                <span class="font-titulo italic text-amber text-sm font-semibold uppercase tracking-[1.3px]">
                     Desde 2006</span>
             </div>
             <h1

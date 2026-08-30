@@ -40,7 +40,7 @@
                         class="h-[clamp(38px,5.5vw,52px)] w-auto object-contain">
                 </a>
                 <span
-                    class="text-[11px] font-bold tracking-[1.4px] uppercase text-amber border border-rule-on-dark px-[10px] py-[5px] rounded-sharp">Admin</span>
+                    class="text-xs font-bold tracking-[1.4px] uppercase text-amber border border-rule-on-dark px-[10px] py-[5px] rounded-sharp">Admin</span>
             </div>
             <div class="flex items-center gap-[clamp(14px,2.5vw,24px)] flex-wrap">
                 <span class="text-sm text-cream/90">{{ Auth::user()->name }}</span>

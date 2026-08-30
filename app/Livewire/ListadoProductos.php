@@ -19,6 +19,7 @@ class ListadoProductos extends Component
         $producto = Producto::find($id);
         $this->borraImagen($producto->imagen);
         $producto->delete();
+        $this->dispatch('resultadoEliminacion', ['success' => true, 'message' => 'El producto se ha eliminado correctamente.']);
     }
 
 

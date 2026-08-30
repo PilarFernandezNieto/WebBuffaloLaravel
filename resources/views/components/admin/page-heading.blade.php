@@ -2,7 +2,7 @@
 
 <div class="flex flex-wrap gap-4 items-end justify-between mb-[clamp(20px,2.5vw,28px)]">
     <div class="min-w-0">
-        <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2">
+        <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-2">
             @if ($eyebrowHref)
                 <a href="{{ $eyebrowHref }}" class="hover:text-oxide-hover">{{ $eyebrow }}</a>
             @else

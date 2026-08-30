@@ -18,6 +18,7 @@ class ListadoNoticias extends Component
         $noticia = Noticia::find($id);
         $this->borraImagen($noticia->imagen);
         $noticia->delete();
+        $this->dispatch('resultadoEliminacion', ['success' => true, 'message' => 'La noticia se ha eliminado correctamente.']);
     }
 
     public function render()

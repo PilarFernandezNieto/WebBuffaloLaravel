@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2.5">
+    <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-2.5">
         Panel de administración
     </p>
     <h1 class="heading-auth">
@@ -27,7 +27,7 @@
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit" class="text-[13px] font-semibold text-oxide hover:text-oxide-hover">
+            <button type="submit" class="text-sm font-semibold text-oxide hover:text-oxide-hover">
                 {{ __('Cerrar sesión') }}
             </button>
         </form>

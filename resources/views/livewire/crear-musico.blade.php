@@ -49,7 +49,7 @@
             <div class="flex flex-col gap-1.5">
                 <x-input-label :value="__('Imagen actual')" />
                 <div
-                    class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-[11px] font-bold uppercase tracking-[0.6px] text-ink-muted">
+                    class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-xs font-bold uppercase tracking-[0.6px] text-ink-muted">
                     Sin imagen todavía
                 </div>
             </div>

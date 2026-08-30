@@ -1,7 +1,7 @@
 <x-admin-layout>
     <div class="max-w-[900px] w-full mx-auto px-edge py-[clamp(36px,6vw,72px)]">
 
-        <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2.5">
+        <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-2.5">
             Panel de administración
         </p>
         <h1

@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2.5">
+    <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-2.5">
         Panel de administración
     </p>
     <h1 class="heading-auth">
@@ -33,16 +33,16 @@
 
         <div class="flex flex-col gap-2">
             <x-input-label for="password_confirmation" :value="__('Repetir contraseña')" />
-            <x-text-input id="password_confirmation" class="block w-full" type="password"
-                name="password_confirmation" required autocomplete="new-password" />
+            <x-text-input id="password_confirmation" class="block w-full" type="password" name="password_confirmation"
+                required autocomplete="new-password" />
             <x-input-error :messages="$errors->get('password_confirmation')" />
         </div>
 
         <div class="flex items-center justify-between gap-4 flex-wrap">
-            <a href="{{ route('login') }}" class="text-[13px] font-semibold text-oxide hover:text-oxide-hover">Inicia
+            <a href="{{ route('login') }}" class="text-sm font-semibold text-oxide hover:text-oxide-hover">Inicia
                 sesión</a>
             <a href="{{ route('password.request') }}"
-                class="text-[13px] font-semibold text-oxide hover:text-oxide-hover">¿Has olvidado tu contraseña?</a>
+                class="text-sm font-semibold text-oxide hover:text-oxide-hover">¿Has olvidado tu contraseña?</a>
         </div>
 
         <x-primary-button class="w-full justify-center">

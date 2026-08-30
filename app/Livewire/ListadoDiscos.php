@@ -15,6 +15,7 @@ class ListadoDiscos extends Component
     {
         $producto = Producto::find($id);
         $producto->delete();
+        $this->dispatch('resultadoEliminacion', ['success' => true, 'message' => 'El disco se ha eliminado correctamente.']);
     }
     public function render()
     {

@@ -21,8 +21,10 @@
                 <x-text-input id="fecha" class="block w-full" type="date" wire:model="fecha" :value="old('fecha')" />
                 <x-input-error :messages="$errors->get('fecha')" />
             </div>
-            <label class="flex items-center gap-3 cursor-pointer bg-cream-white border border-rule-light rounded-sharp px-[18px] h-[50px]">
-                <input type="checkbox" wire:model="portada" id="portada" class="w-5 h-5 accent-oxide rounded-sharp cursor-pointer">
+            <label
+                class="flex items-center gap-3 cursor-pointer bg-cream-white border border-rule-light rounded-sharp px-[18px] h-[50px]">
+                <input type="checkbox" wire:model="portada" id="portada"
+                    class="w-5 h-5 accent-oxide rounded-sharp cursor-pointer">
                 <span class="text-sm font-semibold text-ink-body whitespace-nowrap">Mostrar en portada</span>
             </label>
         </div>
@@ -38,7 +40,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[520px]">
             <div class="flex flex-col gap-1.5">
                 <x-input-label :value="__('Imagen actual')" />
-                <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-[11px] font-bold uppercase tracking-[0.6px] text-ink-muted">
+                <div
+                    class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-xs font-bold uppercase tracking-[0.6px] text-ink-muted">
                     Sin imagen todavía
                 </div>
             </div>
@@ -47,7 +50,8 @@
                 <x-text-input id="imagen" class="block w-full" type="file" wire:model="imagen" accept="image/*" />
                 @if ($imagen)
                     <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
-                        <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen de la noticia" class="w-full h-full object-cover">
+                        <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen de la noticia"
+                            class="w-full h-full object-cover">
                     </div>
                 @endif
                 <x-input-error :messages="$errors->get('imagen')" />

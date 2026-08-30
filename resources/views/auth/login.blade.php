@@ -4,7 +4,7 @@
 
 
 
-    <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2.5">
+    <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-2.5">
         Panel de administración
     </p>
     <h1 class="heading-auth">
@@ -38,7 +38,7 @@
                 <x-text-input id="password" class="block w-full flex-1 min-w-0" type="password" name="password"
                     placeholder="••••••••" required autocomplete="current-password" />
                 <button type="button" id="toggle-password"
-                    class="shrink-0 flex items-center font-cuerpo bg-transparent border border-rule-input text-ink-muted text-[11px] font-bold tracking-[1.2px] uppercase px-4 rounded-sharp cursor-pointer hover:bg-ink hover:border-ink hover:text-cream-white transition duration-200">
+                    class="shrink-0 flex items-center font-cuerpo bg-transparent border border-rule-input text-ink-muted text-xs font-bold tracking-[1.2px] uppercase px-4 rounded-sharp cursor-pointer hover:bg-ink hover:border-ink hover:text-cream-white transition duration-200">
                     Ver
                 </button>
             </div>
@@ -51,8 +51,7 @@
                     class="w-5 h-5 accent-oxide rounded-sharp cursor-pointer">
                 <span class="text-sm text-ink-body">Mantener la sesión</span>
             </label>
-            <a href="{{ route('password.request') }}"
-                class="text-[13px] font-semibold text-oxide hover:text-oxide-hover">
+            <a href="{{ route('password.request') }}" class="text-sm font-semibold text-oxide hover:text-oxide-hover">
                 ¿Olvidaste la contraseña?
             </a>
         </div>

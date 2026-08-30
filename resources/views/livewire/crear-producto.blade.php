@@ -13,16 +13,19 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[520px]">
                 <div class="flex flex-col gap-1.5">
                     <x-input-label :value="__('Imagen actual')" />
-                    <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-[11px] font-bold uppercase tracking-[0.6px] text-ink-muted">
+                    <div
+                        class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-xs font-bold uppercase tracking-[0.6px] text-ink-muted">
                         Sin imagen todavía
                     </div>
                 </div>
                 <div class="flex flex-col gap-1.5">
                     <x-input-label for="imagen" :value="__('Imagen')" />
-                    <x-text-input id="imagen" class="block w-full" type="file" wire:model="imagen" accept="image/*" />
+                    <x-text-input id="imagen" class="block w-full" type="file" wire:model="imagen"
+                        accept="image/*" />
                     @if ($imagen)
                         <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
-                            <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen del producto" class="w-full h-full object-cover">
+                            <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen del producto"
+                                class="w-full h-full object-cover">
                         </div>
                     @endif
                     <x-input-error :messages="$errors->get('imagen')" />

@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2.5">
+    <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-2.5">
         Panel de administración
     </p>
     <h1 class="heading-auth">
@@ -11,7 +11,8 @@
         {{ __('¿Has olvidado tu contraseña? Introduce el correo con el que te registraste y te enviaremos un enlace para que puedas crear una nueva.') }}
     </p>
 
-    <x-auth-session-status class="mb-5 block border-l-4 border-green-600 bg-green-50 text-green-700 font-semibold text-sm p-3 rounded-sharp"
+    <x-auth-session-status
+        class="mb-5 block border-l-4 border-green-600 bg-green-50 text-green-700 font-semibold text-sm p-3 rounded-sharp"
         :status="session('status')" />
 
     <form method="POST" action="{{ route('password.email') }}" class="flex flex-col gap-5">
@@ -25,7 +26,7 @@
         </div>
 
         <div class="flex items-center justify-between gap-4 flex-wrap">
-            <a href="{{ route('login') }}" class="text-[13px] font-semibold text-oxide hover:text-oxide-hover">Inicia
+            <a href="{{ route('login') }}" class="text-sm font-semibold text-oxide hover:text-oxide-hover">Inicia
                 sesión</a>
         </div>
 

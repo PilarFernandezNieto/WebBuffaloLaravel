@@ -18,6 +18,7 @@ class ListadoContenidos extends Component
         $contenido = Contenido::find($id);
         $this->borraImagen($contenido->imagen);
         $contenido->delete();
+        $this->dispatch('resultadoEliminacion', ['success' => true, 'message' => 'El contenido se ha eliminado correctamente.']);
     }
 
     public function render()

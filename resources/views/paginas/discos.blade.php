@@ -1,6 +1,6 @@
 <x-app-layout pageTitle="Discografía">
     <div class="max-w-content mx-auto px-edge py-section-lg">
-        <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-3">Discografía
+        <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-3">Discografía
         </p>
         <h1
             class="font-titulo font-black uppercase text-ink-heading text-[clamp(30px,3.6vw,42px)] tracking-[-0.02em] mb-3">

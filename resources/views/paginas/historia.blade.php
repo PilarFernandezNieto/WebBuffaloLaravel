@@ -10,7 +10,7 @@
             <div class="flex items-center gap-3 mb-3">
                 <span class="inline-block h-px w-11 bg-amber"></span>
                 <span
-                    class="font-titulo italic text-amber text-[13px] font-semibold uppercase tracking-[1.2px]">Historia</span>
+                    class="font-titulo italic text-amber text-sm font-semibold uppercase tracking-[1.2px]">Historia</span>
             </div>
             <h1
                 class="font-titulo font-black uppercase text-cream-white leading-[1] tracking-[-0.02em] text-[clamp(30px,3.6vw,42px)]">
@@ -27,7 +27,7 @@
         {{-- 2006 · LA IDEA --}}
         <section class="flex flex-wrap gap-cols-lg items-start">
             <div class="flex-1 min-w-[300px] basis-[480px]">
-                <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-4">
+                <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-4">
                     2006 · La idea</p>
                 <div class="space-y-5 leading-[1.78] text-ink-body max-w-[70ch]">
                     <p><b>The Electric Buffalo</b> (Oviedo) surge, como idea, en un garito de costumbres rockeras allá
@@ -47,7 +47,7 @@
             <figure class="flex-1 min-w-[220px] basis-[260px] m-0">
                 <img src="{{ asset('img/trio_vertical.webp') }}" alt="El trío en sus primeros años"
                     class="w-full aspect-[1500/2256] object-cover">
-                <figcaption class="text-[11px] font-titulo italic text-ink-muted text-right pt-[7px]">Foto de Manfred
+                <figcaption class="text-xs font-titulo italic text-ink-muted text-right pt-[7px]">Foto de Manfred
                 </figcaption>
             </figure>
         </section>
@@ -60,7 +60,7 @@
                     No se hizo de rogar. Álvaro se lo planteó y Jandro dijo "sí" al momento.</p>
             </blockquote>
             <div class="flex-1 min-w-[280px] basis-[340px]">
-                <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-4">
+                <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-4">
                     2006–2009 · Hidin' from the Butcher</p>
                 <p class="leading-[1.78] text-ink-body m-0">Fueron largas mañanas de ensayos en Agüera (Las Regueras,
                     Asturias) a unos 30 minutos en coche de la capital, previo paso por Casa Edelmiro a desayunar
@@ -94,7 +94,7 @@
         <section class="flex flex-wrap gap-cols-lg items-start">
 
             <div class="flex-1 min-w-[300px] basis-[380px]">
-                <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-4">
+                <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-4">
                     2016 · La muerte de Alejandro</p>
                 <div class="space-y-5 leading-[1.78] text-ink-body">
                     <p>Jandro "Espina", un ser de luz y amor, se iba a los 45. Dejaba una mujer y una hija desoladas y
@@ -106,7 +106,7 @@
                         con un futuro algo incierto.</p>
                 </div>
                 <p
-                    class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mt-6 pt-5 border-t border-rule-light">
+                    class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mt-6 pt-5 border-t border-rule-light">
                     La llamada a filas</p>
                 <div class="space-y-5 leading-[1.78] text-ink-body mt-4">
                     <p>El exilio espiritual tocó a su fin algunas semanas después, con la decisión de seguir adelante
@@ -120,7 +120,7 @@
                 <img src="{{ asset('img/cartel_aniversario.webp') }}"
                     alt="Cartel del concierto de presentación en Oviedo"
                     class="w-full aspect-[578/1036] object-cover block">
-                <figcaption class="text-[11px] font-titulo italic text-ink-muted text-right pt-[7px]">Cartel del
+                <figcaption class="text-xs font-titulo italic text-ink-muted text-right pt-[7px]">Cartel del
                     concierto de presentación</figcaption>
             </figure>
         </section>
@@ -140,7 +140,7 @@
                     class="flex-1 min-w-[220px] basis-[300px] w-full aspect-square object-cover shadow-[0_18px_44px_rgba(62,48,37,0.28)]">
                 <div class="flex-1 min-w-[280px] basis-[360px]">
                     <p
-                        class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2.5">
+                        class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-2.5">
                         2023 · Boomerang Discos</p>
                     <h2
                         class="font-titulo font-black uppercase text-ink-heading leading-[1.02] tracking-[-0.02em] text-[clamp(28px,3.8vw,44px)] mb-4">

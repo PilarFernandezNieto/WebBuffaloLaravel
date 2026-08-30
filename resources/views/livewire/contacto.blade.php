@@ -5,7 +5,7 @@
 
         @if (session()->has('success'))
             <div role="status" class="border-2 border-oxide bg-cream-field px-5 py-4 mb-6">
-                <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-1">
+                <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-1">
                     Mensaje enviado</p>
                 <p class="text-ink-body text-sm">{{ session('success') }}</p>
             </div>
@@ -77,7 +77,7 @@
 
     {{-- COLUMNA LATERAL --}}
     <div class="flex-1 basis-[260px] min-w-[260px] border-t border-rule-light pt-8">
-        <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-4">Directo al
+        <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-4">Directo al
             grano</p>
         <a href="mailto:info@theelectricbuffalo.com"
             class="block font-titulo font-black text-ink-heading text-xl hover:text-oxide transition-colors duration-200 mb-4">info@theelectricbuffalo.com</a>

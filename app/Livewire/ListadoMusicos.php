@@ -20,6 +20,7 @@ class ListadoMusicos extends Component
         $musico = Musico::find($id);
         $this->borraImagen($musico->imagen);
         $musico->delete();
+        $this->dispatch('resultadoEliminacion', ['success' => true, 'message' => 'El músico se ha eliminado correctamente.']);
     }
 
 

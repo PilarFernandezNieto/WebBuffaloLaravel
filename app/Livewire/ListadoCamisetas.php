@@ -18,6 +18,7 @@ class ListadoCamisetas extends Component
         $producto = Producto::find($id);
         $this->borraImagen($producto->imagen);
         $producto->delete();
+        $this->dispatch('resultadoEliminacion', ['success' => true, 'message' => 'La camiseta se ha eliminado correctamente.']);
     }
 
 

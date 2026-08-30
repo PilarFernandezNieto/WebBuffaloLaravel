@@ -39,7 +39,7 @@
     @endphp
     <section class="max-w-content mx-auto px-edge pb-[clamp(48px,6vw,76px)]">
         <p
-            class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-5 pt-[clamp(24px,3vw,32px)] border-t border-rule-light">
+            class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-5 pt-[clamp(24px,3vw,32px)] border-t border-rule-light">
             Otras noticias</p>
 
         @if ($otras->count())
