@@ -9,10 +9,7 @@
 
         <div class="flex flex-col gap-1.5">
             <x-input-label for="texto" :value="__('Texto')" />
-            <div wire:ignore>
-                <textarea wire:model="texto" id="texto" wire:model.defer="texto" wire:ignore
-                    class="block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
-            </div>
+            <x-tinymce-editor field="texto" />
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[520px]">
@@ -53,22 +50,3 @@
         </div>
     </form>
 </div>
-@push('scripts')
-    <script>
-        tinymce.init({
-            selector: '#texto',
-            plugins: 'link code lists',
-            toolbar: 'undo redo | bold italic underline | bullist numlist | outdent indent link code',
-            language_url: '/js/langs/es.js',
-            language: 'es',
-            setup: function(editor) {
-                editor.on('init change', function() {
-                    editor.save();
-                });
-                editor.on('change', function(e) {
-                    @this.set('texto', editor.getContent());
-                });
-            }
-        });
-    </script>
-@endpush

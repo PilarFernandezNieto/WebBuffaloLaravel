@@ -38,10 +38,7 @@
 
         <div class="flex flex-col gap-1.5">
             <x-input-label for="biografia" :value="__('Biografía')" />
-            <div wire:ignore>
-                <textarea wire:model="biografia" id="biografia" wire:model.defer="biografia" wire:ignore
-                    class="block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
-            </div>
+            <x-tinymce-editor field="biografia" />
             <x-input-error :messages="$errors->get('biografia')" />
         </div>
 
@@ -80,22 +77,3 @@
         </div>
     </form>
 </div>
-@push('scripts')
-    <script>
-        tinymce.init({
-            selector: '#biografia',
-            plugins: 'link code lists',
-            toolbar: 'undo redo | bold italic underline | bullist numlist | outdent indent link code',
-            language_url: '/js/langs/es.js',
-            language: 'es',
-            setup: function(editor) {
-                editor.on('init change', function() {
-                    editor.save();
-                });
-                editor.on('change', function(e) {
-                    @this.set('biografia', editor.getContent());
-                });
-            }
-        });
-    </script>
-@endpush

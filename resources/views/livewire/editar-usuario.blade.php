@@ -16,12 +16,12 @@
 
         <div class="flex flex-col gap-1.5">
             <x-input-label for="password" :value="__('Nueva contraseña')" />
-            <x-text-input id="password" class="block w-full" type="password" wire:model="password"
-                :value="old('password')" placeholder="Dejar en blanco para no cambiarla" />
+            <x-text-input id="password" class="block w-full" type="password" wire:model="password" :value="old('password')"
+                placeholder="Dejar en blanco para no cambiarla" />
             <x-input-error :messages="$errors->get('password')" />
         </div>
 
-        <div class="flex flex-col gap-3.5 bg-cream-white border border-rule-light rounded-sharp p-4">
+        <div class="flex gap-6 bg-cream-white border border-rule-light rounded-sharp p-4">
             <div>
                 <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" wire:model="admin" id="admin"

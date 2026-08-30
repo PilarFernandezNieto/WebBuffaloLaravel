@@ -31,17 +31,14 @@
 
         <div class="flex flex-col gap-1.5">
             <x-input-label for="texto" :value="__('Texto')" />
-            <div wire:ignore>
-                <textarea wire:model="texto" id="texto" wire:model.defer="texto" wire:ignore
-                    class="block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
-            </div>
+            <x-tinymce-editor field="texto" />
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[520px]">
             <div class="flex flex-col gap-1.5">
                 <x-input-label :value="__('Imagen actual')" />
                 <div
-                    class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-xs font-bold uppercase tracking-[0.6px] text-ink-muted">
+                    class="w-full  border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-xs font-bold uppercase tracking-[0.6px] text-ink-muted">
                     Sin imagen todavía
                 </div>
             </div>
@@ -49,7 +46,7 @@
                 <x-input-label for="imagen" :value="__('Imagen')" />
                 <x-text-input id="imagen" class="block w-full" type="file" wire:model="imagen" accept="image/*" />
                 @if ($imagen)
-                    <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                    <div class="w-full  border border-rule-input rounded-sharp overflow-hidden">
                         <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen de la noticia"
                             class="w-full h-full object-cover">
                     </div>
@@ -74,22 +71,3 @@
         @endif
     </form>
 </div>
-@push('scripts')
-    <script>
-        tinymce.init({
-            selector: '#texto',
-            plugins: 'link code lists',
-            toolbar: 'undo redo | bold italic underline | bullist numlist | outdent indent link code',
-            language_url: '/js/langs/es.js',
-            language: 'es',
-            setup: function(editor) {
-                editor.on('init change', function() {
-                    editor.save();
-                });
-                editor.on('change', function(e) {
-                    @this.set('texto', editor.getContent());
-                });
-            }
-        });
-    </script>
-@endpush

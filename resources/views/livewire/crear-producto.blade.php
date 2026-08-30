@@ -110,17 +110,11 @@
 
         <div class="flex flex-col gap-1.5">
             <x-input-label for="informacion" :value="__('Información')" />
-            <div wire:ignore>
-                <textarea wire:model="informacion" id="informacion" wire:model.defer="informacion" wire:ignore
-                    class="block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
-            </div>
+            <x-tinymce-editor field="informacion" />
         </div>
         <div class="flex flex-col gap-1.5">
             <x-input-label for="textos" :value="__('Textos')" />
-            <div wire:ignore>
-                <textarea wire:model="textos" id="textos" wire:model.defer="textos" wire:ignore
-                    class="tinymce block w-full h-52 bg-cream-field border border-rule-input rounded-sharp focus:border-oxide-focus focus:ring-oxide-focus"></textarea>
-            </div>
+            <x-tinymce-editor field="textos" />
         </div>
 
         <div class="flex gap-3.5 mt-2">
@@ -139,22 +133,3 @@
         @endif
     </form>
 </div>
-@push('scripts')
-    <script>
-        tinymce.init({
-            selector: 'textarea#informacion, textarea#textos',
-            plugins: 'link code lists',
-            toolbar: 'undo redo | bold italic underline | bullist numlist | outdent indent link code',
-            language_url: '/js/langs/es.js',
-            language: 'es',
-            setup: function(editor) {
-                editor.on('init', function() {
-                    editor.save();
-                });
-                editor.on('change', function(e) {
-                    @this.set(editor.id, editor.getContent());
-                });
-            }
-        });
-    </script>
-@endpush
