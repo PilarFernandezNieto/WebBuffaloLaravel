@@ -90,22 +90,22 @@
             <div class="flex items-center gap-3">
                 <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank"
                     aria-label="Facebook de The Electric Buffalo"
-                    class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-rule-on-dark/90 text-2xl hover:border-oxide hover:text-oxide transition duration-200 ease-in-out">
+                    class="flex h-11 w-11 items-center justify-center rounded-full text-rule-on-dark/90 text-2xl hover:border-oxide hover:text-oxide transition duration-200 ease-in-out">
                     <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.instagram.com/theelectricbuffalo/" target="_blank"
                     aria-label="Instagram de The Electric Buffalo"
-                    class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-rule-on-dark/90 text-2xl hover:border-oxide hover:text-oxide transition duration-200 ease-in-out">
+                    class="flex h-11 w-11 items-center justify-center rounded-full text-rule-on-dark/90 text-2xl hover:border-oxide hover:text-oxide transition duration-200 ease-in-out">
                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.youtube.com/@theelectricbuffalo666" target="_blank"
                     aria-label="YouTube de The Electric Buffalo"
-                    class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-rule-on-dark/90 text-2xl hover:border-oxide hover:text-oxide transition duration-200 ease-in-out">
+                    class="flex h-11 w-11 items-center justify-center rounded-full text-rule-on-dark/90 text-2xl hover:border-oxide hover:text-oxide transition duration-200 ease-in-out">
                     <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                 </a>
                 <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank"
                     aria-label="Bandcamp de The Electric Buffalo"
-                    class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-rule-on-dark/90 text-2xl hover:border-oxide hover:text-oxide transition duration-200 ease-in-out">
+                    class="flex h-11 w-11 items-center justify-center rounded-full text-rule-on-dark/90 text-2xl hover:border-oxide hover:text-oxide transition duration-200 ease-in-out">
                     <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
                 </a>
             </div>

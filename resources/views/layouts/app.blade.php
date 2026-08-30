@@ -39,24 +39,9 @@
     @stack('styles')
 
     <style>
-        .imagen-header {
-            background-image: url("{{ asset('img/bufalos_header2.webp') }}");
-            background-position: 50%;
-            background-size: cover;
-            position: relative;
-        }
 
-        .imagen-central {
-            background-image: url("{{ asset('img/imagen_central.webp') }}");
-            background-position: 50%;
-            background-size: cover;
-        }
 
-        .imagen-central-tienda {
-            background-image: url("{{ asset('img/Banda.jpg') }}");
-            background-position: 50%;
-            background-size: cover;
-        }
+
     </style>
     <!-- Google Consent Mode - Default (denied) -->
     <script>
@@ -77,8 +62,8 @@
     <!-- End Google Consent Mode -->
 
     <!-- CookieScript -->
-    <script type="text/javascript" charset="UTF-8"
-        src="//cdn.cookie-script.com/s/fa5545b6c667adb43097b75a9bf07211.js" data-navigate-track="reload"></script>
+    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/fa5545b6c667adb43097b75a9bf07211.js"
+        data-navigate-track="reload"></script>
     <!-- End CookieScript -->
 
     <!-- Google Tag Manager -->

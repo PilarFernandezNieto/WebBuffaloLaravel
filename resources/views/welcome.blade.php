@@ -67,24 +67,7 @@
         </div>
     </section>
 
-    {{-- 4. BANNER TIENDA --}}
-    {{-- <section class="relative bg-ink">
-        <img src="{{ asset('img/imagen_central.webp') }}" alt=""
-            class="absolute inset-0 w-full h-full object-cover opacity-30">
-        <div class="absolute inset-0 bg-oxide/90"></div>
-        <div class="relative z-10 max-w-home mx-auto px-edge-home py-section-lg text-center">
-            <h2
-                class="font-titulo font-black uppercase text-cream-white text-[clamp(30px,3.6vw,42px)] tracking-[-0.02em] mb-4">
-                Llévate el vinilo</h2>
-            <p class="font-cuerpo text-onblack-body text-base max-w-[56ch] mx-auto mb-8">Discos, camisetas y más
-                merchandising del Búfalo Eléctrico.</p>
-            <div class="flex flex-wrap items-center justify-center gap-4">
-                <x-button :href="route('tienda')" class="!bg-ink !border-ink hover:!bg-ink/80">Ir a la tienda</x-button>
-                <x-button-ghost dark href="https://theelectricbuffalo.bandcamp.com/"
-                    target="_blank">Bandcamp</x-button-ghost>
-            </div>
-        </div>
-    </section> --}}
+
 
     {{-- 5. NOTICIAS --}}
     <livewire:noticias-portada />

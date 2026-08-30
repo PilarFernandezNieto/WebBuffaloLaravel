@@ -15,8 +15,8 @@
             <h1
                 class="font-titulo font-black uppercase text-cream-white leading-[1] tracking-[-0.02em] text-[clamp(30px,3.6vw,42px)]">
                 15 años de rock</h1>
-            <p class="mt-4 font-cuerpo text-onblack-body text-base max-w-[56ch]">Desde un garito de costumbres
-                rockeras en Oviedo, 2006. Sin prisa y sin pretensiones.</p>
+            {{-- <p class="mt-4 font-cuerpo text-onblack-body text-base max-w-[56ch]">Desde un garito de costumbres
+                rockeras en Oviedo, 2006. Sin prisa y sin pretensiones.</p> --}}
         </div>
         <p class="absolute right-edge bottom-3 font-titulo italic text-[12px] text-onblack-body/80">Foto de Manfred
         </p>
@@ -159,7 +159,7 @@
 
 
     {{-- CTA --}}
-    <div class=" px-edge-home bg-oxide py-section-lg ">
+    {{-- <div class=" px-edge-home bg-oxide py-section-lg ">
         <div class="max-w-content mx-auto  px-edge flex items-center justify-between gap-7 flex-wrap">
             <div>
                 <h2
@@ -174,6 +174,6 @@
                 <x-button-ghost href="{{ route('banda') }}">La banda</x-button-ghost>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </x-app-layout>

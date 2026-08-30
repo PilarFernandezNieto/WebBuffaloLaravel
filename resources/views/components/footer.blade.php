@@ -19,29 +19,31 @@
         </div>
 
         <div class="flex justify-center gap-3 mt-8">
-            <a href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank" aria-label="Facebook de The Electric Buffalo"
-                class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-cream/90 hover:border-amber hover:text-amber transition duration-200 ease-in-out">
-                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.instagram.com/theelectricbuffalo/" target="_blank" aria-label="Instagram de The Electric Buffalo"
-                class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-cream/90 hover:border-amber hover:text-amber transition duration-200 ease-in-out">
+            <x-button-icon href="https://www.facebook.com/TheElectricBuffalo?locale=es_ES" target="_blank"
+                aria-label="Facebook de The Electric Buffalo"><i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            </x-button-icon>
+            <x-button-icon href="https://www.instagram.com/theelectricbuffalo/" target="_blank"
+                aria-label="Instagram de The Electric Buffalo">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.youtube.com/@theelectricbuffalo666" target="_blank" aria-label="YouTube de The Electric Buffalo"
-                class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-cream/90 hover:border-amber hover:text-amber transition duration-200 ease-in-out">
+            </x-button-icon>
+            <x-button-icon href="https://www.youtube.com/@theelectricbuffalo666" target="_blank"
+                aria-label="YouTube de The Electric Buffalo">
                 <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-            </a>
-            <a href="https://theelectricbuffalo.bandcamp.com/" target="_blank" aria-label="Bandcamp de The Electric Buffalo"
-                class="flex h-11 w-11 items-center justify-center rounded-full border border-rule-on-dark text-cream/90 hover:border-amber hover:text-amber transition duration-200 ease-in-out">
+            </x-button-icon>
+            <x-button-icon href="https://theelectricbuffalo.bandcamp.com/" target="_blank"
+                aria-label="Bandcamp de The Electric Buffalo">
                 <i class="fa-brands fa-bandcamp" aria-hidden="true"></i>
-            </a>
+            </x-button-icon>
         </div>
 
         <div class="flex flex-wrap items-center justify-between gap-4 mt-[30px] pt-6 border-t border-rule-dark">
-            <p class="text-xs text-[#B7A990]">&copy; {{ date('Y') }} The Electric Buffalo. Todos los derechos reservados.</p>
+            <p class="text-xs text-[#B7A990]">&copy; {{ date('Y') }} The Electric Buffalo. Todos los derechos
+                reservados.</p>
             <div class="flex gap-4">
-                <a href="{{ route('politica') }}" class="text-xs text-[#B7A990] hover:text-amber transition duration-200">Política de privacidad</a>
-                <a href="{{ route('cookies') }}" class="text-xs text-[#B7A990] hover:text-amber transition duration-200">Política de cookies</a>
+                <a href="{{ route('politica') }}"
+                    class="text-xs text-[#B7A990] hover:text-amber transition duration-200">Política de privacidad</a>
+                <a href="{{ route('cookies') }}"
+                    class="text-xs text-[#B7A990] hover:text-amber transition duration-200">Política de cookies</a>
             </div>
         </div>
     </div>

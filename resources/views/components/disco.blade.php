@@ -27,6 +27,6 @@
         <div class="mt-3 text-base leading-[1.7] text-ink-body max-w-[70ch] line-clamp-[6]">
             {!! $disco->textos !!}
         </div>
-        <x-button-ghost :href="route('discografia.mostrar', $disco->slug)" class="mt-5">Ver ficha</x-button-ghost>
+        <x-button :href="route('discografia.mostrar', $disco->slug)" class="mt-5">Ver ficha</x-button>
     </div>
 </article>

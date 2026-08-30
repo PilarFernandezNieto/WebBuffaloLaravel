@@ -4,17 +4,18 @@
         {{-- CABECERA --}}
         <div class="flex flex-wrap items-center justify-between gap-8 mb-4">
             <div>
-                <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px] mb-3">La
+                <p class="font-titulo italic text-oxide text-sm font-semibold uppercase tracking-[1.2px]">La
                     Banda</p>
                 <h1
                     class="font-titulo font-black uppercase text-ink-heading text-[clamp(30px,3.6vw,42px)] tracking-[-0.02em]">
                     Ahora</h1>
             </div>
-            <p class="text-ink-body text-base leading-[1.65] max-w-[56ch]">Cuatro músicos asturianos que llevan haciendo
-                la música que les apetece desde hace casi veinte años, sin prisa ni pretensión.</p>
+
         </div>
 
         <x-banda :musicos="$musicos" />
+
+
 
         {{-- IN MEMORIAM --}}
         {{-- <section class="bg-ink -mx-edge px-edge py-section mt-4">
@@ -29,4 +30,24 @@
         </section> --}}
 
     </div>
+    {{-- 4. BANNER TODOS --}}
+    <section class="relative bg-ink min-h-96">
+        <img src="{{ asset('img/electric_bufalo_ahora_min.webp') }}" alt=""
+            class="inline md:hidden absolute inset-0 w-full h-full object-cover">
+        <img src="{{ asset('img/imagen_central.webp') }}" alt=""
+            class="hidden md:inline absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-oxide/20"></div>
+        {{-- <div class="relative z-10 max-w-home mx-auto px-edge-home py-section-lg text-center">
+            <h2
+                class="font-titulo font-black uppercase text-cream-white text-[clamp(30px,3.6vw,42px)] tracking-[-0.02em] mb-4">
+                Llévate el vinilo</h2>
+            <p class="font-cuerpo text-onblack-body text-base max-w-[56ch] mx-auto mb-8">Discos, camisetas y más
+                merchandising del Búfalo Eléctrico.</p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <x-button :href="route('tienda')" class="!bg-ink !border-ink hover:!bg-ink/80">Ir a la tienda</x-button>
+                <x-button-ghost dark href="https://theelectricbuffalo.bandcamp.com/"
+                    target="_blank">Bandcamp</x-button-ghost>
+            </div>
+        </div> --}}
+    </section>
 </x-app-layout>

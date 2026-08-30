@@ -6,7 +6,7 @@
         <div class="flex-none w-full md:w-[clamp(300px,10vw,350px)]">
             <img src="{{ asset($musico->imagen ? 'storage/' . $musico->imagen : 'img/no-imagen.jpg') }}"
                 alt="{{ $musico->nombre }}" class="w-full aspect-square object-cover">
-            @if ($musico->fotografo)
+            @if ($musico->fotografo and $musico->imagen)
                 <p class="text-xs font-titulo italic text-ink-muted pt-[7px]">Foto de {{ $musico->fotografo }}</p>
             @endif
         </div>
