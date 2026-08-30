@@ -37,11 +37,15 @@
                             class="w-12 h-12 object-cover border border-rule-light rounded-sharp">
                     </td>
                     <td class="px-4 py-3.5 whitespace-nowrap">
+
+
                         <div class="flex gap-3.5 items-center">
-                            <a href="{{ route('admin.contenidos.edit', $contenido->id) }}"
-                                class="text-xs font-bold uppercase tracking-[1px] min-h-11 flex items-center hover:text-oxide-hover">Editar</a>
-                            <button type="button" wire:click="$dispatch('mostrarAlerta',{{ $contenido->id }})"
-                                class="text-xs font-bold uppercase tracking-[1px] text-ink-muted min-h-11 flex items-center hover:text-oxide transition duration-200 bg-transparent border-0 p-0 font-cuerpo cursor-pointer">Borrar</button>
+                            <x-link-edit href="{{ route('admin.contenidos.edit', $contenido->id) }}">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </x-link-edit>
+                            <x-button-trash type="button"
+                                wire:click="$dispatch('mostrarAlerta',{{ $contenido->id }})"><i
+                                    class="fa-regular fa-trash-can"></i></x-button-trash>
                         </div>
                     </td>
                 </tr>

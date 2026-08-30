@@ -14,7 +14,7 @@
                 <div class="flex flex-col gap-1.5">
                     <x-input-label :value="__('Imagen actual')" />
                     <div
-                        class="w-full aspect-[4/3] border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-xs font-bold uppercase tracking-[0.6px] text-ink-muted">
+                        class="w-full   border border-rule-input rounded-sharp bg-cream-hover flex items-center justify-center text-xs font-bold uppercase tracking-[0.6px] text-ink-muted">
                         Sin imagen todavía
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <x-text-input id="imagen" class="block w-full" type="file" wire:model="imagen"
                         accept="image/*" />
                     @if ($imagen)
-                        <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                        <div class="w-full   border border-rule-input rounded-sharp overflow-hidden">
                             <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen del producto"
                                 class="w-full h-full object-cover">
                         </div>

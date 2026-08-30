@@ -45,7 +45,7 @@
         <div class="flex flex-col gap-5">
             <div class="flex flex-col gap-1.5">
                 <x-input-label :value="__('Imagen actual')" />
-                <div class="w-52 aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                <div class="w-52   border border-rule-input rounded-sharp overflow-hidden">
                     <img src="{{ asset('storage/' . $imagen) }}" alt="Imagen de {{ $nombre }}"
                         class="w-full h-full object-cover">
                 </div>
@@ -55,7 +55,7 @@
                 <x-text-input id="imagen_nueva" class="block w-full" type="file" wire:model="imagen_nueva"
                     accept="image/*" />
                 @if ($imagen_nueva)
-                    <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
+                    <div class="w-full   border border-rule-input rounded-sharp overflow-hidden">
                         <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Nueva imagen del músico"
                             class="w-full h-full object-cover">
                     </div>

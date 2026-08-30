@@ -6,8 +6,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div class="flex flex-col gap-1.5">
                     <x-input-label for="nombre" :value="__('Nombre')" />
-                    <x-text-input id="nombre" class="block w-full" type="text" wire:model="nombre"
-                        :value="old('nombre')" placeholder="Nombre" />
+                    <x-text-input id="nombre" class="block w-full" type="text" wire:model="nombre" :value="old('nombre')"
+                        placeholder="Nombre" />
                     <x-input-error :messages="$errors->get('nombre')" />
                 </div>
                 <div class="flex flex-col gap-1.5">
@@ -20,8 +20,9 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[520px]">
                 <div class="flex flex-col gap-1.5">
                     <x-input-label :value="__('Imagen actual')" />
-                    <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
-                        <img src="{{ asset('storage/' . $imagen) }}" alt="{{ 'Imagen ' . $nombre }}" class="w-full h-full object-cover">
+                    <div class="w-full   border border-rule-input rounded-sharp overflow-hidden">
+                        <img src="{{ asset('storage/' . $imagen) }}" alt="{{ 'Imagen ' . $nombre }}"
+                            class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="flex flex-col gap-1.5">
@@ -29,8 +30,9 @@
                     <x-text-input id="imagen_nueva" class="block w-full" type="file" wire:model="imagen_nueva"
                         accept="image/*" />
                     @if ($imagen_nueva)
-                        <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
-                            <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Nueva imagen del producto" class="w-full h-full object-cover">
+                        <div class="w-full   border border-rule-input rounded-sharp overflow-hidden">
+                            <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Nueva imagen del producto"
+                                class="w-full h-full object-cover">
                         </div>
                     @endif
                     <x-input-error :messages="$errors->get('imagen_nueva')" />

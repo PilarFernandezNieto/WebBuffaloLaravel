@@ -15,16 +15,19 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[520px]">
             <div class="flex flex-col gap-1.5">
                 <x-input-label :value="__('Imagen actual')" />
-                <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
-                    <img src="{{ asset('storage/' . $imagen) }}" alt="{{ 'Imagen ' . $id }}" class="w-full h-full object-cover">
+                <div class="w-full border border-rule-input rounded-sharp overflow-hidden">
+                    <img src="{{ asset('storage/' . $imagen) }}" alt="{{ 'Imagen ' . $id }}"
+                        class="w-full h-full object-cover">
                 </div>
             </div>
             <div class="flex flex-col gap-1.5">
                 <x-input-label for="imagen_nueva" :value="__('Nueva imagen')" />
-                <x-text-input id="imagen_nueva" class="block w-full" type="file" wire:model="imagen_nueva" accept="image/*" />
+                <x-text-input id="imagen_nueva" class="block w-full" type="file" wire:model="imagen_nueva"
+                    accept="image/*" />
                 @if ($imagen_nueva)
-                    <div class="w-full aspect-[4/3] border border-rule-input rounded-sharp overflow-hidden">
-                        <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Nueva imagen del contenido" class="w-full h-full object-cover">
+                    <div class="w-full border border-rule-input rounded-sharp overflow-hidden">
+                        <img src="{{ $imagen_nueva->temporaryUrl() }}" alt="Nueva imagen del contenido"
+                            class="w-full h-full object-cover">
                     </div>
                 @endif
                 <x-input-error :messages="$errors->get('imagen_nueva')" />
@@ -32,7 +35,8 @@
         </div>
 
         <div class="flex flex-wrap items-end gap-5">
-            <label class="flex items-center gap-3 cursor-pointer bg-cream-white border border-rule-light rounded-sharp px-[18px] h-[50px]">
+            <label
+                class="flex items-center gap-3 cursor-pointer bg-cream-white border border-rule-light rounded-sharp px-[18px] h-[50px]">
                 <input type="checkbox" wire:model="portada" id="portada" {{ $portada ? 'checked' : '' }}
                     class="w-5 h-5 accent-oxide rounded-sharp cursor-pointer">
                 <span class="text-sm font-semibold text-ink-body whitespace-nowrap">Mostrar en portada</span>

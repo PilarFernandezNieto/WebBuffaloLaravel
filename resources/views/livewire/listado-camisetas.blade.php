@@ -42,14 +42,20 @@
                     </td>
                     <td class="px-4 py-3.5 text-sm font-semibold text-ink-body whitespace-nowrap">
                         {{ $camiseta->precio_formateado }}</td>
+
+
+
                     <td class="px-4 py-3.5 whitespace-nowrap">
                         <div class="flex gap-3.5 items-center">
-                            <a href="{{ route('admin.productos.edit', $camiseta->id) }}"
-                                class="text-xs font-bold uppercase tracking-[1px] min-h-11 flex items-center hover:text-oxide-hover">Editar</a>
-                            <button type="button" wire:click="$dispatch('mostrarAlerta',{{ $camiseta->id }})"
-                                class="text-xs font-bold uppercase tracking-[1px] text-ink-muted min-h-11 flex items-center hover:text-oxide transition duration-200 bg-transparent border-0 p-0 font-cuerpo cursor-pointer">Borrar</button>
+                            <x-link-edit href="{{ route('admin.productos.edit', $camiseta->id) }}"><i
+                                    class="fa-regular fa-pen-to-square"></i></x-link-edit>
+                            <x-button-trash type="button"
+                                wire:click="$dispatch('mostrarAlerta',{{ $camiseta->id }})"><i
+                                    class="fa-regular fa-trash-can"></i></x-button-trash>
                         </div>
                     </td>
+
+
                 </tr>
             @empty
                 <tr>

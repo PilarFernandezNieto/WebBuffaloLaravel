@@ -3,29 +3,29 @@
         <thead>
             <tr class="bg-cream-hover">
                 <th
-                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
                     Id</th>
                 <th
-                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
                     Nombre</th>
                 <th
-                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
                     Categoría</th>
                 <th
-                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
                     Imagen</th>
                 <th
-                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
                     Precio</th>
                 <th
-                    class="text-xs font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
+                    class="text-[11px] font-bold tracking-[1.3px] uppercase text-ink-muted px-4 py-3.5 border-b border-rule-light whitespace-nowrap">
                     Acciones</th>
             </tr>
         </thead>
         <tbody>
             @forelse ($productos as $producto)
                 <tr class="border-b border-rule-light-soft last:border-b-0">
-                    <td class="px-4 py-3.5 text-sm font-bold text-ink-muted whitespace-nowrap">{{ $producto->id }}
+                    <td class="px-4 py-3.5 text-[13px] font-bold text-ink-muted whitespace-nowrap">{{ $producto->id }}
                     </td>
                     <td class="px-4 py-3.5 min-w-44">
                         <span
@@ -39,13 +39,15 @@
                     </td>
                     <td class="px-4 py-3.5 text-sm font-semibold text-ink-body whitespace-nowrap">
                         {{ $producto->precio_formateado }}</td>
+
+
                     <td class="px-4 py-3.5 whitespace-nowrap">
                         <div class="flex gap-3.5 items-center">
                             <x-link-edit href="{{ route('admin.productos.edit', $producto->id) }}"><i
                                     class="fa-regular fa-pen-to-square"></i></x-link-edit>
                             <x-button-trash type="button"
                                 wire:click="$dispatch('mostrarAlerta',{{ $producto->id }})"><i
-                                    class="fa-regular fa-trash-can"></x-button-trash>
+                                    class="fa-regular fa-trash-can"></i></x-button-trash>
                         </div>
                     </td>
                 </tr>
@@ -58,4 +60,5 @@
         </tbody>
     </table>
 </div>
+
 <x-confirm-delete-alert event="eliminarProducto" />
