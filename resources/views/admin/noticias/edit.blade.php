@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class="max-w-[760px] w-full mx-auto px-edge py-[clamp(24px,3.5vw,44px)]">
+    <div class="max-w-[760px] w-full mx-auto px-edge py-admin">
         <p class="font-titulo italic text-oxide text-[13px] font-semibold uppercase tracking-[1.2px] mb-2">
             <a href="{{ route('admin.noticias.index') }}">Noticias</a>
         </p>

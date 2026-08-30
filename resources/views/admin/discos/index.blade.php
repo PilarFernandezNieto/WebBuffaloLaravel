@@ -1,7 +1,7 @@
 <x-admin-layout>
     @include('admin.partials.tabs')
 
-    <div class="max-w-[1180px] w-full mx-auto px-edge py-[clamp(24px,3.5vw,44px)]">
+    <div class="max-w-5xl w-full mx-auto px-edge py-admin">
 
         <x-admin.page-heading eyebrow="Panel" :eyebrow-href="route('admin.index')" title="Discos">
             <x-button-link :href="route('admin.productos.create')">Nuevo producto</x-button-link>

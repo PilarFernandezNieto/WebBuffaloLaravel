@@ -33,9 +33,8 @@
 
     <div class="min-h-screen flex flex-col">
 
-        <header
-            class="bg-ink px-[clamp(18px,4vw,40px)] py-[10px] flex items-center justify-between gap-4 flex-wrap">
-            <div class="flex items-center gap-3.5 min-w-0">
+        <header class="bg-ink px-[clamp(18px,4vw,40px)] py-[10px] flex items-center justify-between gap-4 flex-wrap">
+            <div class="flex items-end gap-3.5 min-w-0">
                 <a href="{{ route('admin.index') }}" class="shrink-0">
                     <img src="{{ asset('img/logo_blanco_transparente.png') }}" alt="The Electric Buffalo"
                         class="h-[clamp(38px,5.5vw,52px)] w-auto object-contain">
@@ -44,7 +43,7 @@
                     class="text-[11px] font-bold tracking-[1.4px] uppercase text-amber border border-rule-on-dark px-[10px] py-[5px] rounded-sharp">Admin</span>
             </div>
             <div class="flex items-center gap-[clamp(14px,2.5vw,24px)] flex-wrap">
-                <span class="text-[13px] text-cream/90">{{ Auth::user()->name }}</span>
+                <span class="text-sm text-cream/90">{{ Auth::user()->name }}</span>
                 <a href="{{ route('welcome') }}"
                     class="text-xs font-semibold tracking-[1px] uppercase text-cream-white min-h-11 flex items-center hover:text-amber transition duration-200">
                     Ver la web
@@ -71,7 +70,7 @@
             {{ $slot }}
         </main>
 
-        <footer class="bg-ink px-[clamp(20px,4vw,44px)] py-[22px] flex justify-between items-center flex-wrap gap-3">
+        <footer class="bg-ink px-edge py-5 flex justify-between items-center flex-wrap gap-3">
             <span class="text-xs text-cream/70">The Electric Buffalo · Panel de administración</span>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

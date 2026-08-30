@@ -86,6 +86,7 @@ export default {
             spacing: {
                 edge: "clamp(20px,4vw,44px)",
                 "edge-home": "clamp(20px,4vw,48px)",
+                admin: "clamp(24px,3.5vw,44px)",
                 section: "clamp(40px,5vw,64px)",
                 "section-lg": "clamp(56px,7vw,96px)",
                 cols: "clamp(20px,3vw,44px)",
