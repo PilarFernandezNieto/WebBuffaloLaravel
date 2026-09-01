@@ -1,13 +1,16 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
 
 export default defineConfig({
+    build: {
+        copyPublicDir: false,
+    },
     plugins: [
         laravel({
             input: [
-                'resources/css/app.css',
-                'resources/js/app.js',
-                'resources/js/tinymce-config.js',
+                "resources/css/app.css",
+                "resources/js/app.js",
+                "resources/js/tinymce-config.js",
             ],
             refresh: true,
         }),
