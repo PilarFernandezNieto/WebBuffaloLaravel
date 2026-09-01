@@ -7,12 +7,12 @@
 
     <title>The Electric Buffalo | {!! e($pageTitle) !!}</title>
     <meta name="description"
-        content="The Electric Buffalo es una banda de rock asturiana que combina el espíritu del rock clásico americano con una energía moderna. Con influencias de The Allman Brothers y Gov't Mule, su sonido se caracteriza por riffs poderosos y una autenticidad que transmite la esencia del rock en su forma más pura">
+        content="The Electric Buffalo: banda de rock de Asturias con influencias de The Allman Brothers y Gov't Mule. Historia, discos y conciertos.">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website" />
     <meta property="og:title" content="The Electric Buffalo" />
     <meta property="og:description"
-        content="Descubre el potente sonido de la banda de rock asturiana The Electric Buffalo. Rock clásico con influencias americanas y energía contemporánea." />
+        content="Banda de rock de Asturias con influencias de The Allman Brothers y Gov't Mule. Descubre su historia y su música." />
     <meta property="og:url" content="https://www.theelectricbuffalo.com" />
 
     <!-- Styles / Scripts -->

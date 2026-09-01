@@ -18,18 +18,21 @@
                 The Electric<br>Buffalo
             </h1>
 
+
+            </p>
+
         </div>
 
-        <p class="absolute bottom-4 right-edge-home z-10 font-titulo italic text-[12px] text-onblack-body/80">
-            Foto de Manfred</p>
+
+
     </section>
 
     {{-- 2. FRANJA ÓXIDO --}}
     <section class="bg-oxide">
         <div class="max-w-home mx-auto px-edge-home py-4 text-center">
             <p
-                class="font-titulo font-black uppercase text-cream-white text-[clamp(19px,2.4vw,20px)] tracking-[-0.015em]">
-                Sin prisa, sin pretensión: solo la música que nos apetece hacer.
+                class="font-titulo font-black uppercase text-cream-white text-[clamp(19px,2.4vw,20px)] tracking-[0.12em]">
+                Rock con raíces americanas, hecho en Asturias.
             </p>
         </div>
     </section>

@@ -116,14 +116,18 @@
 
     {{-- SOBRE EL DISCO --}}
     <section class="bg-ink">
-        <div class="max-w-content mx-auto px-edge py-section flex flex-wrap gap-cols-lg">
+        <div class="max-w-content mx-auto px-edge py-section flex flex-wrap gap-cols-lg items-start">
             <p
                 class="font-titulo italic text-amber text-sm font-semibold uppercase tracking-[1.2px] flex-none basis-[180px]">
                 Sobre el disco</p>
-            <div
-                class="flex-1 min-w-[300px] informacion-oscura text-onblack-body text-base leading-[1.75] max-w-[70ch] space-y-4">
-                {!! $disco->textos !!}
-            </div>
+            <blockquote class="flex-1 min-w-[300px] m-0 pl-cols relative border-l-[3px] border-oxide">
+                <span aria-hidden="true"
+                    class="absolute -top-3.5 left-cols font-titulo text-[56px] leading-none text-oxide opacity-50">&ldquo;</span>
+                <div
+                    class="informacion-oscura font-titulo italic text-onblack-body text-[17px] leading-[1.75] max-w-[70ch] space-y-3.5">
+                    {!! $disco->textos !!}
+                </div>
+            </blockquote>
         </div>
     </section>
 
