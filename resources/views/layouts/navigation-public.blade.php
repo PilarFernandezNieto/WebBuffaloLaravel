@@ -35,7 +35,8 @@
                 aria-label="Facebook de The Electric Buffalo"><i class="fa-brands fa-facebook" aria-hidden="true"></i>
             </x-button-icon>
             <x-button-icon href="https://www.instagram.com/theelectricbuffalo/" target="_blank"
-                aria-label="Instagram de The Electric Buffalo">
+                aria-label="Instagram de The Electric Buffalo"
+                onclick="window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'click_instagram', link_url: this.href, link_location: 'nav_desktop' });">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </x-button-icon>
             <x-button-icon href="https://www.youtube.com/@theelectricbuffalo666" target="_blank"
@@ -101,7 +102,8 @@
                 <i class="fa-brands fa-facebook" aria-hidden="true"></i>
             </x-button-icon>
             <x-button-icon href="https://www.instagram.com/theelectricbuffalo/" target="_blank"
-                aria-label="Icono Instagram">
+                aria-label="Icono Instagram"
+                onclick="window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'click_instagram', link_url: this.href, link_location: 'nav_mobile' });">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </x-button-icon>
             <x-button-icon href="https://www.youtube.com/@theelectricbuffalo666" target="_blank"
